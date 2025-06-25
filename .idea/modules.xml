@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BACK_STAGE_SERVER.iml" filepath="$PROJECT_DIR$/BACK_STAGE_SERVER.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ape-admin/ape-admin.iml" filepath="$PROJECT_DIR$/ape-admin/ape-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ape-common/ape-common.iml" filepath="$PROJECT_DIR$/ape-common/ape-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ape-framework/ape-framework.iml" filepath="$PROJECT_DIR$/ape-framework/ape-framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ape-generator/ape-generator.iml" filepath="$PROJECT_DIR$/ape-generator/ape-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ape-quartz/ape-quartz.iml" filepath="$PROJECT_DIR$/ape-quartz/ape-quartz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ape-system/ape-system.iml" filepath="$PROJECT_DIR$/ape-system/ape-system.iml" />
+    </modules>
+  </component>
+</project>
