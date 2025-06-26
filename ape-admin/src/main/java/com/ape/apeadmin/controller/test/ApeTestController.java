@@ -22,6 +22,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * @author 超级管理员
@@ -168,7 +170,7 @@ public class ApeTestController {
         return Result.success(apeTestList);
     }
 
-    @PostMapping("getTestStudent")
+    /*@PostMapping("getTestStudent")
     public Result getTestStudent(@RequestBody JSONObject jsonObject) {
         String testId = jsonObject.getString("testId");
         ApeTest test = apeTestService.getById(testId);
@@ -195,6 +197,75 @@ public class ApeTestController {
             student.setTotalGetScore(score);
         }
         return Result.success(studentPage);
+    }*/
+    @PostMapping("getTestStudent")
+    public Result getTestStudent(@RequestBody JSONObject jsonObject) {
+        String testId = jsonObject.getString("testId");
+        ApeTest test = apeTestService.getById(testId);
+        String userName = jsonObject.getString("userName");
+        Integer pageNumber = jsonObject.getInteger("pageNumber");
+        Integer pageSize = jsonObject.getInteger("pageSize");
+
+        // 创建分页对象
+        Page<ApeTestStudent> page = new Page<>(pageNumber, pageSize);
+
+        // 方案1：使用子查询先获取分组的用户ID列表
+        // 1. 先查询分组的用户ID
+        QueryWrapper<ApeTestStudent> groupQuery = new QueryWrapper<>();
+        groupQuery.select("user_id")
+                .eq("test_id", testId)
+                .groupBy("user_id")
+                .orderByAsc("MIN(update_time)");
+
+        if (StringUtils.isNotBlank(userName)) {
+            groupQuery.like("create_by", userName);
+        }
+
+        // 2. 获取分页的用户ID列表
+        Page<Map<String, Object>> userPage = apeTestStudentService.pageMaps(
+                new Page<>(pageNumber, pageSize),
+                groupQuery
+        );
+
+        // 3. 收集用户ID
+        List<String> userIds = userPage.getRecords().stream()
+                .map(map -> (String)map.get("user_id"))
+                .collect(Collectors.toList());
+
+        // 4. 如果没有用户则返回空结果
+        if (userIds.isEmpty()) {
+            return Result.success(new Page<ApeTestStudent>());
+        }
+
+        // 5. 查询这些用户的详细信息
+        QueryWrapper<ApeTestStudent> detailQuery = new QueryWrapper<>();
+        detailQuery.in("user_id", userIds)
+                .eq("test_id", testId);
+
+        List<ApeTestStudent> students = apeTestStudentService.list(detailQuery);
+
+        // 6. 按用户分组并计算总分
+        Map<String, List<ApeTestStudent>> grouped = students.stream()
+                .collect(Collectors.groupingBy(ApeTestStudent::getUserId));
+
+        List<ApeTestStudent> resultList = new ArrayList<>();
+        for (Map.Entry<String, List<ApeTestStudent>> entry : grouped.entrySet()) {
+            ApeTestStudent representative = entry.getValue().get(0); // 取第一条作为代表
+            int totalScore = entry.getValue().stream()
+                    .mapToInt(ApeTestStudent::getPoint)
+                    .sum();
+
+            representative.setTestName(test.getName());
+            representative.setTotalScore(test.getTotalScore());
+            representative.setTotalGetScore(totalScore);
+            resultList.add(representative);
+        }
+
+        // 7. 设置分页结果
+        page.setRecords(resultList);
+        page.setTotal(userPage.getTotal());
+
+        return Result.success(page);
     }
 
 }

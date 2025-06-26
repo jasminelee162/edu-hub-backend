@@ -7,13 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ape-framework" />
         <module name="ape-common" />
         <module name="ape-system" />
-        <module name="ape-admin" />
+        <module name="ape-framework (1)" />
         <module name="ape-quartz" />
         <module name="ape-generator" />
+        <module name="ape-admin" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ape-framework (2)" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
