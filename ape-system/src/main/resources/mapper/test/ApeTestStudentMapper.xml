@@ -3,11 +3,4 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ape.apesystem.mapper.ApeTestStudentMapper">
-    <select id="getTestStudent" resultType="com.ape.apesystem.domain.ApeTestStudent">
-        SELECT user_id, MAX(update_time) as update_time
-        FROM ape_test_student
-        WHERE test_id = #{testId}
-        GROUP BY user_id
-        ORDER BY update_time ASC
-    </select>
 </mapper>
