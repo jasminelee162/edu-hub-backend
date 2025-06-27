@@ -16,6 +16,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -247,4 +249,87 @@ public class ApeTaskStudentController {
         return Result.success(studentPage);
     }
 
+    /*6.26 新增 学习进度*/
+    @Autowired
+    private ApeLearningProgressService apeLearningProgressService;
+
+    @Log(name = "更新学习进度", type = BusinessType.OTHER)
+    @PostMapping("updateLearningProgress")
+    public Result updateLearningProgress(@RequestBody ApeTaskStudent apeTaskStudent) {
+        ApeUser userInfo = ShiroUtils.getUserInfo();
+        String userId = userInfo.getId();
+        String taskId = apeTaskStudent.getTaskId();
+        System.out.println("taskId122:" + taskId);
+
+        // 获取课程信息
+        ApeTask task = apeTaskService.getById(taskId);
+        if (task == null) {
+            return Result.fail("课程不存在");
+        }
+
+        // 构造查询条件
+        QueryWrapper<ApeTaskStudent> query = new QueryWrapper<>();
+        query.lambda().eq(ApeTaskStudent::getTaskId, taskId)
+                .eq(ApeTaskStudent::getState, 0)
+                .eq(ApeTaskStudent::getUserId, userId);
+
+        // 查询与登录用户名一致的数据
+        ApeTaskStudent student = apeTaskStudentService.getOne(query);
+
+        if (student == null) {
+            return Result.fail("未找到与登录用户名一致的数据");
+        }
+        System.out.println("学生信息：" + student);
+
+        // 获取考试得分
+        Map<String, Object> score = apeTestService.getStudentTotalScore(student.getTaskId(), student.getUserId());
+        if (score != null) {
+            student.setTestScore(score.get("point").toString());
+            student.setTotalScore(score.get("total").toString());
+        } else {
+            student.setTestScore("0");
+            student.setTotalScore("0");
+        }
+
+        // 获取已看视频数量
+        Integer videoCount = apeChapterService.getStudentVideo(student.getTaskId(), student.getUserId());
+        if (videoCount == null) {
+            videoCount = 0;
+        }
+        student.setVideoCount(videoCount);
+
+        // 获取已做作业数量
+        List<String> assignList = apeHomeworkService.getStudentHomeWork(student.getTaskId(), student.getUserId());
+        student.setAssignCount(assignList.size());
+
+        // 获取总视频数目
+        QueryWrapper<ApeChapter> chapterQueryWrapper = new QueryWrapper<>();
+        chapterQueryWrapper.lambda().eq(ApeChapter::getTaskId, taskId);
+        int totalVideos = apeChapterService.count(chapterQueryWrapper);
+        student.setVideoNum(totalVideos);
+
+        // 获取总作业数量
+        List<String> totalAssignList = apeHomeworkService.getTotalAssignCount(taskId);
+        student.setAssign(totalAssignList.size());
+
+        // 设置任务比例
+        student.setProportion(task.getProportion());
+
+        // 计算学习进度
+        int totalItems = totalVideos + totalAssignList.size();
+        int completedItems = videoCount + assignList.size();
+        int progress = totalItems > 0 ? (completedItems * 100 / totalItems) : 0;
+
+        // 创建或更新学习进度记录
+        ApeLearningProgress learningProgress = new ApeLearningProgress();
+        learningProgress.setUserId(userId);
+        learningProgress.setProgress(progress);
+        learningProgress.setUserName(userInfo.getUserName());
+        learningProgress.setTeacherName(task.getTeacherName());
+        learningProgress.setTaskName(task.getName());
+        learningProgress.setUpdateTime(new Date());
+        apeLearningProgressService.updateOrInsertProgress(learningProgress);
+
+        return Result.success(learningProgress);
+    }
 }

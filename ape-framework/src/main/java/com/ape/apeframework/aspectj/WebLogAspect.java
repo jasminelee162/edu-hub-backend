@@ -50,6 +50,18 @@ public class WebLogAspect {
         String respParam = getParameterInfo(joinPoint);
         Object result = joinPoint.proceed();
         if (SystemConfig.isRequestLog()) {
+            // 判断是否是资源类型（文件下载）
+            String responseLog;
+            if (result instanceof org.springframework.core.io.Resource) {
+                responseLog = "【文件资源响应，已跳过打印】";
+            } else {
+                try {
+                    responseLog = JSON.toJSONString(result);
+                } catch (Exception e) {
+                    responseLog = "【响应内容序列化失败】";
+                }
+            }
+
             log.info(logTemplate,
                     request.getRequestURL(),
                     (System.currentTimeMillis() - begin),
@@ -58,7 +70,8 @@ public class WebLogAspect {
                     joinPoint.getSignature().getDeclaringTypeName(),
                     joinPoint.getSignature().getName(),
                     respParam,
-                    JSON.toJSONString(result));
+                    responseLog);
+
         }
         return result;
     }
