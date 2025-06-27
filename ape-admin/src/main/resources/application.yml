@@ -51,3 +51,5 @@ logging:
     path: ./logs
   config: classpath:logback-spring.xml
 
+sa-token:
+  token-name: x_access_token
