@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author 超级管理员
@@ -165,4 +166,13 @@ public class ApeTestStudentController {
         }
     }
 
+    /*6.27 新增 薄弱科目*/
+    @Log(name = "获取学生优势和薄弱科目", type = BusinessType.OTHER)
+    @GetMapping("getStudentStrengthsAndWeaknesses")
+    public Result getStudentStrengthsAndWeaknesses() {
+        ApeUser userInfo = ShiroUtils.getUserInfo();
+        List<Map<String, Object>> result = apeTestStudentService.getStudentSubjectScores(userInfo.getId());
+        return Result.success(result);
+
+}
 }
