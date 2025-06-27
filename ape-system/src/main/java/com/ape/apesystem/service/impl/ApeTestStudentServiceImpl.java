@@ -125,4 +125,10 @@ public class ApeTestStudentServiceImpl extends ServiceImpl<ApeTestStudentMapper,
         System.out.println("结果构建完成，返回结果。");
         return result;
     }
+
+    /* 6.28 新增 错题集*/
+    @Override
+    public List<ApeTestStudent> getWrongAnswers(String userId) {
+        return baseMapper.selectWrongAnswers(userId);
+    }
 }

@@ -174,5 +174,13 @@ public class ApeTestStudentController {
         List<Map<String, Object>> result = apeTestStudentService.getStudentSubjectScores(userInfo.getId());
         return Result.success(result);
 
-}
+    }
+
+    /*6.28 新增 错题集*/
+    @GetMapping("getWrongAnswers")
+    public Result getWrongAnswers() {
+        String userId = ShiroUtils.getUserInfo().getId();
+        List<ApeTestStudent> wrongAnswers = apeTestStudentService.getWrongAnswers(userId);
+        return Result.success(wrongAnswers);
+    }
 }

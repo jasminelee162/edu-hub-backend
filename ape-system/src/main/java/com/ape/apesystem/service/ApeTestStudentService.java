@@ -16,4 +16,6 @@ public interface ApeTestStudentService extends IService<ApeTestStudent> {
     /*6.27 新增 薄弱科目*/
     List<Map<String, Object>> getStudentSubjectScores(String userId);
 
+    /*6.28 新增 错题集*/
+    List<ApeTestStudent> getWrongAnswers(String userId);
 }

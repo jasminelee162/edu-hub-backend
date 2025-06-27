@@ -20,4 +20,10 @@ public interface ApeTestStudentMapper extends BaseMapper<ApeTestStudent> {
             "GROUP BY user_id " +
             "ORDER BY update_time ASC")
     List<ApeTestStudent> getTestStudent(@Param("testId") String testId);
+
+    /*6.28 新增 错题集*/
+    @Select("SELECT ts.* FROM ape_test_student ts " +
+            "JOIN ape_test_item ti ON ts.item_id = ti.id " +
+            "WHERE ts.user_id = #{userId} AND ts.point < ti.score")
+    List<ApeTestStudent> selectWrongAnswers(@Param("userId") String userId);
 }
