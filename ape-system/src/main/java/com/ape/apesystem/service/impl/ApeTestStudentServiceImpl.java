@@ -10,9 +10,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -37,11 +35,12 @@ public class ApeTestStudentServiceImpl extends ServiceImpl<ApeTestStudentMapper,
         // 2. 查询所有考试信息
         List<ApeTest> allTests = apeTestMapper.selectList(null);
 
-        // 3. 构建课程ID到课程名称的映射
+        // 3. 构建考试ID到课程名称的映射
         Map<String, String> testIdToTaskName = allTests.stream()
                 .collect(Collectors.toMap(
                         ApeTest::getId,
-                        ApeTest::getTaskName
+                        ApeTest::getTaskName,
+                        (existing, replacement) -> existing
                 ));
 
         // 4. 按课程名称分组，计算学生每个课程的平均分
@@ -52,36 +51,43 @@ public class ApeTestStudentServiceImpl extends ServiceImpl<ApeTestStudentMapper,
                         Collectors.averagingDouble(ApeTestStudent::getPoint)
                 ));
 
-        // 5. 计算所有学生每个课程的平均分
-        Map<String, Double> allStudentsSubjectAvgScores = allTests.stream()
-                .collect(Collectors.groupingBy(
-                        ApeTest::getTaskName,
-                        Collectors.averagingDouble(test -> {
-                            QueryWrapper<ApeTestStudent> examQuery = new QueryWrapper<>();
-                            examQuery.lambda().eq(ApeTestStudent::getTestId, test.getId());
-                            List<ApeTestStudent> examStudents = this.list(examQuery);
-                            return examStudents.stream()
-                                    .mapToDouble(ApeTestStudent::getPoint)
-                                    .average()
-                                    .orElse(0.0);
-                        })
-                ));
+        // 如果学生参加的科目少于2个，则不返回结果
+        if (studentSubjectAvgScores.size() < 2) {
+            return Collections.emptyList();
+        }
+
+        // 5. 找出学生得分最高和最低的科目
+        Optional<Map.Entry<String, Double>> maxScoreEntry = studentSubjectAvgScores.entrySet()
+                .stream()
+                .max(Map.Entry.comparingByValue());
+
+        Optional<Map.Entry<String, Double>> minScoreEntry = studentSubjectAvgScores.entrySet()
+                .stream()
+                .min(Map.Entry.comparingByValue());
 
         // 6. 构建结果
         List<Map<String, Object>> result = new ArrayList<>();
-        for (Map.Entry<String, Double> entry : studentSubjectAvgScores.entrySet()) {
-            String subjectName = entry.getKey();
-            double studentAvgScore = entry.getValue();
-            double allStudentsAvgScore = allStudentsSubjectAvgScores.getOrDefault(subjectName, 0.0);
-            String status = studentAvgScore > allStudentsAvgScore ? "优势科目" : "薄弱科目";
 
+        // 添加优势科目(得分最高的科目)
+        maxScoreEntry.ifPresent(entry -> {
             result.add(Map.of(
-                    "subject", subjectName,
-                    "studentScore", studentAvgScore,
-                    "avgScore", allStudentsAvgScore,
-                    "status", status
+                    "subject", entry.getKey(),
+                    "studentScore", entry.getValue(),
+                    "status", "优势科目"
             ));
-        }
+        });
+
+        // 添加薄弱科目(得分最低的科目)
+        minScoreEntry.ifPresent(entry -> {
+            // 只有当最高分和最低分不是同一科目时才添加薄弱科目
+            if (!maxScoreEntry.get().getKey().equals(entry.getKey())) {
+                result.add(Map.of(
+                        "subject", entry.getKey(),
+                        "studentScore", entry.getValue(),
+                        "status", "薄弱科目"
+                ));
+            }
+        });
 
         return result;
     }
