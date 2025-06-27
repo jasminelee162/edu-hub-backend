@@ -43,4 +43,5 @@ public class ApeChapterVideo implements Serializable {
 
     @TableField(exist = false)
     private Integer pageSize;
+
 }
