@@ -7,4 +7,5 @@ import com.alibaba.dashscope.exception.NoApiKeyException;
 
 public interface AIService {
     GenerationResult callWithMessage(String key) throws ApiException, NoApiKeyException, InputRequiredException;
+    GenerationResult studySuggestion(String key) throws ApiException,NoApiKeyException, InputRequiredException;
 }

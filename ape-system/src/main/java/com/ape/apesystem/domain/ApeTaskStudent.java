@@ -108,4 +108,7 @@ public class ApeTaskStudent implements Serializable {
     @TableField(exist = false)
     private Integer proportion;
 
+    @TableField(exist = false)
+    private String classification;
+
 }
