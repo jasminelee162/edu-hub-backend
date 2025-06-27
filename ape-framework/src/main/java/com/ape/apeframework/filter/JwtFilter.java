@@ -15,6 +15,8 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author shaozhujie
@@ -33,10 +35,19 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     * @author shaozhujie
     * @date: 2023/9/7 15:02
     */
+    private static final List<String> EXCLUDED_URLS = Arrays.asList(
+            "/ai"
+    );
     @SneakyThrows
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
         HttpServletResponse httpServletResponse = (HttpServletResponse)response;
+        // 如果是放行路径，直接通过
+        HttpServletRequest httpRequest = (HttpServletRequest) request;
+        String path = httpRequest.getRequestURI();
+        if (EXCLUDED_URLS.stream().anyMatch(path::startsWith)) {
+            return true;
+        }
         try {
             executeLogin(request, response);
         } catch (IncorrectCredentialsException e) {
