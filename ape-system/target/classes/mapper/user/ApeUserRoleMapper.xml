@@ -7,8 +7,8 @@
         select
             r.role_key
         from
-            ape_user u left join ape_user_role ur on u.id = ur.user_id
-            left join ape_role r on ur.role_id = r.id
+            user u left join user_role ur on u.id = ur.user_id
+            left join role r on ur.role_id = r.id
         <where>
             1=1
             <if test="loginAccount != null and loginAccount != ''">
