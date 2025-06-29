@@ -21,7 +21,7 @@ import java.util.Date;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("ape_operate_log")
+@TableName("operate_log")
 public class ApeOperateLog {
 
     private static final long serialVersionUID = 1L;

@@ -22,7 +22,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@TableName("ape_test_student")
+@TableName("test_student")
 public class ApeTestStudent implements Serializable {
 
     private static final long serialVersionUID = 1L;

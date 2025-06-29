@@ -21,7 +21,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@TableName("ape_gen_table_column")
+@TableName("gen_table_column")
 public class ApeGenTableColumn  extends BaseEntity {
 
     private static final long serialVersionUID = 1L;

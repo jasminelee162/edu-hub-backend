@@ -1,6 +1,7 @@
 2025-06-26 19:18:11.173 [restartedMain] ERROR com.baomidou.mybatisplus.core.MybatisConfiguration - mapper[com.ape.apesystem.mapper.ApeTestStudentMapper.getTestStudent] is ignored, because it exists, maybe from xml file
 2025-06-26 19:19:06.688 [restartedMain] ERROR com.baomidou.mybatisplus.core.MybatisConfiguration - mapper[com.ape.apesystem.mapper.ApeTestStudentMapper.getTestStudent] is ignored, because it exists, maybe from xml file
 2025-06-26 19:24:34.712 [restartedMain] ERROR com.baomidou.mybatisplus.core.MybatisConfiguration - mapper[com.ape.apesystem.mapper.ApeTestStudentMapper.getTestStudent] is ignored, because it exists, maybe from xml file
+<<<<<<< HEAD
 2025-06-26 21:33:10.690 [asyncExecutor-1] ERROR o.s.a.i.SimpleAsyncUncaughtExceptionHandler - Unexpected exception occurred invoking async method: public void com.ape.apeframework.event.listener.SystemEventListener.handleLoginLogEvent(com.ape.apeframework.event.LoginLogEvent)
 org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')
 	at org.springframework.cglib.core.ReflectUtils.defineClass(ReflectUtils.java:558)
@@ -822,6 +823,9 @@ Caused by: java.lang.LinkageError: loader 'app' attempted duplicate class defini
 	at org.springframework.cglib.core.ReflectUtils.defineClass(ReflectUtils.java:555)
 	... 27 common frames omitted
 2025-06-27 15:42:24.235 [http-nio-8080-exec-9] ERROR com.alibaba.druid.pool.DruidDataSource - init datasource error, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+=======
+2025-06-26 19:54:07.138 [http-nio-8080-exec-5] ERROR com.alibaba.druid.pool.DruidDataSource - init datasource error, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -853,6 +857,7 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:165)
 	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:65)
 	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+<<<<<<< HEAD
 	at jdk.proxy2/jdk.proxy2.$Proxy192.query(Unknown Source)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
@@ -863,11 +868,27 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
 	at jdk.proxy2/jdk.proxy2.$Proxy68.selectOne(Unknown Source)
+=======
+	at com.sun.proxy.$Proxy186.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy69.selectOne(Unknown Source)
+>>>>>>> 48e4fb6 (cms:pull)
 	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
 	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:90)
 	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
 	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+<<<<<<< HEAD
 	at jdk.proxy3/jdk.proxy3.$Proxy69.selectById(Unknown Source)
+=======
+	at com.sun.proxy.$Proxy70.selectById(Unknown Source)
+>>>>>>> 48e4fb6 (cms:pull)
 	at com.baomidou.mybatisplus.extension.service.IService.getById(IService.java:201)
 	at com.ape.apeframework.config.ShiroRealm.checkUserTokenIsEffect(ShiroRealm.java:115)
 	at com.ape.apeframework.config.ShiroRealm.doGetAuthenticationInfo(ShiroRealm.java:94)
@@ -878,8 +899,13 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
 	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:275)
 	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:260)
+<<<<<<< HEAD
 	at com.ape.apeframework.filter.JwtFilter.executeLogin(JwtFilter.java:91)
 	at com.ape.apeframework.filter.JwtFilter.isAccessAllowed(JwtFilter.java:52)
+=======
+	at com.ape.apeframework.filter.JwtFilter.executeLogin(JwtFilter.java:80)
+	at com.ape.apeframework.filter.JwtFilter.isAccessAllowed(JwtFilter.java:41)
+>>>>>>> 48e4fb6 (cms:pull)
 	at org.apache.shiro.web.filter.AccessControlFilter.onPreHandle(AccessControlFilter.java:162)
 	at org.apache.shiro.web.filter.PathMatchingFilter.isFilterChainContinued(PathMatchingFilter.java:223)
 	at org.apache.shiro.web.filter.PathMatchingFilter.preHandle(PathMatchingFilter.java:198)
@@ -930,11 +956,19 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:842)
 2025-06-27 15:42:24.238 [http-nio-8080-exec-9] ERROR com.alibaba.druid.pool.DruidDataSource - {dataSource-1} init error
+=======
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2025-06-26 19:54:07.140 [http-nio-8080-exec-5] ERROR com.alibaba.druid.pool.DruidDataSource - {dataSource-1} init error
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -966,6 +1000,7 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:165)
 	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:65)
 	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+<<<<<<< HEAD
 	at jdk.proxy2/jdk.proxy2.$Proxy192.query(Unknown Source)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
@@ -976,11 +1011,27 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
 	at jdk.proxy2/jdk.proxy2.$Proxy68.selectOne(Unknown Source)
+=======
+	at com.sun.proxy.$Proxy186.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy69.selectOne(Unknown Source)
+>>>>>>> 48e4fb6 (cms:pull)
 	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
 	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:90)
 	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
 	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+<<<<<<< HEAD
 	at jdk.proxy3/jdk.proxy3.$Proxy69.selectById(Unknown Source)
+=======
+	at com.sun.proxy.$Proxy70.selectById(Unknown Source)
+>>>>>>> 48e4fb6 (cms:pull)
 	at com.baomidou.mybatisplus.extension.service.IService.getById(IService.java:201)
 	at com.ape.apeframework.config.ShiroRealm.checkUserTokenIsEffect(ShiroRealm.java:115)
 	at com.ape.apeframework.config.ShiroRealm.doGetAuthenticationInfo(ShiroRealm.java:94)
@@ -991,8 +1042,13 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
 	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:275)
 	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:260)
+<<<<<<< HEAD
 	at com.ape.apeframework.filter.JwtFilter.executeLogin(JwtFilter.java:91)
 	at com.ape.apeframework.filter.JwtFilter.isAccessAllowed(JwtFilter.java:52)
+=======
+	at com.ape.apeframework.filter.JwtFilter.executeLogin(JwtFilter.java:80)
+	at com.ape.apeframework.filter.JwtFilter.isAccessAllowed(JwtFilter.java:41)
+>>>>>>> 48e4fb6 (cms:pull)
 	at org.apache.shiro.web.filter.AccessControlFilter.onPreHandle(AccessControlFilter.java:162)
 	at org.apache.shiro.web.filter.PathMatchingFilter.isFilterChainContinued(PathMatchingFilter.java:223)
 	at org.apache.shiro.web.filter.PathMatchingFilter.preHandle(PathMatchingFilter.java:198)
@@ -1043,11 +1099,19 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:842)
 2025-06-27 15:42:24.321 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2025-06-26 19:54:07.149 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1062,7 +1126,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:24.418 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:07.158 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1077,7 +1145,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:25.029 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:07.680 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1092,7 +1164,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:25.637 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:08.217 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1107,7 +1183,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:26.230 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:08.736 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1122,7 +1202,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:26.852 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:09.275 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1137,7 +1221,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:27.435 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:09.802 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1152,7 +1240,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:28.026 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:10.340 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1167,7 +1259,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:28.650 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:10.872 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1182,7 +1278,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:29.240 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:11.404 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1197,7 +1297,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:29.844 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:11.939 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1212,7 +1316,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:30.480 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:12.457 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1227,7 +1335,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:31.069 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:12.995 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1242,7 +1354,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:31.670 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:13.511 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1257,7 +1373,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:32.273 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:14.032 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1272,7 +1392,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:32.875 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:14.565 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1287,7 +1411,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:33.483 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:15.101 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1302,7 +1430,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:34.107 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:15.627 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1317,7 +1449,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:34.745 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:16.151 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1332,7 +1468,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:35.367 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:16.689 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1347,7 +1487,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:35.977 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:17.226 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1362,7 +1506,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:36.582 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:17.758 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1377,7 +1525,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:37.176 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:18.280 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1392,7 +1544,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:37.784 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:18.800 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1407,7 +1563,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:38.394 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:19.331 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1422,7 +1582,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:38.993 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:19.845 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1437,7 +1601,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:39.591 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:20.376 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1452,7 +1620,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:40.198 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:20.901 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1467,7 +1639,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:40.799 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:21.439 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1482,7 +1658,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:41.410 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:21.969 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1497,7 +1677,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:42.020 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:22.499 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1512,7 +1696,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:42.619 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:23.021 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1527,7 +1715,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:43.228 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:23.544 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1542,7 +1734,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:43.837 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:24.062 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1557,7 +1753,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:44.484 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:24.593 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1572,7 +1772,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:45.085 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:25.122 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1587,7 +1791,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:45.692 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:25.654 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1602,7 +1810,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:46.297 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:26.170 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1617,7 +1829,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:46.916 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:26.685 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1632,7 +1848,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:47.518 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:27.209 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1647,7 +1867,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:48.139 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:27.738 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1662,7 +1886,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:48.742 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:28.265 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1677,7 +1905,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:49.366 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:28.780 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1692,7 +1924,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:49.972 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:29.299 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1707,7 +1943,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:50.595 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:29.822 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1722,7 +1962,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:51.204 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:30.351 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1737,7 +1981,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:51.790 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:30.873 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1752,7 +2000,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:52.384 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:31.399 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1767,7 +2019,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:52.993 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:31.920 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1782,7 +2038,11 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:53.611 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+=======
+2025-06-26 19:54:32.445 [Druid-ConnectionPool-Create-1484649418] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+>>>>>>> 48e4fb6 (cms:pull)
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
@@ -1797,6 +2057,7 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+<<<<<<< HEAD
 2025-06-27 15:42:54.262 [Druid-ConnectionPool-Create-779665576] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/ape-learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
 java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
@@ -1971,3 +2232,5 @@ Action:
 
 Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
 
+=======
+>>>>>>> 48e4fb6 (cms:pull)

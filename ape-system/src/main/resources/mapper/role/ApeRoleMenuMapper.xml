@@ -7,8 +7,8 @@
         select
             m.perms
         from
-            ape_role r left join ape_role_menu rm on r.id = rm.role_id
-            left join ape_menu m on rm.menu_id = m.id
+            role r left join role_menu rm on r.id = rm.role_id
+            left join menu m on rm.menu_id = m.id
         <where>
             1=1
             <if test="role != null and role != ''">

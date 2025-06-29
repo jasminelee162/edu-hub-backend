@@ -22,7 +22,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@TableName("ape_dict_data")
+@TableName("dict_data")
 public class ApeDictData extends BaseEntity {
 
     private static final long serialVersionUID = 1L;

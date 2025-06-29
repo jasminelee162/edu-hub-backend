@@ -10,9 +10,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -29,60 +27,108 @@ public class ApeTestStudentServiceImpl extends ServiceImpl<ApeTestStudentMapper,
 
     @Override
     public List<Map<String, Object>> getStudentSubjectScores(String userId) {
+        System.out.println("开始查询学生的所有考试记录...");
         // 1. 查询该学生的所有考试记录
         QueryWrapper<ApeTestStudent> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().eq(ApeTestStudent::getUserId, userId);
         List<ApeTestStudent> studentScores = this.list(queryWrapper);
+        System.out.println("查询到 " + studentScores.size() + " 条考试记录。");
 
         // 2. 查询所有考试信息
         List<ApeTest> allTests = apeTestMapper.selectList(null);
+        System.out.println("查询到 " + allTests.size() + " 条考试信息。");
 
-        // 3. 构建课程ID到课程名称的映射
+        // 3. 构建考试ID到课程名称的映射
         Map<String, String> testIdToTaskName = allTests.stream()
                 .collect(Collectors.toMap(
                         ApeTest::getId,
-                        ApeTest::getTaskName
-                ));
-
-        // 4. 按课程名称分组，计算学生每个课程的平均分
-        Map<String, Double> studentSubjectAvgScores = studentScores.stream()
-                .filter(score -> testIdToTaskName.containsKey(score.getTestId()))
-                .collect(Collectors.groupingBy(
-                        score -> testIdToTaskName.get(score.getTestId()),
-                        Collectors.averagingDouble(ApeTestStudent::getPoint)
-                ));
-
-        // 5. 计算所有学生每个课程的平均分
-        Map<String, Double> allStudentsSubjectAvgScores = allTests.stream()
-                .collect(Collectors.groupingBy(
                         ApeTest::getTaskName,
-                        Collectors.averagingDouble(test -> {
-                            QueryWrapper<ApeTestStudent> examQuery = new QueryWrapper<>();
-                            examQuery.lambda().eq(ApeTestStudent::getTestId, test.getId());
-                            List<ApeTestStudent> examStudents = this.list(examQuery);
-                            return examStudents.stream()
-                                    .mapToDouble(ApeTestStudent::getPoint)
-                                    .average()
-                                    .orElse(0.0);
-                        })
+                        (existing, replacement) -> existing
                 ));
 
-        // 6. 构建结果
-        List<Map<String, Object>> result = new ArrayList<>();
-        for (Map.Entry<String, Double> entry : studentSubjectAvgScores.entrySet()) {
-            String subjectName = entry.getKey();
-            double studentAvgScore = entry.getValue();
-            double allStudentsAvgScore = allStudentsSubjectAvgScores.getOrDefault(subjectName, 0.0);
-            String status = studentAvgScore > allStudentsAvgScore ? "优势科目" : "薄弱科目";
+        // 打印每个考试的成绩以及所属科目
+        System.out.println("考试记录详情：");
+        studentScores.forEach(score -> {
+            String taskName = testIdToTaskName.getOrDefault(score.getTestId(), "未知科目");
+        });
 
-            result.add(Map.of(
-                    "subject", subjectName,
-                    "studentScore", studentAvgScore,
-                    "avgScore", allStudentsAvgScore,
-                    "status", status
-            ));
+        // 4. 按考试(testId)分组，计算每次考试的总分
+        Map<String, Double> examTotalScores = studentScores.stream()
+                .collect(Collectors.groupingBy(
+                        ApeTestStudent::getTestId,
+                        Collectors.summingDouble(ApeTestStudent::getPoint)
+                ));
+
+
+        // 5. 按课程(taskName)分组，计算每个课程的总分和考试次数
+        Map<String, Double> courseTotalScores = new HashMap<>();
+        Map<String, Integer> courseExamCounts = new HashMap<>();
+
+        examTotalScores.forEach((testId, totalScore) -> {
+            if (testIdToTaskName.containsKey(testId)) {
+                String taskName = testIdToTaskName.get(testId);
+                courseTotalScores.merge(taskName, totalScore, Double::sum);
+                courseExamCounts.merge(taskName, 1, Integer::sum);
+            }
+        });
+
+        // 6. 计算每个课程的平均分（课程总分/考试次数）
+        Map<String, Double> studentSubjectAvgScores = new HashMap<>();
+        courseTotalScores.forEach((taskName, totalScore) -> {
+            int examCount = courseExamCounts.getOrDefault(taskName, 1);
+            double avgScore = totalScore / examCount;
+            studentSubjectAvgScores.put(taskName, avgScore);
+        });
+        System.out.println("计算每个课程的平均分完成。");
+
+        // 如果学生参加的课程少于2个，则不返回结果
+        if (studentSubjectAvgScores.size() < 2) {
+            System.out.println("学生参加的课程少于2个，不返回结果。");
+            return Collections.emptyList();
         }
 
+        // 7. 找出学生得分最高和最低的课程
+        Optional<Map.Entry<String, Double>> maxScoreEntry = studentSubjectAvgScores.entrySet()
+                .stream()
+                .max(Map.Entry.comparingByValue());
+
+        Optional<Map.Entry<String, Double>> minScoreEntry = studentSubjectAvgScores.entrySet()
+                .stream()
+                .min(Map.Entry.comparingByValue());
+
+        // 8. 构建结果
+        List<Map<String, Object>> result = new ArrayList<>();
+
+        // 添加优势课程(得分最高的课程)
+        maxScoreEntry.ifPresent(entry -> {
+            result.add(Map.of(
+                    "subject", entry.getKey(),
+                    "studentScore", entry.getValue(),
+                    "status", "优势科目"
+            ));
+            System.out.println("添加优势课程：" + entry.getKey() + "，得分：" + entry.getValue());
+        });
+
+        // 添加薄弱课程(得分最低的课程)
+        minScoreEntry.ifPresent(entry -> {
+            // 只有当最高分和最低分不是同一课程时才添加薄弱课程
+            if (maxScoreEntry.isPresent() && !maxScoreEntry.get().getKey().equals(entry.getKey())) {
+                result.add(Map.of(
+                        "subject", entry.getKey(),
+                        "studentScore", entry.getValue(),
+                        "status", "薄弱科目"
+                ));
+                System.out.println("添加薄弱课程：" + entry.getKey() + "，得分：" + entry.getValue());
+            }
+        });
+
+        System.out.println("结果构建完成，返回结果。");
         return result;
+    }
+
+    /* 6.28 新增 错题集*/
+    @Override
+    public List<ApeTestStudent> getWrongAnswers(String userId) {
+        return baseMapper.selectWrongAnswers(userId);
     }
 }

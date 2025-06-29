@@ -8,8 +8,8 @@
             u.id, u.dept_id, u.login_account, u.user_name,u.school,u.major,u.country,u.agree,u.age,u.birth,u.flair,u.address,u.work_date,
             u.email, u.avatar, u.tel, u.sex, u.status, u.del_flag,
             u.login_ip, u.login_date, u.create_by, u.create_time, u.remark, d.dept_name
-        from ape_user u
-        left join ape_dept d on u.dept_id = d.id
+        from user u
+        left join dept d on u.dept_id = d.id
         <where>
             1=1
             <if test="ew.userName != null and ew.userName != ''">

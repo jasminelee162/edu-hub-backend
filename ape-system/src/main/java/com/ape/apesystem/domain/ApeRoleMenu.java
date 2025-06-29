@@ -19,7 +19,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@TableName("ape_role_menu")
+@TableName("role_menu")
 public class ApeRoleMenu {
 
     private static final long serialVersionUID = 1L;
