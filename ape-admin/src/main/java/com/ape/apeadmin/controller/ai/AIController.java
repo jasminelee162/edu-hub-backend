@@ -8,10 +8,11 @@ import com.ape.apecommon.domain.Result;
 import com.ape.apesystem.service.AIService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
+@CrossOrigin(origins = "http://127.0.0.1:3001")
 @Controller
 @ResponseBody
 @RequestMapping("/ai")
