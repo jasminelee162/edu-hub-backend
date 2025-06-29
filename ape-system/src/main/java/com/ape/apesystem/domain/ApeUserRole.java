@@ -20,7 +20,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@TableName("ape_user_role")
+@TableName("user_role")
 public class ApeUserRole {
 
     private static final long serialVersionUID = 1L;

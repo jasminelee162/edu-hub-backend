@@ -20,7 +20,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@TableName("ape_task_favor")
+@TableName("task_favor")
 public class ApeTaskFavor implements Serializable {
 
     private static final long serialVersionUID = 1L;

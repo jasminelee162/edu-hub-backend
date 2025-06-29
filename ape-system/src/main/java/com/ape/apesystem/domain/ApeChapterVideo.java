@@ -20,7 +20,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@TableName("ape_chapter_video")
+@TableName("chapter_video")
 public class ApeChapterVideo implements Serializable {
 
     private static final long serialVersionUID = 1L;

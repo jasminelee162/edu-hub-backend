@@ -19,7 +19,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@TableName("ape_post")
+@TableName("post")
 public class ApePost extends BaseEntity {
 
     private static final long serialVersionUID = 1L;

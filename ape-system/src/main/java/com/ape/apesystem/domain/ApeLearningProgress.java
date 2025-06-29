@@ -8,7 +8,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-@TableName("ape_learning_progress")
+@TableName("learning_progress")
 public class ApeLearningProgress {
     @TableId(value = "id", type = IdType.ASSIGN_UUID)
     private String id;

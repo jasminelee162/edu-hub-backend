@@ -20,7 +20,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@TableName("ape_task_student")
+@TableName("task_student")
 public class ApeTaskStudent implements Serializable {
 
     private static final long serialVersionUID = 1L;

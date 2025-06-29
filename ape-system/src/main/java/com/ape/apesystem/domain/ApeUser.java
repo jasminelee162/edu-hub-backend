@@ -24,7 +24,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@TableName("ape_user")
+@TableName("user")
 public class ApeUser extends BaseEntity {
 
     private static final long serialVersionUID = 1L;

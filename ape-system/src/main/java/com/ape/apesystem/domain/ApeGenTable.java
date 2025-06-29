@@ -26,7 +26,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@TableName("ape_gen_table")
+@TableName("gen_table")
 public class ApeGenTable extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
