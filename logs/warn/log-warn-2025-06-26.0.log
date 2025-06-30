@@ -596,7 +596,7 @@ Was expecting one of:
 ### SQL: SELECT COUNT(*) FROM (SELECT id, item_id, test_id, title, sort, type, score, keyword, answer, content, point, solution, user_id, remark, create_by, create_time, update_by, update_time FROM ape_test_student WHERE (test_id = ?) GROUP BY user_id ORDER BY update_time ASC) TOTAL
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'ape-learn.ape_test_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'ape-learn.ape_test_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
-2025-06-26 19:24:54.484 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Failure in @ExceptionHandler com.ape.apeadmin.controller.GlobalExceptionHandler#handleException(Exception)
+2025-06-26 19:24:54.484 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Failure in @ExceptionHandler controller.com.project.admin.GlobalExceptionHandler#handleException(Exception)
 org.apache.catalina.connector.ClientAbortException: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
 	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:309)
 	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:272)
@@ -726,11 +726,11 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 ### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state  FROM ape_task_student     WHERE (task_id = ? AND state = ?) GROUP BY user_id
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'ape-learn.ape_task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'ape-learn.ape_task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
-2025-06-26 19:54:07.141 [http-nio-8080-exec-5] WARN  org.apache.shiro.authc.AbstractAuthenticator - Authentication failed for token submission [com.ape.apeframework.custom.JwtToken@1c598757].  Possible unexpected error? (Typical or expected login exceptions should extend from AuthenticationException).
+2025-06-26 19:54:07.141 [http-nio-8080-exec-5] WARN  org.apache.shiro.authc.AbstractAuthenticator - Authentication failed for token submission [custom.com.project.framework.JwtToken@1c598757].  Possible unexpected error? (Typical or expected login exceptions should extend from AuthenticationException).
 org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
 ### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 ### The error may exist in com/ape/apesystem/mapper/ApeUserMapper.java (best guess)
-### The error may involve com.ape.apesystem.mapper.ApeUserMapper.selectById
+### The error may involve mapper.com.project.system.ApeUserMapper.selectById
 ### The error occurred while executing a query
 ### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
@@ -742,8 +742,8 @@ org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis
 	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
 	at com.sun.proxy.$Proxy70.selectById(Unknown Source)
 	at com.baomidou.mybatisplus.extension.service.IService.getById(IService.java:201)
-	at com.ape.apeframework.config.ShiroRealm.checkUserTokenIsEffect(ShiroRealm.java:115)
-	at com.ape.apeframework.config.ShiroRealm.doGetAuthenticationInfo(ShiroRealm.java:94)
+	at config.com.project.framework.ShiroRealm.checkUserTokenIsEffect(ShiroRealm.java:115)
+	at config.com.project.framework.ShiroRealm.doGetAuthenticationInfo(ShiroRealm.java:94)
 	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:571)
 	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
 	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:273)
@@ -751,8 +751,8 @@ org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis
 	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
 	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:275)
 	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:260)
-	at com.ape.apeframework.filter.JwtFilter.executeLogin(JwtFilter.java:80)
-	at com.ape.apeframework.filter.JwtFilter.isAccessAllowed(JwtFilter.java:41)
+	at filter.com.project.framework.JwtFilter.executeLogin(JwtFilter.java:80)
+	at filter.com.project.framework.JwtFilter.isAccessAllowed(JwtFilter.java:41)
 	at org.apache.shiro.web.filter.AccessControlFilter.onPreHandle(AccessControlFilter.java:162)
 	at org.apache.shiro.web.filter.PathMatchingFilter.isFilterChainContinued(PathMatchingFilter.java:223)
 	at org.apache.shiro.web.filter.PathMatchingFilter.preHandle(PathMatchingFilter.java:198)
@@ -810,7 +810,7 @@ org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis
 Caused by: org.apache.ibatis.exceptions.PersistenceException: 
 ### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 ### The error may exist in com/ape/apesystem/mapper/ApeUserMapper.java (best guess)
-### The error may involve com.ape.apesystem.mapper.ApeUserMapper.selectById
+### The error may involve mapper.com.project.system.ApeUserMapper.selectById
 ### The error occurred while executing a query
 ### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
 	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)

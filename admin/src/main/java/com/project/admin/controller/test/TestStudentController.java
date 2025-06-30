@@ -1,0 +1,185 @@
+package com.project.admin.controller.test;
+
+import com.alibaba.fastjson2.JSONArray;
+import com.alibaba.fastjson2.JSONObject;
+import com.project.common.annotation.Log;
+import com.project.common.domain.Result;
+import com.project.common.enums.BusinessType;
+import com.project.common.enums.ResultCode;
+import com.project.framework.utils.ShiroUtils;
+import com.project.system.domain.Test;
+import com.project.system.domain.TestStudent;
+import com.project.system.domain.User;
+import com.project.system.service.TestService;
+import com.project.system.service.TestStudentService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author 超级管理员
+ * @version 1.0
+ * @description: 用户考试题目controller
+ * @date 2023/11/24 10:23
+ */
+@Controller
+@ResponseBody
+@RequestMapping("student")
+public class TestStudentController {
+
+    @Autowired
+    private TestStudentService testStudentService;
+    @Autowired
+    private TestService testService;
+
+    /** 分页获取用户考试题目 */
+    @Log(name = "分页获取用户考试题目", type = BusinessType.OTHER)
+    @PostMapping("getApeTestStudentPage")
+    public Result getApeTestStudentPage(@RequestBody TestStudent testStudent) {
+        Page<TestStudent> page = new Page<>(testStudent.getPageNumber(), testStudent.getPageSize());
+        QueryWrapper<TestStudent> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda()
+                .eq(StringUtils.isNotBlank(testStudent.getItemId()), TestStudent::getItemId, testStudent.getItemId())
+                .eq(StringUtils.isNotBlank(testStudent.getTestId()), TestStudent::getTestId, testStudent.getTestId())
+                .like(StringUtils.isNotBlank(testStudent.getTitle()), TestStudent::getTitle, testStudent.getTitle())
+                .eq(testStudent.getSort() != null, TestStudent::getSort, testStudent.getSort())
+                .eq(testStudent.getType() != null, TestStudent::getType, testStudent.getType())
+                .eq(StringUtils.isNotBlank(testStudent.getUserId()), TestStudent::getUserId, testStudent.getUserId());
+        Page<TestStudent> apeTestStudentPage = testStudentService.page(page, queryWrapper);
+        return Result.success(apeTestStudentPage);
+    }
+
+    /** 根据id获取用户考试题目 */
+    @Log(name = "根据id获取用户考试题目", type = BusinessType.OTHER)
+    @GetMapping("getApeTestStudentById")
+    public Result getApeTestStudentById(@RequestParam("id")String id) {
+        TestStudent testStudent = testStudentService.getById(id);
+        return Result.success(testStudent);
+    }
+
+    @GetMapping("getTestUserState")
+    public Result getTestUserState(@RequestParam("id")String id) {
+        User userInfo = ShiroUtils.getUserInfo();
+        QueryWrapper<TestStudent> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda().eq(TestStudent::getTestId,id)
+                .eq(TestStudent::getUserId,userInfo.getId());
+        int count = testStudentService.count(queryWrapper);
+        if (count > 0) {
+            return Result.success();
+        } else {
+            return Result.fail();
+        }
+    }
+
+    /** 保存用户考试题目 */
+    @Log(name = "保存用户考试题目", type = BusinessType.INSERT)
+    @PostMapping("saveApeTestStudent")
+    public Result saveApeTestStudent(@RequestBody JSONObject jsonObject) {
+        JSONArray jsonArray = jsonObject.getJSONArray("list");
+        List<TestStudent> testStudents = new ArrayList<>();
+        for (int i = 0; i < jsonArray.size(); i++) {
+            TestStudent object = jsonArray.getJSONObject(i).toJavaObject(TestStudent.class);
+            if (StringUtils.isNotBlank(object.getSolution())) {
+                if (object.getType() == 0 || object.getType() == 1 || object.getType() == 2 || object.getType() == 3 ) {
+                    if (object.getAnswer().equals(object.getSolution())) {
+                        object.setPoint(object.getScore());
+                    }
+                }
+                if (object.getType() == 4) {
+                    JSONArray parseArray = JSONArray.parseArray(object.getKeyword());
+                    int score = 0;
+                    for (int j = 0; j < parseArray.size();j++) {
+                        JSONObject item = parseArray.getJSONObject(j);
+                        if (object.getSolution().contains(item.getString("option"))) {
+                            score += item.getInteger("value");
+                        }
+                    }
+                    object.setPoint(score);
+                }
+            }
+            testStudents.add(object);
+        }
+        if (testStudents.size() > 0) {
+            TestStudent student = testStudents.get(0);
+            Test test = testService.getById(student.getTestId());
+            Date date = new Date();
+            if (test.getEndTime().before(date)) {
+                return Result.fail("考试截止时间已过无法提交");
+            }
+        }
+        boolean save = testStudentService.saveBatch(testStudents);
+        if (save) {
+            return Result.success();
+        } else {
+            return Result.fail(ResultCode.COMMON_DATA_OPTION_ERROR.getMessage());
+        }
+    }
+
+    /** 编辑用户考试题目 */
+    @Log(name = "编辑用户考试题目", type = BusinessType.UPDATE)
+    @PostMapping("editApeTestStudent")
+    public Result editApeTestStudent(@RequestBody JSONObject jsonObject) {
+        JSONArray jsonArray = jsonObject.getJSONArray("list");
+        List<TestStudent> testStudents = new ArrayList<>();
+        for (int i = 0; i < jsonArray.size(); i++) {
+            TestStudent object = jsonArray.getJSONObject(i).toJavaObject(TestStudent.class);
+            testStudents.add(object);
+        }
+        boolean save = testStudentService.updateBatchById(testStudents);
+        if (save) {
+            return Result.success();
+        } else {
+            return Result.fail(ResultCode.COMMON_DATA_OPTION_ERROR.getMessage());
+        }
+    }
+
+    @GetMapping("getTestStudentItem")
+    public Result getTestStudent(@RequestParam("testId")String testId,@RequestParam("userId")String userId) {
+        QueryWrapper<TestStudent> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda().eq(TestStudent::getTestId,testId)
+                .eq(TestStudent::getUserId,userId);
+        List<TestStudent> studentList = testStudentService.list(queryWrapper);
+        return Result.success(studentList);
+    }
+
+    /** 删除用户考试题目 */
+    @GetMapping("removeApeTestStudent")
+    @Log(name = "删除用户考试题目", type = BusinessType.DELETE)
+    public Result removeApeTestStudent(@RequestParam("ids")String ids) {
+        if (StringUtils.isNotBlank(ids)) {
+            String[] asList = ids.split(",");
+            for (String id : asList) {
+                testStudentService.removeById(id);
+            }
+            return Result.success();
+        } else {
+            return Result.fail("用户考试题目id不能为空！");
+        }
+    }
+
+    /*6.27 新增 薄弱科目*/
+    @Log(name = "获取学生优势和薄弱科目", type = BusinessType.OTHER)
+    @GetMapping("getStudentStrengthsAndWeaknesses")
+    public Result getStudentStrengthsAndWeaknesses() {
+        User userInfo = ShiroUtils.getUserInfo();
+        List<Map<String, Object>> result = testStudentService.getStudentSubjectScores(userInfo.getId());
+        return Result.success(result);
+
+    }
+
+    /*6.28 新增 错题集*/
+    @GetMapping("getWrongAnswers")
+    public Result getWrongAnswers() {
+        String userId = ShiroUtils.getUserInfo().getId();
+        List<TestStudent> wrongAnswers = testStudentService.getWrongAnswers(userId);
+        return Result.success(wrongAnswers);
+    }
+}
