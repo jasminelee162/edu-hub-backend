@@ -45,8 +45,8 @@ public class HomeworkStudentController {
 
     /** 分页获取学生作业 */
     @Log(name = "分页获取学生作业", type = BusinessType.OTHER)
-    @PostMapping("getApeHomeworkStudentPage")
-    public Result getApeHomeworkStudentPage(@RequestBody HomeworkStudent homeworkStudent) {
+    @PostMapping("getHomeworkStudentPage")
+    public Result getHomeworkStudentPage(@RequestBody HomeworkStudent homeworkStudent) {
         Page<HomeworkStudent> page = new Page<>(homeworkStudent.getPageNumber(), homeworkStudent.getPageSize());
         QueryWrapper<HomeworkStudent> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
@@ -54,12 +54,12 @@ public class HomeworkStudentController {
                 .eq(StringUtils.isNotBlank(homeworkStudent.getWorkId()), HomeworkStudent::getWorkId, homeworkStudent.getWorkId())
                 .eq(StringUtils.isNotBlank(homeworkStudent.getTitle()), HomeworkStudent::getTitle, homeworkStudent.getTitle())
                 .eq(StringUtils.isNotBlank(homeworkStudent.getUserId()), HomeworkStudent::getUserId, homeworkStudent.getUserId());
-        Page<HomeworkStudent> apeHomeworkStudentPage = homeworkStudentService.page(page, queryWrapper);
-        return Result.success(apeHomeworkStudentPage);
+        Page<HomeworkStudent> HomeworkStudentPage = homeworkStudentService.page(page, queryWrapper);
+        return Result.success(HomeworkStudentPage);
     }
 
-    @GetMapping("getApeHomeworkStudentFlag")
-    public Result getApeHomeworkStudentFlag(@RequestParam("id") String id) {
+    @GetMapping("getHomeworkStudentFlag")
+    public Result getHomeworkStudentFlag(@RequestParam("id") String id) {
         User userInfo = ShiroUtils.getUserInfo();
         QueryWrapper<HomeworkStudent> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().eq(HomeworkStudent::getChapterId,id)
@@ -72,22 +72,9 @@ public class HomeworkStudentController {
         }
     }
 
-    @GetMapping("getHomeworkStudentFlag")
-    public Result getHomeworkStudentFlag(@RequestParam("id") String id,@RequestParam("userId")String userId) {
-        User userInfo = ShiroUtils.getUserInfo();
-        QueryWrapper<HomeworkStudent> queryWrapper = new QueryWrapper<>();
-        queryWrapper.lambda().eq(HomeworkStudent::getChapterId,id)
-                .eq(HomeworkStudent::getUserId,userId);
-        int count = homeworkStudentService.count(queryWrapper);
-        if (count > 0) {
-            return Result.success();
-        } else {
-            return Result.fail();
-        }
-    }
 
-    @GetMapping("getMyApeHomework")
-    public Result getMyApeHomework() {
+    @GetMapping("getMyHomework")
+    public Result getMyHomework() {
         User userInfo = ShiroUtils.getUserInfo();
         QueryWrapper<HomeworkStudent> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().eq(HomeworkStudent::getUserId,userInfo.getId())
@@ -100,11 +87,11 @@ public class HomeworkStudentController {
         return Result.success(studentList);
     }
 
-    @PostMapping("getApeHomeworkStudentList")
-    public Result getApeHomeworkStudentList(@RequestBody HomeworkStudent apeHomeworkStudent) {
+    @PostMapping("getHomeworkStudentList")
+    public Result getHomeworkStudentList(@RequestBody HomeworkStudent homeworkStudent1) {
         User userInfo = ShiroUtils.getUserInfo();
         QueryWrapper<Homework> queryWrapper = new QueryWrapper<>();
-        queryWrapper.lambda().eq(Homework::getChapterId,apeHomeworkStudent.getChapterId()).orderByAsc(Homework::getSort);
+        queryWrapper.lambda().eq(Homework::getChapterId,homeworkStudent1.getChapterId()).orderByAsc(Homework::getSort);
         List<Homework> homeworkList = homeworkService.list(queryWrapper);
         List<HomeworkStudent> homeworkStudentList = new ArrayList<>();
         for (Homework homework : homeworkList) {
@@ -136,16 +123,16 @@ public class HomeworkStudentController {
 
     /** 根据id获取学生作业 */
     @Log(name = "根据id获取学生作业", type = BusinessType.OTHER)
-    @GetMapping("getApeHomeworkStudentById")
-    public Result getApeHomeworkStudentById(@RequestParam("id")String id) {
+    @GetMapping("getHomeworkStudentById")
+    public Result getHomeworkStudentById(@RequestParam("id")String id) {
         HomeworkStudent homeworkStudent = homeworkStudentService.getById(id);
         return Result.success(homeworkStudent);
     }
 
     /** 保存学生作业 */
     @Log(name = "保存学生作业", type = BusinessType.INSERT)
-    @PostMapping("saveApeHomeworkStudent")
-    public Result saveApeHomeworkStudent(@RequestBody JSONObject jsonObject) {
+    @PostMapping("saveHomeworkStudent")
+    public Result saveHomeworkStudent(@RequestBody JSONObject jsonObject) {
         JSONArray homework = jsonObject.getJSONArray("homework");
         List<HomeworkStudent> list = new ArrayList<>();
         for (int i = 0; i < homework.size(); i++) {
@@ -167,8 +154,8 @@ public class HomeworkStudentController {
 
     /** 编辑学生作业 */
     @Log(name = "编辑学生作业", type = BusinessType.UPDATE)
-    @PostMapping("editApeHomeworkStudent")
-    public Result editApeHomeworkStudent(@RequestBody HomeworkStudent homeworkStudent) {
+    @PostMapping("editHomeworkStudent")
+    public Result editHomeworkStudent(@RequestBody HomeworkStudent homeworkStudent) {
         boolean save = homeworkStudentService.updateById(homeworkStudent);
         if (save) {
             return Result.success();
@@ -178,9 +165,9 @@ public class HomeworkStudentController {
     }
 
     /** 删除学生作业 */
-    @GetMapping("removeApeHomeworkStudent")
+    @GetMapping("removeHomeworkStudent")
     @Log(name = "删除学生作业", type = BusinessType.DELETE)
-    public Result removeApeHomeworkStudent(@RequestParam("ids")String ids) {
+    public Result removeHomeworkStudent(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {

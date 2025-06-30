@@ -33,28 +33,28 @@ public class ArticleCommentController {
 
     /** 分页获取笔记评论 */
     @Log(name = "分页获取笔记评论", type = BusinessType.OTHER)
-    @PostMapping("getApeArticleCommentPage")
-    public Result getApeArticleCommentPage(@RequestBody ArticleComment articleComment) {
+    @PostMapping("getArticleCommentPage")
+    public Result getArticleCommentPage(@RequestBody ArticleComment articleComment) {
         Page<ArticleComment> page = new Page<>(articleComment.getPageNumber(), articleComment.getPageSize());
         QueryWrapper<ArticleComment> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
                 .eq(StringUtils.isNotBlank(articleComment.getTaskId()), ArticleComment::getTaskId, articleComment.getTaskId())
                 .like(StringUtils.isNotBlank(articleComment.getContent()), ArticleComment::getContent, articleComment.getContent())
                 .like(StringUtils.isNotBlank(articleComment.getCreateBy()), ArticleComment::getCreateBy, articleComment.getCreateBy());
-        Page<ArticleComment> apeArticleCommentPage = articleCommentService.page(page, queryWrapper);
-        return Result.success(apeArticleCommentPage);
+        Page<ArticleComment> articleCommentPage = articleCommentService.page(page, queryWrapper);
+        return Result.success(articleCommentPage);
     }
 
     /** 根据id获取笔记评论 */
     @Log(name = "根据id获取笔记评论", type = BusinessType.OTHER)
-    @GetMapping("getApeArticleCommentById")
-    public Result getApeArticleCommentById(@RequestParam("id")String id) {
+    @GetMapping("getArticleCommentById")
+    public Result getArticleCommentById(@RequestParam("id")String id) {
         ArticleComment articleComment = articleCommentService.getById(id);
         return Result.success(articleComment);
     }
 
-    @GetMapping("getApeArticleCommentByArticleId")
-    public Result getApeArticleCommentByArticleId(@RequestParam("id")String id) {
+    @GetMapping("getArticleCommentByArticleId")
+    public Result getArticleCommentByArticleId(@RequestParam("id")String id) {
         QueryWrapper<ArticleComment> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().eq(ArticleComment::getTaskId,id).orderByDesc(ArticleComment::getCreateTime);
         List<ArticleComment> commentList = articleCommentService.list(queryWrapper);
@@ -63,8 +63,8 @@ public class ArticleCommentController {
 
     /** 保存笔记评论 */
     @Log(name = "保存笔记评论", type = BusinessType.INSERT)
-    @PostMapping("saveApeArticleComment")
-    public Result saveApeArticleComment(@RequestBody ArticleComment articleComment) {
+    @PostMapping("saveArticleComment")
+    public Result saveArticleComment(@RequestBody ArticleComment articleComment) {
         User userInfo = ShiroUtils.getUserInfo();
         articleComment.setAvatar(userInfo.getAvatar());
         boolean save = articleCommentService.save(articleComment);
@@ -77,8 +77,8 @@ public class ArticleCommentController {
 
     /** 编辑笔记评论 */
     @Log(name = "编辑笔记评论", type = BusinessType.UPDATE)
-    @PostMapping("editApeArticleComment")
-    public Result editApeArticleComment(@RequestBody ArticleComment articleComment) {
+    @PostMapping("editArticleComment")
+    public Result editArticleComment(@RequestBody ArticleComment articleComment) {
         boolean save = articleCommentService.updateById(articleComment);
         if (save) {
             return Result.success();
@@ -88,9 +88,9 @@ public class ArticleCommentController {
     }
 
     /** 删除笔记评论 */
-    @GetMapping("removeApeArticleComment")
+    @GetMapping("removeArticleComment")
     @Log(name = "删除笔记评论", type = BusinessType.DELETE)
-    public Result removeApeArticleComment(@RequestParam("ids")String ids) {
+    public Result removeArticleComment(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {

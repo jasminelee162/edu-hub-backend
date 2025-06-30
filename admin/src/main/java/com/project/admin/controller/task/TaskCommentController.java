@@ -33,28 +33,28 @@ public class TaskCommentController {
 
     /** 分页获取课程评论 */
     @Log(name = "分页获取课程评论", type = BusinessType.OTHER)
-    @PostMapping("getApeTaskCommentPage")
-    public Result getApeTaskCommentPage(@RequestBody TaskComment taskComment) {
+    @PostMapping("getTaskCommentPage")
+    public Result getTaskCommentPage(@RequestBody TaskComment taskComment) {
         Page<TaskComment> page = new Page<>(taskComment.getPageNumber(), taskComment.getPageSize());
         QueryWrapper<TaskComment> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
                 .eq(StringUtils.isNotBlank(taskComment.getTaskId()), TaskComment::getTaskId, taskComment.getTaskId())
                 .like(StringUtils.isNotBlank(taskComment.getContent()), TaskComment::getContent, taskComment.getContent())
                 .like(StringUtils.isNotBlank(taskComment.getCreateBy()), TaskComment::getCreateBy, taskComment.getCreateBy());
-        Page<TaskComment> apeTaskCommentPage = taskCommentService.page(page, queryWrapper);
-        return Result.success(apeTaskCommentPage);
+        Page<TaskComment> TaskCommentPage = taskCommentService.page(page, queryWrapper);
+        return Result.success(TaskCommentPage);
     }
 
     /** 根据id获取课程评论 */
     @Log(name = "根据id获取课程评论", type = BusinessType.OTHER)
-    @GetMapping("getApeTaskCommentById")
-    public Result getApeTaskCommentById(@RequestParam("id")String id) {
+    @GetMapping("getTaskCommentById")
+    public Result getTaskCommentById(@RequestParam("id")String id) {
         TaskComment taskComment = taskCommentService.getById(id);
         return Result.success(taskComment);
     }
 
-    @GetMapping("getApeTaskCommentListByTaskId")
-    public Result getApeTaskCommentListByTaskId(@RequestParam("id")String id) {
+    @GetMapping("getTaskCommentListByTaskId")
+    public Result getTaskCommentListByTaskId(@RequestParam("id")String id) {
         QueryWrapper<TaskComment> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().eq(TaskComment::getTaskId,id).orderByDesc(TaskComment::getCreateTime);
         List<TaskComment> commentList = taskCommentService.list(queryWrapper);
@@ -63,8 +63,8 @@ public class TaskCommentController {
 
     /** 保存课程评论 */
     @Log(name = "保存课程评论", type = BusinessType.INSERT)
-    @PostMapping("saveApeTaskComment")
-    public Result saveApeTaskComment(@RequestBody TaskComment taskComment) {
+    @PostMapping("saveTaskComment")
+    public Result saveTaskComment(@RequestBody TaskComment taskComment) {
         User userInfo = ShiroUtils.getUserInfo();
         taskComment.setAvatar(userInfo.getAvatar());
         boolean save = taskCommentService.save(taskComment);
@@ -77,8 +77,8 @@ public class TaskCommentController {
 
     /** 编辑课程评论 */
     @Log(name = "编辑课程评论", type = BusinessType.UPDATE)
-    @PostMapping("editApeTaskComment")
-    public Result editApeTaskComment(@RequestBody TaskComment taskComment) {
+    @PostMapping("editTaskComment")
+    public Result editTaskComment(@RequestBody TaskComment taskComment) {
         User userInfo = ShiroUtils.getUserInfo();
         taskComment.setAvatar(userInfo.getAvatar());
         boolean save = taskCommentService.updateById(taskComment);
@@ -90,9 +90,9 @@ public class TaskCommentController {
     }
 
     /** 删除课程评论 */
-    @GetMapping("removeApeTaskComment")
+    @GetMapping("removeTaskComment")
     @Log(name = "删除课程评论", type = BusinessType.DELETE)
-    public Result removeApeTaskComment(@RequestParam("ids")String ids) {
+    public Result removeTaskComment(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {

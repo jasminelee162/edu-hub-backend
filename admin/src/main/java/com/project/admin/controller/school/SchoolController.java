@@ -31,36 +31,36 @@ public class SchoolController {
 
     /** 分页获取学校表 */
     @Log(name = "分页获取学校表", type = BusinessType.OTHER)
-    @PostMapping("getApeSchoolPage")
-    public Result getApeSchoolPage(@RequestBody School school) {
+    @PostMapping("getSchoolPage")
+    public Result getSchoolPage(@RequestBody School school) {
         Page<School> page = new Page<>(school.getPageNumber(), school.getPageSize());
         QueryWrapper<School> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
                 .like(StringUtils.isNotBlank(school.getName()), School::getName, school.getName());
-        Page<School> apeSchoolPage = schoolService.page(page, queryWrapper);
-        return Result.success(apeSchoolPage);
+        Page<School> schoolPage = schoolService.page(page, queryWrapper);
+        return Result.success(schoolPage);
     }
 
     /** 获取学校列表 */
     @Log(name = "获取学校列表", type = BusinessType.OTHER)
-    @GetMapping("getApeSchoolList")
-    public Result getApeSchoolList() {
+    @GetMapping("getSchoolList")
+    public Result getSchoolList() {
         List<School> schoolList = schoolService.list();
         return Result.success(schoolList);
     }
 
     /** 根据id获取学校表 */
     @Log(name = "根据id获取学校表", type = BusinessType.OTHER)
-    @GetMapping("getApeSchoolById")
-    public Result getApeSchoolById(@RequestParam("id")String id) {
+    @GetMapping("getSchoolById")
+    public Result getSchoolById(@RequestParam("id")String id) {
         School school = schoolService.getById(id);
         return Result.success(school);
     }
 
     /** 保存学校表 */
     @Log(name = "保存学校表", type = BusinessType.INSERT)
-    @PostMapping("saveApeSchool")
-    public Result saveApeSchool(@RequestBody School school) {
+    @PostMapping("saveSchool")
+    public Result saveSchool(@RequestBody School school) {
         boolean save = schoolService.save(school);
         if (save) {
             return Result.success();
@@ -71,8 +71,8 @@ public class SchoolController {
 
     /** 编辑学校表 */
     @Log(name = "编辑学校表", type = BusinessType.UPDATE)
-    @PostMapping("editApeSchool")
-    public Result editApeSchool(@RequestBody School school) {
+    @PostMapping("editSchool")
+    public Result editSchool(@RequestBody School school) {
         boolean save = schoolService.updateById(school);
         if (save) {
             return Result.success();
@@ -82,9 +82,9 @@ public class SchoolController {
     }
 
     /** 删除学校表 */
-    @GetMapping("removeApeSchool")
+    @GetMapping("removeSchool")
     @Log(name = "删除学校表", type = BusinessType.DELETE)
-    public Result removeApeSchool(@RequestParam("ids")String ids) {
+    public Result removeSchool(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {

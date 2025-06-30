@@ -41,8 +41,8 @@ public class ChapterController {
 
     /** 分页获取章节 */
     @Log(name = "分页获取章节", type = BusinessType.OTHER)
-    @PostMapping("getApeChapterPage")
-    public Result getApeChapterPage(@RequestBody Chapter chapter) {
+    @PostMapping("getChapterPage")
+    public Result getChapterPage(@RequestBody Chapter chapter) {
         Page<Chapter> page = new Page<>(chapter.getPageNumber(), chapter.getPageSize());
         QueryWrapper<Chapter> queryWrapper = new QueryWrapper<>();
         if (chapter.getType() == 1) {
@@ -67,12 +67,12 @@ public class ChapterController {
                     .like(StringUtils.isNotBlank(chapter.getTaskName()), Chapter::getTaskName, chapter.getTaskName())
                     .like(StringUtils.isNotBlank(chapter.getName()), Chapter::getName, chapter.getName());
         }
-        Page<Chapter> apeChapterPage = chapterService.page(page, queryWrapper);
-        return Result.success(apeChapterPage);
+        Page<Chapter> chapterPage = chapterService.page(page, queryWrapper);
+        return Result.success(chapterPage);
     }
 
-    @GetMapping("getApeChapterByTaskId")
-    public Result getApeChapterByTaskId(@RequestParam("id")String id) {
+    @GetMapping("getChapterByTaskId")
+    public Result getChapterByTaskId(@RequestParam("id")String id) {
         QueryWrapper<Chapter> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().eq(Chapter::getTaskId,id);
         List<Chapter> chapterList = chapterService.list(queryWrapper);
@@ -91,16 +91,16 @@ public class ChapterController {
 
     /** 根据id获取章节 */
     @Log(name = "根据id获取章节", type = BusinessType.OTHER)
-    @GetMapping("getApeChapterById")
-    public Result getApeChapterById(@RequestParam("id")String id) {
+    @GetMapping("getChapterById")
+    public Result getChapterById(@RequestParam("id")String id) {
         Chapter chapter = chapterService.getById(id);
         return Result.success(chapter);
     }
 
     /** 保存章节 */
     @Log(name = "保存章节", type = BusinessType.INSERT)
-    @PostMapping("saveApeChapter")
-    public Result saveApeChapter(@RequestBody Chapter chapter) {
+    @PostMapping("saveChapter")
+    public Result saveChapter(@RequestBody Chapter chapter) {
         if (StringUtils.isNotBlank(chapter.getTaskId())) {
             Task task = taskService.getById(chapter.getTaskId());
             chapter.setTaskName(task.getName());
@@ -115,8 +115,8 @@ public class ChapterController {
 
     /** 编辑章节 */
     @Log(name = "编辑章节", type = BusinessType.UPDATE)
-    @PostMapping("editApeChapter")
-    public Result editApeChapter(@RequestBody Chapter chapter) {
+    @PostMapping("editChapter")
+    public Result editChapter(@RequestBody Chapter chapter) {
         if (StringUtils.isNotBlank(chapter.getTaskId())) {
             Task task = taskService.getById(chapter.getTaskId());
             chapter.setTaskName(task.getName());
@@ -130,9 +130,9 @@ public class ChapterController {
     }
 
     /** 删除章节 */
-    @GetMapping("removeApeChapter")
+    @GetMapping("removeChapter")
     @Log(name = "删除章节", type = BusinessType.DELETE)
-    public Result removeApeChapter(@RequestParam("ids")String ids) {
+    public Result removeChapter(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {

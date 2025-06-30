@@ -42,8 +42,8 @@ public class ArticleController {
 
     /** 分页获取笔记 */
     @Log(name = "分页获取笔记", type = BusinessType.OTHER)
-    @PostMapping("getApeArticlePage")
-    public Result getApeArticlePage(@RequestBody Article article) {
+    @PostMapping("getArticlePage")
+    public Result getArticlePage(@RequestBody Article article) {
         Page<Article> page = new Page<>(article.getPageNumber(), article.getPageSize());
         QueryWrapper<Article> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
@@ -80,8 +80,8 @@ public class ArticleController {
 
     /** 根据id获取笔记 */
     @Log(name = "根据id获取笔记", type = BusinessType.OTHER)
-    @GetMapping("getApeArticleById")
-    public Result getApeArticleById(@RequestParam("id")String id) {
+    @GetMapping("getArticleById")
+    public Result getArticleById(@RequestParam("id")String id) {
         Article article = articleService.getById(id);
         User userInfo = ShiroUtils.getUserInfo();
         QueryWrapper<ArticleFavor> queryWrapper = new QueryWrapper<>();
@@ -97,8 +97,8 @@ public class ArticleController {
 
     /** 保存笔记 */
     @Log(name = "保存笔记", type = BusinessType.INSERT)
-    @PostMapping("saveApeArticle")
-    public Result saveApeArticle(@RequestBody Article article) {
+    @PostMapping("saveArticle")
+    public Result saveArticle(@RequestBody Article article) {
         User userInfo = ShiroUtils.getUserInfo();
         article.setUserId(userInfo.getId());
         article.setAvatar(userInfo.getAvatar());
@@ -116,8 +116,8 @@ public class ArticleController {
 
     /** 编辑笔记 */
     @Log(name = "编辑笔记", type = BusinessType.UPDATE)
-    @PostMapping("editApeArticle")
-    public Result editApeArticle(@RequestBody Article article) {
+    @PostMapping("editArticle")
+    public Result editArticle(@RequestBody Article article) {
         User userInfo = ShiroUtils.getUserInfo();
         article.setAvatar(userInfo.getAvatar());
         if (StringUtils.isNotBlank(article.getTaskId())) {
@@ -133,9 +133,9 @@ public class ArticleController {
     }
 
     /** 删除笔记 */
-    @GetMapping("removeApeArticle")
+    @GetMapping("removeArticle")
     @Log(name = "删除笔记", type = BusinessType.DELETE)
-    public Result removeApeArticle(@RequestParam("ids")String ids) {
+    public Result removeArticle(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {

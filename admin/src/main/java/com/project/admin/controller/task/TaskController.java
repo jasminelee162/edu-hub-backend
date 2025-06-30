@@ -57,8 +57,8 @@ public class TaskController {
 
     /** 分页获取课程 */
     @Log(name = "分页获取课程", type = BusinessType.OTHER)
-    @PostMapping("getApeTaskPage")
-    public Result getApeTaskPage(@RequestBody Task task) {
+    @PostMapping("getTaskPage")
+    public Result getTaskPage(@RequestBody Task task) {
         if (task.getType() == 1) {
             task.setTeacherId(ShiroUtils.getUserInfo().getId());
         }
@@ -72,28 +72,28 @@ public class TaskController {
                 .eq(task.getState() != null, Task::getState, task.getState())
                 .like(StringUtils.isNotBlank(task.getMajor()), Task::getMajor, task.getMajor())
                 .like(StringUtils.isNotBlank(task.getClassification()), Task::getClassification, task.getClassification());
-        Page<Task> apeTaskPage = taskService.page(page, queryWrapper);
-        return Result.success(apeTaskPage);
+        Page<Task> TaskPage = taskService.page(page, queryWrapper);
+        return Result.success(TaskPage);
     }
 
     /** 根据id获取课程 */
     @Log(name = "根据id获取课程", type = BusinessType.OTHER)
-    @GetMapping("getApeTaskById")
-    public Result getApeTaskById(@RequestParam("id")String id) {
+    @GetMapping("getTaskById")
+    public Result getTaskById(@RequestParam("id")String id) {
         Task task = taskService.getById(id);
         return Result.success(task);
     }
 
-    @GetMapping("getApeTaskByTeacher")
-    public Result getApeTaskByTeacher(@RequestParam("id")String id) {
+    @GetMapping("getTaskByTeacher")
+    public Result getTaskByTeacher(@RequestParam("id")String id) {
         QueryWrapper<Task> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().eq(Task::getTeacherId,id);
         List<Task> taskList = taskService.list(queryWrapper);
         return Result.success(taskList);
     }
 
-    @GetMapping("getApeTaskByTeacherId")
-    public Result getApeTaskByTeacherId() {
+    @GetMapping("getTaskByTeacherId")
+    public Result getTaskByTeacherId() {
         QueryWrapper<Task> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().eq(Task::getTeacherId,ShiroUtils.getUserInfo().getId());
         List<Task> taskList = taskService.list(queryWrapper);
@@ -102,16 +102,16 @@ public class TaskController {
 
     /** 获取课程列表 */
     @Log(name = "获取课程列表", type = BusinessType.OTHER)
-    @GetMapping("getApeTaskList")
-    public Result getApeTaskList() {
+    @GetMapping("getTaskList")
+    public Result getTaskList() {
         List<Task> taskList = taskService.list();
         return Result.success(taskList);
     }
 
     /** 保存课程 */
     @Log(name = "保存课程", type = BusinessType.INSERT)
-    @PostMapping("saveApeTask")
-    public Result saveApeTask(@RequestBody Task task) {
+    @PostMapping("saveTask")
+    public Result saveTask(@RequestBody Task task) {
         if (task.getType() == 1) {
             task.setTeacherId(ShiroUtils.getUserInfo().getId());
         }
@@ -127,8 +127,8 @@ public class TaskController {
 
     /** 编辑课程 */
     @Log(name = "编辑课程", type = BusinessType.UPDATE)
-    @PostMapping("editApeTask")
-    public Result editApeTask(@RequestBody Task task) {
+    @PostMapping("editTask")
+    public Result editTask(@RequestBody Task task) {
         if (StringUtils.isNotBlank(task.getTeacherId())) {
             User user = userService.getById(task.getTeacherId());
             task.setTeacherName(user.getUserName());
@@ -143,9 +143,9 @@ public class TaskController {
 
     /** 删除课程 */
     @Transactional(rollbackFor = Exception.class)
-    @GetMapping("removeApeTask")
+    @GetMapping("removeTask")
     @Log(name = "删除课程", type = BusinessType.DELETE)
-    public Result removeApeTask(@RequestParam("ids")String ids) {
+    public Result removeTask(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {

@@ -43,27 +43,27 @@ public class TestItemController {
 
     /** 分页获取考试题目 */
     @Log(name = "分页获取考试题目", type = BusinessType.OTHER)
-    @PostMapping("getApeTestItemPage")
-    public Result getApeTestItemPage(@RequestBody TestItem testItem) {
+    @PostMapping("getTestItemPage")
+    public Result getTestItemPage(@RequestBody TestItem testItem) {
         Page<TestItem> page = new Page<>(testItem.getPageNumber(), testItem.getPageSize());
         QueryWrapper<TestItem> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
                 .like(StringUtils.isNotBlank(testItem.getTitle()), TestItem::getTitle, testItem.getTitle())
                 .eq(StringUtils.isNotBlank(testItem.getTestId()), TestItem::getTestId, testItem.getTestId());
-        Page<TestItem> apeTestItemPage = testItemService.page(page, queryWrapper);
-        return Result.success(apeTestItemPage);
+        Page<TestItem> testItemPage = testItemService.page(page, queryWrapper);
+        return Result.success(testItemPage);
     }
 
     /** 根据id获取考试题目 */
     @Log(name = "根据id获取考试题目", type = BusinessType.OTHER)
-    @GetMapping("getApeTestItemById")
-    public Result getApeTestItemById(@RequestParam("id")String id) {
+    @GetMapping("getTestItemById")
+    public Result getTestItemById(@RequestParam("id")String id) {
         TestItem testItem = testItemService.getById(id);
         return Result.success(testItem);
     }
 
-    @GetMapping("getApeTestItemByTestId")
-    public Result getApeTestItemByTestId(@RequestParam("id")String id) {
+    @GetMapping("getTestItemByTestId")
+    public Result getTestItemByTestId(@RequestParam("id")String id) {
         User userInfo = ShiroUtils.getUserInfo();
         Test test = testService.getById(id);
         QueryWrapper<TestItem> queryWrapper = new QueryWrapper<>();
@@ -98,8 +98,8 @@ public class TestItemController {
 
     /** 保存考试题目 */
     @Log(name = "保存考试题目", type = BusinessType.INSERT)
-    @PostMapping("saveApeTestItem")
-    public Result saveApeTestItem(@RequestBody TestItem testItem) {
+    @PostMapping("saveTestItem")
+    public Result saveTestItem(@RequestBody TestItem testItem) {
         boolean save = testItemService.save(testItem);
         if (save) {
             return Result.success();
@@ -110,8 +110,8 @@ public class TestItemController {
 
     /** 编辑考试题目 */
     @Log(name = "编辑考试题目", type = BusinessType.UPDATE)
-    @PostMapping("editApeTestItem")
-    public Result editApeTestItem(@RequestBody TestItem testItem) {
+    @PostMapping("editTestItem")
+    public Result editTestItem(@RequestBody TestItem testItem) {
         boolean save = testItemService.updateById(testItem);
         if (save) {
             return Result.success();
@@ -121,9 +121,9 @@ public class TestItemController {
     }
 
     /** 删除考试题目 */
-    @GetMapping("removeApeTestItem")
+    @GetMapping("removeTestItem")
     @Log(name = "删除考试题目", type = BusinessType.DELETE)
-    public Result removeApeTestItem(@RequestParam("ids")String ids) {
+    public Result removeTestItem(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {

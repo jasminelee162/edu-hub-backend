@@ -31,36 +31,36 @@ public class ClassificationController {
 
     /** 分页获取分类 */
     @Log(name = "分页获取分类", type = BusinessType.OTHER)
-    @PostMapping("getApeClassificationPage")
-    public Result getApeClassificationPage(@RequestBody Classification classification) {
+    @PostMapping("getClassificationPage")
+    public Result getClassificationPage(@RequestBody Classification classification) {
         Page<Classification> page = new Page<>(classification.getPageNumber(), classification.getPageSize());
         QueryWrapper<Classification> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
                 .like(StringUtils.isNotBlank(classification.getName()), Classification::getName, classification.getName());
-        Page<Classification> apeClassificationPage = classificationService.page(page, queryWrapper);
-        return Result.success(apeClassificationPage);
+        Page<Classification> classificationPage = classificationService.page(page, queryWrapper);
+        return Result.success(classificationPage);
     }
 
     /** 获取分类列表 */
     @Log(name = "获取分类列表", type = BusinessType.OTHER)
-    @GetMapping("getApeClassificationList")
-    public Result getApeClassificationList() {
+    @GetMapping("getClassificationList")
+    public Result getClassificationList() {
         List<Classification> list = classificationService.list();
         return Result.success(list);
     }
 
     /** 根据id获取分类 */
     @Log(name = "根据id获取分类", type = BusinessType.OTHER)
-    @GetMapping("getApeClassificationById")
-    public Result getApeClassificationById(@RequestParam("id")String id) {
+    @GetMapping("getClassificationById")
+    public Result getClassificationById(@RequestParam("id")String id) {
         Classification classification = classificationService.getById(id);
         return Result.success(classification);
     }
 
     /** 保存分类 */
     @Log(name = "保存分类", type = BusinessType.INSERT)
-    @PostMapping("saveApeClassification")
-    public Result saveApeClassification(@RequestBody Classification classification) {
+    @PostMapping("saveClassification")
+    public Result saveClassification(@RequestBody Classification classification) {
         boolean save = classificationService.save(classification);
         if (save) {
             return Result.success();
@@ -71,8 +71,8 @@ public class ClassificationController {
 
     /** 编辑分类 */
     @Log(name = "编辑分类", type = BusinessType.UPDATE)
-    @PostMapping("editApeClassification")
-    public Result editApeClassification(@RequestBody Classification classification) {
+    @PostMapping("editClassification")
+    public Result editClassification(@RequestBody Classification classification) {
         boolean save = classificationService.updateById(classification);
         if (save) {
             return Result.success();
@@ -82,9 +82,9 @@ public class ClassificationController {
     }
 
     /** 删除分类 */
-    @GetMapping("removeApeClassification")
+    @GetMapping("removeClassification")
     @Log(name = "删除分类", type = BusinessType.DELETE)
-    public Result removeApeClassification(@RequestParam("ids")String ids) {
+    public Result removeClassification(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {

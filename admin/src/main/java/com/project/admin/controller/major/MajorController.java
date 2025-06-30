@@ -31,36 +31,36 @@ public class MajorController {
 
     /** 分页获取专业表 */
     @Log(name = "分页获取专业表", type = BusinessType.OTHER)
-    @PostMapping("getApeMajorPage")
-    public Result getApeMajorPage(@RequestBody Major major) {
+    @PostMapping("getMajorPage")
+    public Result getMajorPage(@RequestBody Major major) {
         Page<Major> page = new Page<>(major.getPageNumber(), major.getPageSize());
         QueryWrapper<Major> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
                 .like(StringUtils.isNotBlank(major.getName()), Major::getName, major.getName());
-        Page<Major> apeMajorPage = majorService.page(page, queryWrapper);
-        return Result.success(apeMajorPage);
+        Page<Major> majorPage = majorService.page(page, queryWrapper);
+        return Result.success(majorPage);
     }
 
     /** 获取专业列表 */
     @Log(name = "获取专业列表", type = BusinessType.OTHER)
-    @GetMapping("getApeMajorList")
-    public Result getApeMajorList() {
+    @GetMapping("getMajorList")
+    public Result getMajorList() {
         List<Major> majorList = majorService.list();
         return Result.success(majorList);
     }
 
     /** 根据id获取专业表 */
     @Log(name = "根据id获取专业表", type = BusinessType.OTHER)
-    @GetMapping("getApeMajorById")
-    public Result getApeMajorById(@RequestParam("id")String id) {
+    @GetMapping("getMajorById")
+    public Result getMajorById(@RequestParam("id")String id) {
         Major major = majorService.getById(id);
         return Result.success(major);
     }
 
     /** 保存专业表 */
     @Log(name = "保存专业表", type = BusinessType.INSERT)
-    @PostMapping("saveApeMajor")
-    public Result saveApeMajor(@RequestBody Major major) {
+    @PostMapping("saveMajor")
+    public Result saveMajor(@RequestBody Major major) {
         boolean save = majorService.save(major);
         if (save) {
             return Result.success();
@@ -71,8 +71,8 @@ public class MajorController {
 
     /** 编辑专业表 */
     @Log(name = "编辑专业表", type = BusinessType.UPDATE)
-    @PostMapping("editApeMajor")
-    public Result editApeMajor(@RequestBody Major major) {
+    @PostMapping("editMajor")
+    public Result editMajor(@RequestBody Major major) {
         boolean save = majorService.updateById(major);
         if (save) {
             return Result.success();
@@ -82,9 +82,9 @@ public class MajorController {
     }
 
     /** 删除专业表 */
-    @GetMapping("removeApeMajor")
+    @GetMapping("removeMajor")
     @Log(name = "删除专业表", type = BusinessType.DELETE)
-    public Result removeApeMajor(@RequestParam("ids")String ids) {
+    public Result removeMajor(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {

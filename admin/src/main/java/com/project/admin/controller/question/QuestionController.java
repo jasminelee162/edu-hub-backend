@@ -35,8 +35,8 @@ public class QuestionController {
 
     /** 分页获取答疑 */
     @Log(name = "分页获取答疑", type = BusinessType.OTHER)
-    @PostMapping("getApeQuestionPage")
-    public Result getApeQuestionPage(@RequestBody Question question) {
+    @PostMapping("getQuestionPage")
+    public Result getQuestionPage(@RequestBody Question question) {
         Page<Question> page = new Page<>(question.getPageNumber(), question.getPageSize());
         QueryWrapper<Question> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
@@ -46,22 +46,22 @@ public class QuestionController {
                 .eq(StringUtils.isNotBlank(question.getTaskId()), Question::getTaskId, question.getTaskId())
                 .eq(StringUtils.isNotBlank(question.getTeacherId()), Question::getTeacherId, question.getTeacherId())
                 .like(StringUtils.isNotBlank(question.getTaskName()), Question::getTaskName, question.getTaskName());
-        Page<Question> apeQuestionPage = questionService.page(page, queryWrapper);
-        return Result.success(apeQuestionPage);
+        Page<Question> questionPage = questionService.page(page, queryWrapper);
+        return Result.success(questionPage);
     }
 
     /** 根据id获取答疑 */
     @Log(name = "根据id获取答疑", type = BusinessType.OTHER)
-    @GetMapping("getApeQuestionById")
-    public Result getApeQuestionById(@RequestParam("id")String id) {
+    @GetMapping("getQuestionById")
+    public Result getQuestionById(@RequestParam("id")String id) {
         Question question = questionService.getById(id);
         return Result.success(question);
     }
 
     /** 保存答疑 */
     @Log(name = "保存答疑", type = BusinessType.INSERT)
-    @PostMapping("saveApeQuestion")
-    public Result saveApeQuestion(@RequestBody Question question) {
+    @PostMapping("saveQuestion")
+    public Result saveQuestion(@RequestBody Question question) {
         User user = ShiroUtils.getUserInfo();
         question.setUserId(user.getId());
         question.setUserName(user.getUserName());
@@ -79,8 +79,8 @@ public class QuestionController {
 
     /** 编辑答疑 */
     @Log(name = "编辑答疑", type = BusinessType.UPDATE)
-    @PostMapping("editApeQuestion")
-    public Result editApeQuestion(@RequestBody Question question) {
+    @PostMapping("editQuestion")
+    public Result editQuestion(@RequestBody Question question) {
         boolean save = questionService.updateById(question);
         if (save) {
             return Result.success();
@@ -90,9 +90,9 @@ public class QuestionController {
     }
 
     /** 删除答疑 */
-    @GetMapping("removeApeQuestion")
+    @GetMapping("removeQuestion")
     @Log(name = "删除答疑", type = BusinessType.DELETE)
-    public Result removeApeQuestion(@RequestParam("ids")String ids) {
+    public Result removeQuestion(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {
