@@ -31,8 +31,8 @@ public class MessageController {
 
     /** 分页获取留言表 */
     @Log(name = "分页获取留言表", type = BusinessType.OTHER)
-    @PostMapping("getApeMessagePage")
-    public Result getApeMessagePage(@RequestBody Message message) {
+    @PostMapping("getMessagePage")
+    public Result getMessagePage(@RequestBody Message message) {
         if (message.getFlag() == 0) {
             User userInfo = ShiroUtils.getUserInfo();
             message.setUserId(userInfo.getId());
@@ -44,22 +44,22 @@ public class MessageController {
                 .like(StringUtils.isNotBlank(message.getUserName()), Message::getUserName, message.getUserName())
                 .like(StringUtils.isNotBlank(message.getContent()), Message::getContent, message.getContent())
                 .like(StringUtils.isNotBlank(message.getAnswer()), Message::getAnswer, message.getAnswer());
-        Page<Message> apeMessagePage = messageService.page(page, queryWrapper);
-        return Result.success(apeMessagePage);
+        Page<Message> messagePage = messageService.page(page, queryWrapper);
+        return Result.success(messagePage);
     }
 
     /** 根据id获取留言表 */
     @Log(name = "根据id获取留言表", type = BusinessType.OTHER)
-    @GetMapping("getApeMessageById")
-    public Result getApeMessageById(@RequestParam("id")String id) {
+    @GetMapping("getMessageById")
+    public Result getMessageById(@RequestParam("id")String id) {
         Message message = messageService.getById(id);
         return Result.success(message);
     }
 
     /** 保存留言表 */
     @Log(name = "保存留言表", type = BusinessType.INSERT)
-    @PostMapping("saveApeMessage")
-    public Result saveApeMessage(@RequestBody Message message) {
+    @PostMapping("saveMessage")
+    public Result saveMessage(@RequestBody Message message) {
         User userInfo = ShiroUtils.getUserInfo();
         message.setUserId(userInfo.getId());
         message.setUserName(userInfo.getUserName());
@@ -73,8 +73,8 @@ public class MessageController {
 
     /** 编辑留言表 */
     @Log(name = "编辑留言表", type = BusinessType.UPDATE)
-    @PostMapping("editApeMessage")
-    public Result editApeMessage(@RequestBody Message message) {
+    @PostMapping("editMessage")
+    public Result editMessage(@RequestBody Message message) {
         boolean save = messageService.updateById(message);
         if (save) {
             return Result.success();
@@ -84,9 +84,9 @@ public class MessageController {
     }
 
     /** 删除留言表 */
-    @GetMapping("removeApeMessage")
+    @GetMapping("removeMessage")
     @Log(name = "删除留言表", type = BusinessType.DELETE)
-    public Result removeApeMessage(@RequestParam("ids")String ids) {
+    public Result removeMessage(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {

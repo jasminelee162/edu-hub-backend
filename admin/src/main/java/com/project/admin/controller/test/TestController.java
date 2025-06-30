@@ -45,8 +45,8 @@ public class TestController {
 
     /** 分页获取考试 */
     @Log(name = "分页获取考试", type = BusinessType.OTHER)
-    @PostMapping("getApeTestPage")
-    public Result getApeTestPage(@RequestBody Test test) {
+    @PostMapping("getTestPage")
+    public Result getTestPage(@RequestBody Test test) {
         Page<Test> page = new Page<>(test.getPageNumber(), test.getPageSize());
         QueryWrapper<Test> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
@@ -69,22 +69,22 @@ public class TestController {
                 queryWrapper.lambda().in(Test::getTaskId,list);
             }
         }
-        Page<Test> apeTestPage = testService.page(page, queryWrapper);
-        return Result.success(apeTestPage);
+        Page<Test> testPage = testService.page(page, queryWrapper);
+        return Result.success(testPage);
     }
 
     /** 根据id获取考试 */
     @Log(name = "根据id获取考试", type = BusinessType.OTHER)
-    @GetMapping("getApeTestById")
-    public Result getApeTestById(@RequestParam("id")String id) {
+    @GetMapping("getTestById")
+    public Result getTestById(@RequestParam("id")String id) {
         Test test = testService.getById(id);
         return Result.success(test);
     }
 
     /** 保存考试 */
     @Log(name = "保存考试", type = BusinessType.INSERT)
-    @PostMapping("saveApeTest")
-    public Result saveApeTest(@RequestBody Test test) {
+    @PostMapping("saveTest")
+    public Result saveTest(@RequestBody Test test) {
         if (StringUtils.isNotBlank(test.getTaskId())) {
             Task task = taskService.getById(test.getTaskId());
             test.setTaskName(task.getName());
@@ -99,8 +99,8 @@ public class TestController {
 
     /** 编辑考试 */
     @Log(name = "编辑考试", type = BusinessType.UPDATE)
-    @PostMapping("editApeTest")
-    public Result editApeTest(@RequestBody Test test) {
+    @PostMapping("editTest")
+    public Result editTest(@RequestBody Test test) {
         if (StringUtils.isNotBlank(test.getTaskId())) {
             Task task = taskService.getById(test.getTaskId());
             test.setTaskName(task.getName());
@@ -114,9 +114,9 @@ public class TestController {
     }
 
     /** 删除考试 */
-    @GetMapping("removeApeTest")
+    @GetMapping("removeTest")
     @Log(name = "删除考试", type = BusinessType.DELETE)
-    public Result removeApeTest(@RequestParam("ids")String ids) {
+    public Result removeTest(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {
@@ -168,34 +168,7 @@ public class TestController {
         return Result.success(apeTestList);
     }
 
-    /*@PostMapping("getTestStudent")
-    public Result getTestStudent(@RequestBody JSONObject jsonObject) {
-        String testId = jsonObject.getString("testId");
-        Test test = testService.getById(testId);
-        String userName = jsonObject.getString("userName");
-        Integer pageNumber = jsonObject.getInteger("pageNumber");
-        Integer pageSize = jsonObject.getInteger("pageSize");
-        Page<TestStudent> page = new Page<>(pageNumber,pageSize);
-        QueryWrapper<TestStudent> queryWrapper =  new QueryWrapper<>();
-        queryWrapper.lambda().eq(TestStudent::getTestId,testId)
-                .like(StringUtils.isNotBlank(userName),TestStudent::getCreateBy,userName)
-                .groupBy(TestStudent::getUserId).orderByAsc(TestStudent::getUpdateTime);
-        Page<TestStudent> studentPage = testStudentService.page(page, queryWrapper);
-        for (TestStudent student : studentPage.getRecords()) {
-            QueryWrapper<TestStudent> wrapper = new QueryWrapper<>();
-            wrapper.lambda().eq(TestStudent::getTestId,testId)
-                            .eq(TestStudent::getUserId,student.getUserId());
-            List<TestStudent> testStudents = testStudentService.list(wrapper);
-            int score = 0;
-            for (TestStudent item : testStudents) {
-                score += item.getPoint();
-            }
-            student.setTestName(test.getName());
-            student.setTotalScore(test.getTotalScore());
-            student.setTotalGetScore(score);
-        }
-        return Result.success(studentPage);
-    }*/
+
     @PostMapping("getTestStudent")
     public Result getTestStudent(@RequestBody JSONObject jsonObject) {
         String testId = jsonObject.getString("testId");

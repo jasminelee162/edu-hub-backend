@@ -33,37 +33,37 @@ public class ArticleFavorController {
 
     /** 分页获取笔记收藏 */
     @Log(name = "分页获取笔记收藏", type = BusinessType.OTHER)
-    @PostMapping("getApeArticleFavorPage")
-    public Result getApeArticleFavorPage(@RequestBody ArticleFavor apeArticleFavor) {
-        Page<ArticleFavor> page = new Page<>(apeArticleFavor.getPageNumber(),apeArticleFavor.getPageSize());
+    @PostMapping("getArticleFavorPage")
+    public Result getArticleFavorPage(@RequestBody ArticleFavor articleFavor) {
+        Page<ArticleFavor> page = new Page<>(articleFavor.getPageNumber(), articleFavor.getPageSize());
         QueryWrapper<ArticleFavor> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
-                .eq(StringUtils.isNotBlank(apeArticleFavor.getArticleId()), ArticleFavor::getArticleId,apeArticleFavor.getArticleId())
-                .eq(StringUtils.isNotBlank(apeArticleFavor.getUserId()), ArticleFavor::getUserId,apeArticleFavor.getUserId());
-        Page<ArticleFavor> apeArticleFavorPage = articleFavorService.page(page, queryWrapper);
-        for (ArticleFavor articleFavor : apeArticleFavorPage.getRecords()) {
-            Article article = articleService.getById(articleFavor.getArticleId());
-            articleFavor.setTitle(article.getTitle());
-            articleFavor.setCreateBy(article.getCreateBy());
-            articleFavor.setCreateTime(article.getCreateTime());
-            articleFavor.setAvatar(article.getAvatar());
-            articleFavor.setArticleDesc(article.getArticleDesc());
+                .eq(StringUtils.isNotBlank(articleFavor.getArticleId()), ArticleFavor::getArticleId, articleFavor.getArticleId())
+                .eq(StringUtils.isNotBlank(articleFavor.getUserId()), ArticleFavor::getUserId, articleFavor.getUserId());
+        Page<ArticleFavor> articleFavorPage = articleFavorService.page(page, queryWrapper);
+        for (ArticleFavor record : articleFavorPage.getRecords()) {
+            Article article = articleService.getById(record.getArticleId());
+            record.setTitle(article.getTitle());
+            record.setCreateBy(article.getCreateBy());
+            record.setCreateTime(article.getCreateTime());
+            record.setAvatar(article.getAvatar());
+            record.setArticleDesc(article.getArticleDesc());
         }
-        return Result.success(apeArticleFavorPage);
+        return Result.success(articleFavorPage);
     }
 
     /** 根据id获取笔记收藏 */
     @Log(name = "根据id获取笔记收藏", type = BusinessType.OTHER)
-    @GetMapping("getApeArticleFavorById")
-    public Result getApeArticleFavorById(@RequestParam("id")String id) {
+    @GetMapping("getArticleFavorById")
+    public Result getArticleFavorById(@RequestParam("id")String id) {
         ArticleFavor articleFavor = articleFavorService.getById(id);
         return Result.success(articleFavor);
     }
 
     /** 保存笔记收藏 */
     @Log(name = "保存笔记收藏", type = BusinessType.INSERT)
-    @PostMapping("saveApeArticleFavor")
-    public Result saveApeArticleFavor(@RequestBody ArticleFavor articleFavor) {
+    @PostMapping("saveArticleFavor")
+    public Result saveArticleFavor(@RequestBody ArticleFavor articleFavor) {
         boolean save = articleFavorService.save(articleFavor);
         if (save) {
             return Result.success();
@@ -74,8 +74,8 @@ public class ArticleFavorController {
 
     /** 编辑笔记收藏 */
     @Log(name = "编辑笔记收藏", type = BusinessType.UPDATE)
-    @PostMapping("editApeArticleFavor")
-    public Result editApeArticleFavor(@RequestBody ArticleFavor articleFavor) {
+    @PostMapping("editArticleFavor")
+    public Result editArticleFavor(@RequestBody ArticleFavor articleFavor) {
         boolean save = articleFavorService.updateById(articleFavor);
         if (save) {
             return Result.success();
@@ -85,9 +85,9 @@ public class ArticleFavorController {
     }
 
     /** 删除笔记收藏 */
-    @PostMapping("removeApeArticleFavor")
+    @PostMapping("removeArticleFavor")
     @Log(name = "删除笔记收藏", type = BusinessType.DELETE)
-    public Result removeApeArticleFavor(@RequestBody ArticleFavor articleFavor) {
+    public Result removeArticleFavor(@RequestBody ArticleFavor articleFavor) {
         QueryWrapper<ArticleFavor> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().eq(ArticleFavor::getArticleId, articleFavor.getArticleId())
                 .eq(ArticleFavor::getUserId, articleFavor.getUserId());

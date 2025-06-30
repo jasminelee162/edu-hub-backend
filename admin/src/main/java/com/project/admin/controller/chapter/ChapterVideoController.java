@@ -31,29 +31,29 @@ public class ChapterVideoController {
 
     /** 分页获取章节视频是否观看 */
     @Log(name = "分页获取章节视频是否观看", type = BusinessType.OTHER)
-    @PostMapping("getApeChapterVideoPage")
-    public Result getApeChapterVideoPage(@RequestBody ChapterVideo chapterVideo) {
+    @PostMapping("getChapterVideoPage")
+    public Result getChapterVideoPage(@RequestBody ChapterVideo chapterVideo) {
         Page<ChapterVideo> page = new Page<>(chapterVideo.getPageNumber(), chapterVideo.getPageSize());
         QueryWrapper<ChapterVideo> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
                 .eq(StringUtils.isNotBlank(chapterVideo.getChapterId()), ChapterVideo::getChapterId, chapterVideo.getChapterId())
                 .eq(StringUtils.isNotBlank(chapterVideo.getUserId()), ChapterVideo::getUserId, chapterVideo.getUserId());
-        Page<ChapterVideo> apeChapterVideoPage = chapterVideoService.page(page, queryWrapper);
-        return Result.success(apeChapterVideoPage);
+        Page<ChapterVideo> chapterVideoPage = chapterVideoService.page(page, queryWrapper);
+        return Result.success(chapterVideoPage);
     }
 
     /** 根据id获取章节视频是否观看 */
     @Log(name = "根据id获取章节视频是否观看", type = BusinessType.OTHER)
-    @GetMapping("getApeChapterVideoById")
-    public Result getApeChapterVideoById(@RequestParam("id")String id) {
+    @GetMapping("getChapterVideoById")
+    public Result getChapterVideoById(@RequestParam("id")String id) {
         ChapterVideo chapterVideo = chapterVideoService.getById(id);
         return Result.success(chapterVideo);
     }
 
     /** 保存章节视频是否观看 */
     @Log(name = "保存章节视频是否观看", type = BusinessType.INSERT)
-    @PostMapping("saveApeChapterVideo")
-    public Result saveApeChapterVideo(@RequestBody ChapterVideo chapterVideo) {
+    @PostMapping("saveChapterVideo")
+    public Result saveChapterVideo(@RequestBody ChapterVideo chapterVideo) {
         User userInfo = ShiroUtils.getUserInfo();
         QueryWrapper<ChapterVideo> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().eq(ChapterVideo::getChapterId, chapterVideo.getChapterId())
@@ -73,8 +73,8 @@ public class ChapterVideoController {
 
     /** 编辑章节视频是否观看 */
     @Log(name = "编辑章节视频是否观看", type = BusinessType.UPDATE)
-    @PostMapping("editApeChapterVideo")
-    public Result editApeChapterVideo(@RequestBody ChapterVideo chapterVideo) {
+    @PostMapping("editChapterVideo")
+    public Result editChapterVideo(@RequestBody ChapterVideo chapterVideo) {
         boolean save = chapterVideoService.updateById(chapterVideo);
         if (save) {
             return Result.success();
@@ -84,9 +84,9 @@ public class ChapterVideoController {
     }
 
     /** 删除章节视频是否观看 */
-    @GetMapping("removeApeChapterVideo")
+    @GetMapping("removeChapterVideo")
     @Log(name = "删除章节视频是否观看", type = BusinessType.DELETE)
-    public Result removeApeChapterVideo(@RequestParam("ids")String ids) {
+    public Result removeChapterVideo(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {

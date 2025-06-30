@@ -33,28 +33,28 @@ public class HomeworkController {
 
     /** 分页获取作业 */
     @Log(name = "分页获取作业", type = BusinessType.OTHER)
-    @PostMapping("getApeHomeworkPage")
-    public Result getApeHomeworkPage(@RequestBody Homework homework) {
+    @PostMapping("getHomeworkPage")
+    public Result getHomeworkPage(@RequestBody Homework homework) {
         Page<Homework> page = new Page<>(homework.getPageNumber(), homework.getPageSize());
         QueryWrapper<Homework> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
                 .like(StringUtils.isNotBlank(homework.getTitle()), Homework::getTitle, homework.getTitle())
                 .eq(homework.getType() != null, Homework::getType, homework.getType())
                 .orderByAsc(Homework::getSort);
-        Page<Homework> apeHomeworkPage = homeworkService.page(page, queryWrapper);
-        return Result.success(apeHomeworkPage);
+        Page<Homework> HomeworkPage = homeworkService.page(page, queryWrapper);
+        return Result.success(HomeworkPage);
     }
 
     /** 根据id获取作业 */
     @Log(name = "根据id获取作业", type = BusinessType.OTHER)
-    @GetMapping("getApeHomeworkById")
-    public Result getApeHomeworkById(@RequestParam("id")String id) {
+    @GetMapping("getHomeworkById")
+    public Result getHomeworkById(@RequestParam("id")String id) {
         Homework homework = homeworkService.getById(id);
         return Result.success(homework);
     }
 
-    @GetMapping("getApeHomeworkByChapterId")
-    public Result getApeHomeworkByChapterId(@RequestParam("id")String id) {
+    @GetMapping("getHomeworkByChapterId")
+    public Result getHomeworkByChapterId(@RequestParam("id")String id) {
         QueryWrapper<Homework> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().eq(Homework::getChapterId,id);
         int count = homeworkService.count(queryWrapper);
@@ -67,8 +67,8 @@ public class HomeworkController {
 
     /** 保存作业 */
     @Log(name = "保存作业", type = BusinessType.INSERT)
-    @PostMapping("saveApeHomework")
-    public Result saveApeHomework(@RequestBody Homework homework) {
+    @PostMapping("saveHomework")
+    public Result saveHomework(@RequestBody Homework homework) {
         if (StringUtils.isNotBlank(homework.getChapterId())) {
             Chapter chapter = chapterService.getById(homework.getChapterId());
             homework.setChapterName(chapter.getName());
@@ -83,8 +83,8 @@ public class HomeworkController {
 
     /** 编辑作业 */
     @Log(name = "编辑作业", type = BusinessType.UPDATE)
-    @PostMapping("editApeHomework")
-    public Result editApeHomework(@RequestBody Homework homework) {
+    @PostMapping("editHomework")
+    public Result editHomework(@RequestBody Homework homework) {
         if (StringUtils.isNotBlank(homework.getChapterId())) {
             Chapter chapter = chapterService.getById(homework.getChapterId());
             homework.setChapterName(chapter.getName());
@@ -98,9 +98,9 @@ public class HomeworkController {
     }
 
     /** 删除作业 */
-    @GetMapping("removeApeHomework")
+    @GetMapping("removeHomework")
     @Log(name = "删除作业", type = BusinessType.DELETE)
-    public Result removeApeHomework(@RequestParam("ids")String ids) {
+    public Result removeHomework(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {

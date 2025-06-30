@@ -33,8 +33,8 @@ public class ForumItemController {
 
     /** 分页获取论坛讨论 */
     @Log(name = "分页获取论坛讨论", type = BusinessType.OTHER)
-    @PostMapping("getApeForumItemPage")
-    public Result getApeForumItemPage(@RequestBody ForumItem forumItem) {
+    @PostMapping("getForumItemPage")
+    public Result getForumItemPage(@RequestBody ForumItem forumItem) {
         Page<ForumItem> page = new Page<>(forumItem.getPageNumber(), forumItem.getPageSize());
         QueryWrapper<ForumItem> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
@@ -43,12 +43,12 @@ public class ForumItemController {
                 .eq(StringUtils.isNotBlank(forumItem.getCreateBy()), ForumItem::getCreateBy, forumItem.getCreateBy())
                 .eq(forumItem.getCreateTime() != null, ForumItem::getCreateTime, forumItem.getCreateTime())
                 .orderByDesc(ForumItem::getCreateTime);
-        Page<ForumItem> apeForumItemPage = forumItemService.page(page, queryWrapper);
-        return Result.success(apeForumItemPage);
+        Page<ForumItem> forumItemPage = forumItemService.page(page, queryWrapper);
+        return Result.success(forumItemPage);
     }
 
-    @PostMapping("getApeForumItemList")
-    public Result getApeForumItemList(@RequestBody ForumItem forumItem) {
+    @PostMapping("getForumItemList")
+    public Result getForumItemList(@RequestBody ForumItem forumItem) {
         QueryWrapper<ForumItem> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
                 .eq(StringUtils.isNotBlank(forumItem.getForumId()), ForumItem::getForumId, forumItem.getForumId())
@@ -62,16 +62,16 @@ public class ForumItemController {
 
     /** 根据id获取论坛讨论 */
     @Log(name = "根据id获取论坛讨论", type = BusinessType.OTHER)
-    @GetMapping("getApeForumItemById")
-    public Result getApeForumItemById(@RequestParam("id")String id) {
+    @GetMapping("getForumItemById")
+    public Result getForumItemById(@RequestParam("id")String id) {
         ForumItem forumItem = forumItemService.getById(id);
         return Result.success(forumItem);
     }
 
     /** 保存论坛讨论 */
     @Log(name = "保存论坛讨论", type = BusinessType.INSERT)
-    @PostMapping("saveApeForumItem")
-    public Result saveApeForumItem(@RequestBody ForumItem forumItem) {
+    @PostMapping("saveForumItem")
+    public Result saveForumItem(@RequestBody ForumItem forumItem) {
         User userInfo = ShiroUtils.getUserInfo();
         forumItem.setUserId(userInfo.getId());
         forumItem.setUserAvatar(userInfo.getAvatar());
@@ -86,8 +86,8 @@ public class ForumItemController {
 
     /** 编辑论坛讨论 */
     @Log(name = "编辑论坛讨论", type = BusinessType.UPDATE)
-    @PostMapping("editApeForumItem")
-    public Result editApeForumItem(@RequestBody ForumItem forumItem) {
+    @PostMapping("editForumItem")
+    public Result editForumItem(@RequestBody ForumItem forumItem) {
         boolean save = forumItemService.updateById(forumItem);
         if (save) {
             return Result.success();
@@ -97,9 +97,9 @@ public class ForumItemController {
     }
 
     /** 删除论坛讨论 */
-    @GetMapping("removeApeForumItem")
+    @GetMapping("removeForumItem")
     @Log(name = "删除论坛讨论", type = BusinessType.DELETE)
-    public Result removeApeForumItem(@RequestParam("ids")String ids) {
+    public Result removeForumItem(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {

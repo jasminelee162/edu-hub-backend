@@ -35,8 +35,8 @@ public class TaskFavorController {
 
     /** 分页获取课程收藏 */
     @Log(name = "分页获取课程收藏", type = BusinessType.OTHER)
-    @PostMapping("getApeTaskFavorPage")
-    public Result getApeTaskFavorPage(@RequestBody TaskFavor taskFavor) {
+    @PostMapping("getTaskFavorPage")
+    public Result getTaskFavorPage(@RequestBody TaskFavor taskFavor) {
         User user = ShiroUtils.getUserInfo();
         taskFavor.setUserId(user.getId());
         Page<TaskFavor> page = new Page<>(taskFavor.getPageNumber(), taskFavor.getPageSize());
@@ -47,16 +47,16 @@ public class TaskFavorController {
                 .eq(StringUtils.isNotBlank(taskFavor.getTaskName()), TaskFavor::getTaskName, taskFavor.getTaskName())
                 .eq(StringUtils.isNotBlank(taskFavor.getTaskImage()), TaskFavor::getTaskImage, taskFavor.getTaskImage())
                 .eq(StringUtils.isNotBlank(taskFavor.getTaskDesc()), TaskFavor::getTaskDesc, taskFavor.getTaskDesc());
-        Page<TaskFavor> apeTaskFavorPage = taskFavorService.page(page, queryWrapper);
-        return Result.success(apeTaskFavorPage);
+        Page<TaskFavor> taskFavorPage = taskFavorService.page(page, queryWrapper);
+        return Result.success(taskFavorPage);
     }
 
 
 
     /** 根据id获取课程收藏 */
     @Log(name = "根据id获取课程收藏", type = BusinessType.OTHER)
-    @GetMapping("getApeTaskFavorById")
-    public Result getApeTaskFavorById(@RequestParam("taskId")String taskId,@RequestParam("userId")String userId) {
+    @GetMapping("getTaskFavorById")
+    public Result getTaskFavorById(@RequestParam("taskId")String taskId,@RequestParam("userId")String userId) {
         QueryWrapper<TaskFavor> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().eq(TaskFavor::getTaskId,taskId).eq(TaskFavor::getUserId,userId).last("limit 1");
         TaskFavor taskFavor = taskFavorService.getOne(queryWrapper);
@@ -69,8 +69,8 @@ public class TaskFavorController {
 
     /** 保存课程收藏 */
     @Log(name = "保存课程收藏", type = BusinessType.INSERT)
-    @PostMapping("saveApeTaskFavor")
-    public Result saveApeTaskFavor(@RequestBody TaskFavor taskFavor) {
+    @PostMapping("saveTaskFavor")
+    public Result saveTaskFavor(@RequestBody TaskFavor taskFavor) {
         Task task = taskService.getById(taskFavor.getTaskId());
         taskFavor.setTaskDesc(task.getTaskDescribe());
         taskFavor.setTaskName(task.getName());
@@ -85,8 +85,8 @@ public class TaskFavorController {
 
     /** 编辑课程收藏 */
     @Log(name = "编辑课程收藏", type = BusinessType.UPDATE)
-    @PostMapping("editApeTaskFavor")
-    public Result editApeTaskFavor(@RequestBody TaskFavor taskFavor) {
+    @PostMapping("editTaskFavor")
+    public Result editTaskFavor(@RequestBody TaskFavor taskFavor) {
         boolean save = taskFavorService.updateById(taskFavor);
         if (save) {
             return Result.success();
@@ -96,9 +96,9 @@ public class TaskFavorController {
     }
 
     /** 删除课程收藏 */
-    @GetMapping("removeApeTaskFavor")
+    @GetMapping("removeTaskFavor")
     @Log(name = "删除课程收藏", type = BusinessType.DELETE)
-    public Result removeApeTaskFavor(@RequestParam("ids")String ids) {
+    public Result removeTaskFavor(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {

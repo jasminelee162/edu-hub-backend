@@ -61,89 +61,82 @@ public class TaskStudentController {
     }
 
     @PostMapping("getTaskStudentPage")
-    public Result getTaskStudentPage(@RequestBody TaskStudent apeTaskStudent) {
-        Chapter chapter = chapterService.getById(apeTaskStudent.getChapterId());
-        Page<TaskStudent> page = new Page<>(apeTaskStudent.getPageNumber(),apeTaskStudent.getPageSize());
+    public Result getTaskStudentPage(@RequestBody TaskStudent taskStudent) {
+        Chapter chapter = chapterService.getById(taskStudent.getChapterId());
+        Page<TaskStudent> page = new Page<>(taskStudent.getPageNumber(), taskStudent.getPageSize());
         QueryWrapper<TaskStudent> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
-                .eq(StringUtils.isNotBlank(apeTaskStudent.getTaskId()), TaskStudent::getTaskId,apeTaskStudent.getTaskId())
-                .like(StringUtils.isNotBlank(apeTaskStudent.getUserName()), TaskStudent::getUserName,apeTaskStudent.getUserName())
-                .eq(apeTaskStudent.getState() != null, TaskStudent::getState,apeTaskStudent.getState());
-        Page<TaskStudent> apeTaskStudentPage = taskStudentService.page(page, queryWrapper);
-        for (TaskStudent taskStudent : apeTaskStudentPage.getRecords()) {
+                .eq(StringUtils.isNotBlank(taskStudent.getTaskId()), TaskStudent::getTaskId, taskStudent.getTaskId())
+                .like(StringUtils.isNotBlank(taskStudent.getUserName()), TaskStudent::getUserName, taskStudent.getUserName())
+                .eq(taskStudent.getState() != null, TaskStudent::getState, taskStudent.getState());
+        Page<TaskStudent> taskStudentPage = taskStudentService.page(page, queryWrapper);
+        for (TaskStudent record : taskStudentPage.getRecords()) {
             QueryWrapper<HomeworkStudent> wrapper = new QueryWrapper<>();
-            wrapper.lambda().eq(HomeworkStudent::getChapterId,chapter.getId())
-                    .eq(HomeworkStudent::getUserId,taskStudent.getUserId());
+            wrapper.lambda().eq(HomeworkStudent::getChapterId, chapter.getId())
+                    .eq(HomeworkStudent::getUserId, record.getUserId());
             int count = homeworkStudentService.count(wrapper);
-            if (count > 0) {
-                taskStudent.setHomework("已完成");
-            } else {
-                taskStudent.setHomework("未完成");
-            }
+            record.setHomework(count > 0 ? "已完成" : "未完成");
+
             QueryWrapper<ChapterVideo> videoQueryWrapper = new QueryWrapper<>();
-            videoQueryWrapper.lambda().eq(ChapterVideo::getChapterId,chapter.getId())
-                    .eq(ChapterVideo::getUserId,taskStudent.getUserId());
+            videoQueryWrapper.lambda().eq(ChapterVideo::getChapterId, chapter.getId())
+                    .eq(ChapterVideo::getUserId, record.getUserId());
             int count1 = chapterVideoService.count(videoQueryWrapper);
-            if (count1 > 0) {
-                taskStudent.setVideo("已观看");
-            } else {
-                taskStudent.setVideo("未观看");
-            }
+            record.setVideo(count1 > 0 ? "已观看" : "未观看");
         }
-        return Result.success(apeTaskStudentPage);
+        return Result.success(taskStudentPage);
     }
 
     /** 分页获取课程报名 */
     @Log(name = "分页获取我的课程", type = BusinessType.OTHER)
-    @PostMapping("getApeMyTaskPage")
-    public Result getApeMyTaskPage(@RequestBody TaskStudent apeTaskStudent) {
+    @PostMapping("getMyTaskPage")
+    public Result getMyTaskPage(@RequestBody TaskStudent taskStudent) {
         User userInfo = ShiroUtils.getUserInfo();
-        apeTaskStudent.setUserId(userInfo.getId());
-        Page<TaskStudent> page = new Page<>(apeTaskStudent.getPageNumber(),apeTaskStudent.getPageSize());
+        taskStudent.setUserId(userInfo.getId());
+        Page<TaskStudent> page = new Page<>(taskStudent.getPageNumber(), taskStudent.getPageSize());
         QueryWrapper<TaskStudent> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
-                .eq(StringUtils.isNotBlank(apeTaskStudent.getUserId()), TaskStudent::getUserId,apeTaskStudent.getUserId())
-                .eq(apeTaskStudent.getState() != null, TaskStudent::getState,apeTaskStudent.getState());
-        Page<TaskStudent> apeTaskStudentPage = taskStudentService.page(page, queryWrapper);
-        for (TaskStudent taskStudent : apeTaskStudentPage.getRecords()) {
-            Task task = taskService.getById(taskStudent.getTaskId());
-            taskStudent.setTaskDescribe(task.getTaskDescribe());
-            taskStudent.setNum(task.getNum());
-            taskStudent.setImage(task.getImage());
+                .eq(StringUtils.isNotBlank(taskStudent.getUserId()), TaskStudent::getUserId, taskStudent.getUserId())
+                .eq(taskStudent.getState() != null, TaskStudent::getState, taskStudent.getState());
+        Page<TaskStudent> taskStudentPage = taskStudentService.page(page, queryWrapper);
+        for (TaskStudent record : taskStudentPage.getRecords()) {
+            Task task = taskService.getById(record.getTaskId());
+            record.setTaskDescribe(task.getTaskDescribe());
+            record.setNum(task.getNum());
+            record.setImage(task.getImage());
         }
-        return Result.success(apeTaskStudentPage);
+        return Result.success(taskStudentPage);
     }
 
-    @PostMapping("getApeMyTaskList")
-    public Result getApeMyTaskList(@RequestBody TaskStudent apeTaskStudent) {
+    @PostMapping("getMyTaskList")
+    public Result getMyTaskList(@RequestBody TaskStudent taskStudent) {
         User userInfo = ShiroUtils.getUserInfo();
-        apeTaskStudent.setUserId(userInfo.getId());
+        taskStudent.setUserId(userInfo.getId());
         QueryWrapper<TaskStudent> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
-                .eq(StringUtils.isNotBlank(apeTaskStudent.getUserId()), TaskStudent::getUserId,apeTaskStudent.getUserId())
-                .eq(apeTaskStudent.getState() != null, TaskStudent::getState,apeTaskStudent.getState());
+                .eq(StringUtils.isNotBlank(taskStudent.getUserId()), TaskStudent::getUserId, taskStudent.getUserId())
+                .eq(taskStudent.getState() != null, TaskStudent::getState, taskStudent.getState());
         List<TaskStudent> taskStudentList = taskStudentService.list(queryWrapper);
-        for (TaskStudent taskStudent : taskStudentList) {
-            Task task = taskService.getById(taskStudent.getTaskId());
-            taskStudent.setTaskDescribe(task.getTaskDescribe());
-            taskStudent.setNum(task.getNum());
-            taskStudent.setImage(task.getImage());
+        for (TaskStudent record : taskStudentList) {
+            Task task = taskService.getById(record.getTaskId());
+            record.setTaskDescribe(task.getTaskDescribe());
+            record.setNum(task.getNum());
+            record.setImage(task.getImage());
         }
         return Result.success(taskStudentList);
     }
 
     /** 根据id获取课程报名 */
     @Log(name = "根据id获取课程报名", type = BusinessType.OTHER)
-    @GetMapping("getApeTaskStudentById")
-    public Result getApeTaskStudentById(@RequestParam("id")String id) {
+    @GetMapping("getTaskStudentById")
+    public Result getTaskStudentById(@RequestParam("id")String id) {
         TaskStudent taskStudent = taskStudentService.getById(id);
         return Result.success(taskStudent);
     }
 
     /** 保存课程报名 */
     @Log(name = "保存课程报名", type = BusinessType.INSERT)
-    @PostMapping("saveApeTaskStudent")
-    public Result saveApeTaskStudent(@RequestBody TaskStudent taskStudent) {
+    @PostMapping("saveTaskStudent")
+    public Result saveTaskStudent(@RequestBody TaskStudent taskStudent) {
         User userInfo = ShiroUtils.getUserInfo();
         taskStudent.setUserId(userInfo.getId());
         taskStudent.setUserName(userInfo.getUserName());
@@ -175,8 +168,8 @@ public class TaskStudentController {
 
     /** 编辑课程报名 */
     @Log(name = "编辑课程报名", type = BusinessType.UPDATE)
-    @PostMapping("editApeTaskStudent")
-    public Result editApeTaskStudent(@RequestBody TaskStudent taskStudent) {
+    @PostMapping("editTaskStudent")
+    public Result editTaskStudent(@RequestBody TaskStudent taskStudent) {
         TaskStudent student = taskStudentService.getById(taskStudent.getId());
         Task task = taskService.getById(student.getTaskId());
         if (taskStudent.getState() == 0) {
@@ -194,9 +187,9 @@ public class TaskStudentController {
     }
 
     /** 删除课程报名 */
-    @GetMapping("removeApeTaskStudent")
+    @GetMapping("removeTaskStudent")
     @Log(name = "删除课程报名", type = BusinessType.DELETE)
-    public Result removeApeTaskStudent(@RequestParam("ids")String ids) {
+    public Result removeTaskStudent(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {

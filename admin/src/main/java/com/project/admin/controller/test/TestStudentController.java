@@ -42,8 +42,8 @@ public class TestStudentController {
 
     /** 分页获取用户考试题目 */
     @Log(name = "分页获取用户考试题目", type = BusinessType.OTHER)
-    @PostMapping("getApeTestStudentPage")
-    public Result getApeTestStudentPage(@RequestBody TestStudent testStudent) {
+    @PostMapping("getTestStudentPage")
+    public Result getTestStudentPage(@RequestBody TestStudent testStudent) {
         Page<TestStudent> page = new Page<>(testStudent.getPageNumber(), testStudent.getPageSize());
         QueryWrapper<TestStudent> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
@@ -53,14 +53,14 @@ public class TestStudentController {
                 .eq(testStudent.getSort() != null, TestStudent::getSort, testStudent.getSort())
                 .eq(testStudent.getType() != null, TestStudent::getType, testStudent.getType())
                 .eq(StringUtils.isNotBlank(testStudent.getUserId()), TestStudent::getUserId, testStudent.getUserId());
-        Page<TestStudent> apeTestStudentPage = testStudentService.page(page, queryWrapper);
-        return Result.success(apeTestStudentPage);
+        Page<TestStudent> TestStudentPage = testStudentService.page(page, queryWrapper);
+        return Result.success(TestStudentPage);
     }
 
     /** 根据id获取用户考试题目 */
     @Log(name = "根据id获取用户考试题目", type = BusinessType.OTHER)
-    @GetMapping("getApeTestStudentById")
-    public Result getApeTestStudentById(@RequestParam("id")String id) {
+    @GetMapping("getTestStudentById")
+    public Result getTestStudentById(@RequestParam("id")String id) {
         TestStudent testStudent = testStudentService.getById(id);
         return Result.success(testStudent);
     }
@@ -81,8 +81,8 @@ public class TestStudentController {
 
     /** 保存用户考试题目 */
     @Log(name = "保存用户考试题目", type = BusinessType.INSERT)
-    @PostMapping("saveApeTestStudent")
-    public Result saveApeTestStudent(@RequestBody JSONObject jsonObject) {
+    @PostMapping("saveTestStudent")
+    public Result saveTestStudent(@RequestBody JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("list");
         List<TestStudent> testStudents = new ArrayList<>();
         for (int i = 0; i < jsonArray.size(); i++) {
@@ -125,8 +125,8 @@ public class TestStudentController {
 
     /** 编辑用户考试题目 */
     @Log(name = "编辑用户考试题目", type = BusinessType.UPDATE)
-    @PostMapping("editApeTestStudent")
-    public Result editApeTestStudent(@RequestBody JSONObject jsonObject) {
+    @PostMapping("editTestStudent")
+    public Result editTestStudent(@RequestBody JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("list");
         List<TestStudent> testStudents = new ArrayList<>();
         for (int i = 0; i < jsonArray.size(); i++) {
@@ -151,9 +151,9 @@ public class TestStudentController {
     }
 
     /** 删除用户考试题目 */
-    @GetMapping("removeApeTestStudent")
+    @GetMapping("removeTestStudent")
     @Log(name = "删除用户考试题目", type = BusinessType.DELETE)
-    public Result removeApeTestStudent(@RequestParam("ids")String ids) {
+    public Result removeTestStudent(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
             String[] asList = ids.split(",");
             for (String id : asList) {
