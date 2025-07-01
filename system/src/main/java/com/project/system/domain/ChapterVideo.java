@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /**
- *  超级管理员
+ * @author 超级管理员
  * @version 1.0
  * @description: 章节视频是否观看
- * 10:32
+ * @date 2023/11/23 10:32
  */
 @Data
 @AllArgsConstructor

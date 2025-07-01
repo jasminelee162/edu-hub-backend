@@ -10,10 +10,10 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 /**
- *
+ * @author shaozhujie
  * @version 1.0
  * @description: 配置保存时自动插入创建时间和创建账号
- * 
+ * @date 2023/10/9 16:11
  */
 @Slf4j
 @Component

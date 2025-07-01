@@ -1,8 +1,10 @@
 package com.project.common.utils;
 
 /**
+ * @author shaozhujie
  * @version 1.0
  * @description: JWT工具类
+ * @date 2023/8/11 10:00
  */
 
 import com.project.common.constant.Constants;
@@ -31,8 +33,8 @@ public class JwtUtil {
     	userId
     	userPhone
     * @return:
-    *
-    * :
+    * @author shaozhujie
+    * @date: 2023/9/14 11:19
     */
     public static boolean verify(String token, String userId, String userPhone) {
         try {
@@ -51,8 +53,8 @@ public class JwtUtil {
     * @description: 获得token中的信息无需secret解密也能获得
     * @param: token
     * @return:
-    *
-    * :
+    * @author shaozhujie
+    * @date: 2023/9/14 11:19
     */
     public static String getUserId(String token) {
         try {
@@ -68,8 +70,8 @@ public class JwtUtil {
     * @param: userId
     	userPhone
     * @return:
-    *
-    * :
+    * @author shaozhujie
+    * @date: 2023/9/14 11:19
     */
     public static String sign(String userId, String userPhone) {
         Algorithm algorithm = Algorithm.HMAC256(userPhone);
@@ -85,8 +87,8 @@ public class JwtUtil {
     * @description: 根据request中的token获取用户账号
     * @param: request
     * @return:
-    *
-    * :
+    * @author shaozhujie
+    * @date: 2023/9/14 11:20
     */
     public static String getUserIdByToken(HttpServletRequest request) {
         String accessToken = getTokenByRequest(request);
@@ -97,8 +99,8 @@ public class JwtUtil {
     * @description: 获取 request 里传递的 token
     * @param: request
     * @return:
-    *
-    * :
+    * @author shaozhujie
+    * @date: 2023/9/14 11:20
     */
     public static String getTokenByRequest(HttpServletRequest request) {
         return request.getHeader(Constants.X_ACCESS_TOKEN);

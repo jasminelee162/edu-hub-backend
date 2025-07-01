@@ -11,10 +11,10 @@ import lombok.experimental.Accessors;
 import java.util.List;
 
 /**
- *  
+ * @author shaozhujie
  * @version 1.0
  * @description: 角色
- *
+ * @date 2023/8/31 10:10
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

@@ -7,8 +7,10 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
+ * @author shaozhujie
  * @version 1.0
  * @description: 统一返回类型
+ * @date 2023/8/11 16:27
  */
 @Slf4j
 @Data

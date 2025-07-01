@@ -9,10 +9,10 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 /**
- *  
+ * @author shaozhujie
  * @version 1.0
  * @description: 角色菜单关系
- *
+ * @date 2023/8/31 10:15
  */
 @Data
 @EqualsAndHashCode()

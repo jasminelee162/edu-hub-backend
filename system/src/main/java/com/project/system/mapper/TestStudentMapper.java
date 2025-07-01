@@ -8,10 +8,10 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 /**
- *
+ * @author 超级管理员
  * @version 1.0
  * @description: 用户考试题目mapper
- * 
+ * @date 2023/11/24 10:23
  */
 public interface TestStudentMapper extends BaseMapper<TestStudent> {
     @Select("SELECT user_id, MAX(update_time) as update_time " +

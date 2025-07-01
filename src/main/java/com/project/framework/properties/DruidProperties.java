@@ -5,10 +5,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
 /**
- *
+ * @author shaozhujie
  * @version 1.0
  * @description: 连接池配置
- * 
+ * @date 2023/8/10 16:09
  */
 @Configuration
 public class DruidProperties {

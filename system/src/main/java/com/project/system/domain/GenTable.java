@@ -16,10 +16,10 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 /**
- *  
+ * @author shaozhujie
  * @version 1.0
  * @description: 代码生成业务表
- *
+ * @date 2023/10/9 11:14
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

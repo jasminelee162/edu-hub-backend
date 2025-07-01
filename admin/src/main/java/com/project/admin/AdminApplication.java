@@ -8,8 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 //SET GLOBAL sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
 /**
- *  jas
- *  2025/6/26
+ * @author jas
+ * @date 2025/6/26
  */
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class },scanBasePackages = "com.project.*")
 @ComponentScan("com.project")

@@ -11,11 +11,12 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
+ * @author shaozhujie
  * @version 1.0
  * @description: 代码生成service实现类
+ * @date 2023/10/10 9:23
  */
 @Service
 public class GenTableServiceImpl extends ServiceImpl<GenTableMapper, GenTable> implements GenTableService {
@@ -23,7 +24,7 @@ public class GenTableServiceImpl extends ServiceImpl<GenTableMapper, GenTable> i
     /**
     * 获取数据库表
     */
-    /*@Override
+    @Override
     public Page<Map<String, Object>> getTables(GenTable genTable) {
         Page<Map<String, Object>> page = new Page<>(genTable.getPageNumber(), genTable.getPageSize());
         QueryWrapper<GenTable> queryWrapper = new QueryWrapper<>();
@@ -34,19 +35,6 @@ public class GenTableServiceImpl extends ServiceImpl<GenTableMapper, GenTable> i
             tables.add(item.getTableName());
         });
         return baseMapper.getTables(page, genTable,tables);
-    }*/
-
-    /* 7.1 bug修改*/
-    @Override
-    public Page<Map<String, Object>> getTables(GenTable genTable) {
-        Page<Map<String, Object>> page = new Page<>(genTable.getPageNumber(), genTable.getPageSize());
-        QueryWrapper<GenTable> queryWrapper = new QueryWrapper<>();
-        queryWrapper.select("DISTINCT table_name"); // 只查询唯一的table_name
-        List<GenTable> genTables = baseMapper.selectList(queryWrapper);
-        List<String> tables = genTables.stream()
-                .map(GenTable::getTableName)
-                .collect(Collectors.toList());
-        return baseMapper.getTables(page, genTable, tables);
     }
 
     /**
@@ -54,10 +42,6 @@ public class GenTableServiceImpl extends ServiceImpl<GenTableMapper, GenTable> i
      */
     @Override
     public Map<String, Object> getTablesInfo(String table) {
-        Map<String, Object> tablesInfo = baseMapper.getTablesInfo(table);
-        if (tablesInfo == null) {
-            throw new RuntimeException("表" + table + "不存在于数据库中");
-        }
-        return tablesInfo;
+        return baseMapper.getTablesInfo(table);
     }
 }

@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /**
- *  
+ * @author shaozhujie
  * @version 1.0
  * @description: 用户角色关系
- *
+ * @date 2023/8/31 14:32
  */
 @Data
 @EqualsAndHashCode()

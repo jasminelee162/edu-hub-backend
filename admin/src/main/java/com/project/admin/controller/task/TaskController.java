@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
+ * @author 超级管理员
  * @version 1.0
  * @description: 课程controller
+ * @date 2023/11/17 11:28
  */
 @Controller
 @ResponseBody

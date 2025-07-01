@@ -10,10 +10,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- *
+ * @author shaozhujie
  * @version 1.0
  * @description: 代码生成字段service实现类
- *
+ * @date 2023/10/10 9:28
  */
 @Service
 public class GenTableColumnServiceImpl extends ServiceImpl<GenTableColumnMapper, GenTableColumn> implements GenTableColumnService {

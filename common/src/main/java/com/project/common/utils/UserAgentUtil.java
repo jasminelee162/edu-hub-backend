@@ -1,8 +1,10 @@
 package com.project.common.utils;
 
 /**
+ * @author shaozhujie
  * @version 1.0
  * @description: TODO
+ * @date 2023/9/22 17:18
  */
 public class UserAgentUtil {
 

@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- *
+ * @author 超级管理员
  * @version 1.0
  * @description: 作业service实现类
- * 
+ * @date 2023/11/18 09:06
  */
 @Service
 public class HomeworkServiceImpl extends ServiceImpl<HomeworkMapper, Homework> implements HomeworkService {

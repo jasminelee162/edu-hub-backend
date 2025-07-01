@@ -16,8 +16,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
+ * @author 超级管理员
  * @version 1.0
  * @description: 笔记收藏controller
+ * @date 2023/11/22 08:59
  */
 @Controller
 @ResponseBody

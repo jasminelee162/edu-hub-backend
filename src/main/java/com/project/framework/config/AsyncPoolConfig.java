@@ -14,10 +14,10 @@ import org.springframework.web.context.request.RequestContextHolder;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- *
+ * @author shaozhujie
  * @version 1.0
  * @description: 异步线程池配置
- *
+ * @date 2023/9/22 11:02
  */
 @Configuration
 @EnableAsync

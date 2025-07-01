@@ -7,10 +7,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import java.util.List;
 
 /**
- *
+ * @author shaozhujie
  * @version 1.0
  * @description: 用户service
- *
+ * @date 2023/8/28 8:45
  */
 public interface UserService extends IService<User> {
 
@@ -18,7 +18,8 @@ public interface UserService extends IService<User> {
     * @description: 分页查询用户
     * @param: user
     * @return: Page
-    *
+    * @author shaozhujie
+    * @date: 2023/8/28 10:49
     */
     Page<User> getUserPage(User user);
     List<String> unRead();

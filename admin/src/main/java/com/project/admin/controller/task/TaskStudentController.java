@@ -19,8 +19,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * @author 超级管理员
  * @version 1.0
  * @description: 课程报名controller
+ * @date 2023/11/21 03:15
  */
 @Controller
 @ResponseBody

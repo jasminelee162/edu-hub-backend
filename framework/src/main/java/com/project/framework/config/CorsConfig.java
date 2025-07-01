@@ -5,8 +5,10 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 /**
+ * @author shaozhujie
  * @version 1.0
  * @description: 跨域
+ * @date 2023/8/28 10:57
  */
 @Configuration
 public class CorsConfig {
@@ -14,6 +16,9 @@ public class CorsConfig {
     /**
     * @description: 配置跨域
     * @param:
+    * @return:
+    * @author shaozhujie
+    * @date: 2023/9/14 11:03
     */
     @Bean
     public CorsFilter corsFilter() {
