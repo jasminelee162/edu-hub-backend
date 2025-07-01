@@ -15,14 +15,13 @@ public class UserDocument {
     @Id
     private String id;
     private String title;
-
     private byte[] content; // 可编辑内容
 
     @TableField("share_token")
     private String shareToken; // 分享标识
 
-    @TableField("base_template")
-    private Template baseTemplate;
+    @TableField("base_template_id")
+    private String baseTemplateId;
 
     @TableField("user_id")
     private String userId;

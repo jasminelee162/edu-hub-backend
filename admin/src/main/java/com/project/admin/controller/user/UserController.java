@@ -30,10 +30,8 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author shaozhujie
  * @version 1.0
  * @description: 用户controller
- * @date 2023/8/28 9:04
  */
 @Controller
 @ResponseBody
@@ -308,6 +306,13 @@ public class UserController {
         } else {
             return Result.fail("请选择正确的图片格式");
         }
+    }
+
+
+    //获取是否有未审核的入驻教师申请
+    @GetMapping("unread")
+    public Result unread() {
+        return Result.success(userService.unRead());
     }
 
 }

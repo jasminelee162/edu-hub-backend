@@ -19,10 +19,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author 超级管理员
  * @version 1.0
  * @description: 课程报名controller
- * @date 2023/11/21 03:15
  */
 @Controller
 @ResponseBody
@@ -144,6 +142,7 @@ public class TaskStudentController {
         taskStudent.setTaskName(task.getName());
         taskStudent.setTeacherId(task.getTeacherId());
         taskStudent.setTeacherName(task.getTeacherName());
+        taskStudent.setChecked(1);
         boolean save = taskStudentService.save(taskStudent);
         if (save) {
             return Result.success();
@@ -321,5 +320,17 @@ public class TaskStudentController {
         learningProgressService.updateOrInsertProgress(learningProgress);
 
         return Result.success(learningProgress);
+    }
+
+    //获取某个课程是否有未审核的学生课程申请
+    @GetMapping("unread")
+    public Result unread(@RequestParam String taskName) {
+        return Result.success(taskStudentService.unRead(taskName));
+    }
+
+    //点击后表示已读（红点取消）
+    @PostMapping("/checked")
+    public void checked(@RequestParam String taskName,@RequestParam String userName){
+        taskStudentService.checked(taskName,userName);
     }
 }
