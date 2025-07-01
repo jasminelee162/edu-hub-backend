@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.system.mapper.ChapterMapper">
+    <select id="getStudentVideo" resultType="int">
+        select count(*) from chapter c left join chapter_video v on c.id = v.chapter_id
+        where c.task_id = #{taskId} and v.user_id = #{userId}
+    </select>
+</mapper>
