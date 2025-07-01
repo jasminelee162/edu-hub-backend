@@ -14,10 +14,10 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author shaozhujie
+ *  shaozhujie
  * @version 1.0
  * @description: 用户
- * @date 2023/8/11 16:07
+ *  2023/8/11 16:07
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

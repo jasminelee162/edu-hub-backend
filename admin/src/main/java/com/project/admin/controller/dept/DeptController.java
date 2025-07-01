@@ -17,10 +17,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @author shaozhujie
  * @version 1.0
  * @description: 部门controller
- * @date 2023/8/28 11:37
  */
 @Controller
 @ResponseBody

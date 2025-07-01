@@ -12,10 +12,10 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /**
- * @author shaozhujie
+ *  shaozhujie
  * @version 1.0
  * @description: 字典数据
- * @date 2023/10/9 14:23
+ *  2023/10/9 14:23
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

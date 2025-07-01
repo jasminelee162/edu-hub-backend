@@ -12,10 +12,10 @@ import lombok.experimental.Accessors;
 import org.springframework.format.annotation.DateTimeFormat;
 
 /**
- * @author 超级管理员
+ *  超级管理员
  * @version 1.0
  * @description: 笔记
- * @date 2023/11/20 09:14
+ *  2023/11/20 09:14
  */
 @Data
 @AllArgsConstructor

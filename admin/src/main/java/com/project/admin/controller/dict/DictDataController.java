@@ -16,10 +16,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * @author shaozhujie
  * @version 1.0
  * @description: 字典controller
- * @date 2023/10/9 14:32
  */
 @Controller
 @ResponseBody

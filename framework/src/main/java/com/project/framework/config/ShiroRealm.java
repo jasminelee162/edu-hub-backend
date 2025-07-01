@@ -21,7 +21,7 @@ import org.springframework.stereotype.Component;
 import java.util.Set;
 
 /**
- * @author shaozhujie
+ *  shaozhujie
  * @version 1.0
  * @description: 自定义realm
  * @date 2023/9/7 14:38

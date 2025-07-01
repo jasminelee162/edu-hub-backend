@@ -22,10 +22,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author shaozhujie
  * @version 1.0
  * @description: 数据源配置类
- * @date 2023/8/10 16:06
  */
 @Configuration
 public class DruidConfig {
@@ -62,9 +60,6 @@ public class DruidConfig {
     * @param: targetDataSources
     	sourceName
     	beanName
-    * @return:
-    * @author shaozhujie
-    * @date: 2023/9/14 11:04
     */
     public void setDataSource(Map<Object, Object> targetDataSources, String sourceName, String beanName)
     {
@@ -82,7 +77,7 @@ public class DruidConfig {
     * @description: 去除监控页面底部的广告
     * @param: properties
     * @return:
-    * @author shaozhujie
+    *  shaozhujie
     * @date: 2023/9/14 11:04
     */
     @SuppressWarnings({ "rawtypes", "unchecked" })

@@ -11,10 +11,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * @author shaozhujie
+ *  shaozhujie
  * @version 1.0
  * @description: 请求工具类
- * @date 2023/9/14 15:38
+ *  2023/9/14 15:38
  */
 public class RequestUtils {
 
@@ -23,7 +23,7 @@ public class RequestUtils {
     * @param: response
     	json
     * @return:
-    * @author shaozhujie
+    *  shaozhujie
     * @date: 2023/9/14 15:39
     */
     public static void returnJson(HttpServletResponse response, String json) throws Exception{

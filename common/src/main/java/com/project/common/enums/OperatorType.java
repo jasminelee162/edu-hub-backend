@@ -2,8 +2,6 @@ package com.project.common.enums;
 
 /**
 * @description: 操作人类别
-* @author shaozhujie
-* @date 2023/9/22 10:25
 * @version 1.0
 */
 public enum OperatorType

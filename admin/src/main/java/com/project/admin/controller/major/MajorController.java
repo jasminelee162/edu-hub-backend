@@ -16,10 +16,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * @author 超级管理员
  * @version 1.0
  * @description: 专业表controller
- * @date 2023/11/16 08:31
  */
 @Controller
 @ResponseBody

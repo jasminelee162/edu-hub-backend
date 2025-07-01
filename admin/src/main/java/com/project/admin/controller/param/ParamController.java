@@ -15,10 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @author shaozhujie
  * @version 1.0
  * @description: 参数controller
- * @date 2023/9/20 16:44
  */
 @Controller
 @ResponseBody

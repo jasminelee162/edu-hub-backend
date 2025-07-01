@@ -4,7 +4,7 @@ import com.ape.apesystem.domain.ApeOperateLog;
 import org.springframework.context.ApplicationEvent;
 
 /**
- * @author shaozhujie
+ *  shaozhujie
  * @version 1.0
  * @description: 操作日志监听类
  * @date 2023/9/22 10:57

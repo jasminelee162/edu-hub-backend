@@ -13,10 +13,10 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 /**
- * @author shaozhujie
+ *  shaozhujie
  * @version 1.0
  * @description: index代码生成类
- * @date 2023/10/14 10:13
+ *  2023/10/14 10:13
  */
 @Component
 public class GenIndexCode {

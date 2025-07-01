@@ -13,10 +13,10 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 /**
- * @author shaozhujie
+ *  shaozhujie
  * @version 1.0
  * @description: add代码生成类
- * @date 2023/10/16 9:08
+ *  2023/10/16 9:08
  */
 @Component
 public class GenAddCode {

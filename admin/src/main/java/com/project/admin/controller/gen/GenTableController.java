@@ -28,10 +28,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author shaozhujie
  * @version 1.0
  * @description: 代码生成controller
- * @date 2023/10/10 9:25
  */
 @Controller
 @ResponseBody

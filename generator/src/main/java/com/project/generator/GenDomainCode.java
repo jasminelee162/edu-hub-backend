@@ -9,10 +9,10 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author shaozhujie
+ *  shaozhujie
  * @version 1.0
  * @description: domain代码生成类
- * @date 2023/10/13 9:25
+ *  2023/10/13 9:25
  */
 public class GenDomainCode {
 
