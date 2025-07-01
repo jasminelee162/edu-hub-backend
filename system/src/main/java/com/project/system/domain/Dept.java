@@ -14,7 +14,7 @@ import java.util.List;
  *  
  * @version 1.0
  * @description: 部门
- *  2023/8/28 10:08
+ *
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

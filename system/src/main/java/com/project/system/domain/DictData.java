@@ -15,7 +15,7 @@ import lombok.experimental.Accessors;
  *  
  * @version 1.0
  * @description: 字典数据
- *  2023/10/9 14:23
+ *
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

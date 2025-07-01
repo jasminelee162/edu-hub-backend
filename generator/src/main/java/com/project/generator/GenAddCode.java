@@ -16,7 +16,7 @@ import java.util.List;
  *  
  * @version 1.0
  * @description: add代码生成类
- *  2023/10/16 9:08
+ * 9:08
  */
 @Component
 public class GenAddCode {

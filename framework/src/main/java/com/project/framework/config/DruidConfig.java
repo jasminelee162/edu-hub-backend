@@ -78,7 +78,7 @@ public class DruidConfig {
     * @param: properties
     * @return:
     *  
-    * @date: 2023/9/14 11:04
+    *
     */
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Bean

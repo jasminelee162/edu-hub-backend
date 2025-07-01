@@ -12,7 +12,6 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  *  
  * @version 1.0
  * @description: redis配置类
- * @date 2023/8/11 9:02
  */
 @Configuration
 public class RedisConfig {
@@ -36,7 +35,7 @@ public class RedisConfig {
     	factory
     * @return:
     *  
-    * @date: 2023/9/14 11:05
+    *
     */
     private void setSerializer(RedisTemplate<String, Object> redisTemplate,
                                RedisConnectionFactory factory) {

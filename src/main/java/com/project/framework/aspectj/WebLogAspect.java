@@ -22,8 +22,8 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @description: 请求日志
- * @author 
- * @date: 2023/9/21 16:38
+ *
+ *
  */
 @Slf4j
 @Aspect
@@ -68,8 +68,8 @@ public class WebLogAspect {
      * @param: joinPoint
     ex
      * @return:
-     * @author 
-     * @date: 2023/9/21 16:50
+     *
+     *
      */
     @AfterThrowing(value = "webLog()", throwing = "ex")
     public void afterThrowing(JoinPoint joinPoint, Throwable ex) {

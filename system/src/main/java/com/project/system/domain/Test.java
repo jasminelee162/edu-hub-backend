@@ -15,7 +15,7 @@ import org.springframework.format.annotation.DateTimeFormat;
  *  超级管理员
  * @version 1.0
  * @description: 考试
- *  2023/11/20 11:28
+ *
  */
 @Data
 @AllArgsConstructor

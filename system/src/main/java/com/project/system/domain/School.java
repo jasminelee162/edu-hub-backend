@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
  *  超级管理员
  * @version 1.0
  * @description: 学校表
- *  2023/11/16 08:03
+ *
  */
 @Data
 @AllArgsConstructor

@@ -14,10 +14,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * @author 
  * @version 1.0
  * @description: 代码生成service实现类
- * @date 2023/10/10 9:23
  */
 @Service
 public class GenTableServiceImpl extends ServiceImpl<GenTableMapper, GenTable> implements GenTableService {

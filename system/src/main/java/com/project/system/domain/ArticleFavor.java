@@ -15,7 +15,7 @@ import org.springframework.format.annotation.DateTimeFormat;
  *  超级管理员
  * @version 1.0
  * @description: 笔记收藏
- *  2023/11/22 08:59
+ * 08:59
  */
 @Data
 @AllArgsConstructor

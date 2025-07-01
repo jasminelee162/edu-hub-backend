@@ -16,7 +16,7 @@ import java.util.List;
  *  
  * @version 1.0
  * @description: index代码生成类
- *  2023/10/14 10:13
+ * 10:13
  */
 @Component
 public class GenIndexCode {

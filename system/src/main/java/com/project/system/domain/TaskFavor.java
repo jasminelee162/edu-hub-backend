@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
  *  超级管理员
  * @version 1.0
  * @description: 课程收藏
- *  2024/01/18 01:51
+ *
  */
 @Data
 @AllArgsConstructor

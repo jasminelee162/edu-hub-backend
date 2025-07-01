@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
  *  jas
  * @version 1.0
  * @description: 项目整体配置信息
- * @date 2025/6/26
  */
 @Component
 @ConfigurationProperties(prefix = "system")

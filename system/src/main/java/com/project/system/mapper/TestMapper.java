@@ -10,7 +10,7 @@ import java.util.Map;
  *  超级管理员
  * @version 1.0
  * @description: 考试mapper
- * @date 2023/11/20 11:28
+ * 
  */
 public interface TestMapper extends BaseMapper<Test> {
     Map<String,Object> getStudentTotalScore(@Param("taskId") String taskId,@Param("userId") String userId);

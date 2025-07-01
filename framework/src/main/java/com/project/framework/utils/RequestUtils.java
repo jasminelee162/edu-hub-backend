@@ -14,7 +14,7 @@ import java.io.PrintWriter;
  *  
  * @version 1.0
  * @description: 请求工具类
- *  2023/9/14 15:38
+ *
  */
 public class RequestUtils {
 
@@ -24,7 +24,7 @@ public class RequestUtils {
     	json
     * @return:
     *  
-    * @date: 2023/9/14 15:39
+    *
     */
     public static void returnJson(HttpServletResponse response, String json) throws Exception{
         response.setCharacterEncoding("UTF-8");

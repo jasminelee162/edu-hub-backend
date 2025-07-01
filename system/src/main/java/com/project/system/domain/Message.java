@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
  *  超级管理员
  * @version 1.0
  * @description: 留言表
- *  2023/11/16 08:50
+ * 08:50
  */
 @Data
 @AllArgsConstructor

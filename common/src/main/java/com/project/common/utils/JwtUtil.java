@@ -32,7 +32,7 @@ public class JwtUtil {
     	userPhone
     * @return:
     *
-    * : 2023/9/14 11:19
+    * :
     */
     public static boolean verify(String token, String userId, String userPhone) {
         try {
@@ -52,7 +52,7 @@ public class JwtUtil {
     * @param: token
     * @return:
     *
-    * : 2023/9/14 11:19
+    * :
     */
     public static String getUserId(String token) {
         try {
@@ -69,7 +69,7 @@ public class JwtUtil {
     	userPhone
     * @return:
     *
-    * : 2023/9/14 11:19
+    * :
     */
     public static String sign(String userId, String userPhone) {
         Algorithm algorithm = Algorithm.HMAC256(userPhone);
@@ -86,7 +86,7 @@ public class JwtUtil {
     * @param: request
     * @return:
     *
-    * : 2023/9/14 11:20
+    * :
     */
     public static String getUserIdByToken(HttpServletRequest request) {
         String accessToken = getTokenByRequest(request);
@@ -98,7 +98,7 @@ public class JwtUtil {
     * @param: request
     * @return:
     *
-    * : 2023/9/14 11:20
+    * :
     */
     public static String getTokenByRequest(HttpServletRequest request) {
         return request.getHeader(Constants.X_ACCESS_TOKEN);

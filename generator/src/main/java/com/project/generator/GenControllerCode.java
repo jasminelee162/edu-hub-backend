@@ -13,7 +13,7 @@ import java.util.List;
  *  
  * @version 1.0
  * @description: controller代码生成类
- *  2023/10/13 16:46
+ * 16:46
  */
 public class GenControllerCode {
 
@@ -25,7 +25,7 @@ public class GenControllerCode {
         builder.append("package com.ape.apeadmin.controller.").append(name).append(";\n").append("\n").append("import annotation.com.project.common.Log;\n").append("import domain.com.project.common.Result;\n").append("import enums.com.project.common.BusinessType;\n").append("import enums.com.project.common.ResultCode;\n").append("import com.ape.apesystem.domain.").append(genTable.getClassName()).append(";\n").append("import com.ape.apesystem.service.").append(genTable.getClassName()).append("Service;\n").append("import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;\n").append("import com.baomidou.mybatisplus.extension.plugins.pagination.Page;\n").append("import org.apache.commons.lang3.StringUtils;\n").append("import org.springframework.beans.factory.annotation.Autowired;\n").append("import org.springframework.stereotype.Controller;\n").append("import org.springframework.transaction.annotation.Transactional;\n").append("import org.springframework.web.bind.annotation.*;\n\n");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm");
         String format = sdf.format(new Date());
-        builder.append("/**\n" + " * @author ").append(genTable.getFunctionAuthor()).append("\n").append(" * @version 1.0\n").append(" * @description: ").append(genTable.getBusinessName()).append("controller\n").append(" * @date ").append(format).append("\n").append(" */\n");
+        builder.append("/**\n" + " *  ").append(genTable.getFunctionAuthor()).append("\n").append(" * @version 1.0\n").append(" * @description: ").append(genTable.getBusinessName()).append("controller\n").append(" * @date ").append(format).append("\n").append(" */\n");
         builder.append("@Controller\n" + "@ResponseBody\n" + "@RequestMapping(\"").append(name).append("\")\n").append("public class ").append(genTable.getClassName()).append("Controller {\n\n");
         builder.append("     @Autowired\n" + "     private ").append(genTable.getClassName()).append("Service ").append(camel).append("Service;\n\n");
         //拼接分页方法

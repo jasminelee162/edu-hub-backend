@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
  *  超级管理员
  * @version 1.0
  * @description: 课程报名
- *  2023/11/21 03:15
+ *
  */
 @Data
 @AllArgsConstructor

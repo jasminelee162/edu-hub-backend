@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @version 1.0
  * @description: mapper接口代码生成类
- *  2023/10/13 15:36
+ * 15:36
  */
 public class GenMapperCode {
 

@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * @author 
+ *
  * @version 1.0
  * @description: 字典service实现类
- * @date 2023/10/9 14:31
+ * 
  */
 @Service
 public class DictDataServiceImpl extends ServiceImpl<DictDataMapper, DictData> implements DictDataService {

@@ -9,7 +9,7 @@ import java.util.List;
  *
  * @version 1.0
  * @description: 字典mapper
- * @date 2023/10/9 14:29
+ * 
  */
 public interface DictDataMapper extends BaseMapper<DictData> {
     //7.1 bug修改

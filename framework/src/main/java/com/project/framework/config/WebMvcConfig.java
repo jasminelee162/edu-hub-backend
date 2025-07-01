@@ -8,7 +8,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  *
  * @version 1.0
  * @description: 图片、视频、文件拦截
- * @date 2023/10/20 8:39
  */
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {

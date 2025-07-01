@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
  *  
  * @version 1.0
  * @description: mybatisplus配置类
- * @date 2023/8/31 9:02
  */
 @Controller
 public class MybatisPlusConfig {

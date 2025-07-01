@@ -15,7 +15,7 @@ import org.springframework.format.annotation.DateTimeFormat;
  *  超级管理员
  * @version 1.0
  * @description: 论坛
- *  2024/01/18 08:55
+ * 08:55
  */
 @Data
 @AllArgsConstructor

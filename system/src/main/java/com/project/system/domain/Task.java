@@ -15,7 +15,7 @@ import org.springframework.format.annotation.DateTimeFormat;
  *  超级管理员
  * @version 1.0
  * @description: 课程
- *  2023/11/17 11:28
+ *
  */
 @Data
 @AllArgsConstructor

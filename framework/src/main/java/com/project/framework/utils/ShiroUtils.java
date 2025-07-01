@@ -7,7 +7,7 @@ import org.apache.shiro.SecurityUtils;
  *
  * @version 1.0
  * @description: shiro工具类
- * @date 2023/9/12 10:52
+ *
  */
 public class ShiroUtils {
 
@@ -16,7 +16,7 @@ public class ShiroUtils {
     * @param:
     * @return:
     *
-    * @date: 2023/9/12 10:54
+    *
     */
     public static User getUserInfo(){
         return (User) SecurityUtils.getSubject().getPrincipal();

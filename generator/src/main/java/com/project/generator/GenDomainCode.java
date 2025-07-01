@@ -12,7 +12,7 @@ import java.util.List;
  *  
  * @version 1.0
  * @description: domain代码生成类
- *  2023/10/13 9:25
+ * 9:25
  */
 public class GenDomainCode {
 
