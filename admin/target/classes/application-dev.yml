@@ -8,7 +8,11 @@ spring:
       master:
         url: jdbc:mysql://localhost:3306/learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
         username: root
+<<<<<<< Updated upstream
         password: lzy0113zyl0416
+=======
+        password: 123
+>>>>>>> Stashed changes
       # 从库数据源
       slave:
         # 从数据源开关/默认关闭

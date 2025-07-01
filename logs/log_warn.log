@@ -1,0 +1,297 @@
+2025-07-01 00:20:01.500 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-01 00:20:18.726 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-01 00:21:13.059 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.transaction.CannotCreateTransactionException: Could not open JDBC Connection for transaction; nested exception is java.sql.SQLSyntaxErrorException: Unknown database 'learn']
+2025-07-01 00:21:33.640 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-01 00:22:02.088 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under '' to com.zaxxer.hikari.HikariDataSource]
+2025-07-01 00:23:31.643 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-01 00:24:16.912 [Thread-10] WARN  o.s.jdbc.support.SQLErrorCodesFactory - Error while extracting database name
+org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:366)
+	at org.springframework.jdbc.support.SQLErrorCodesFactory.resolveErrorCodes(SQLErrorCodesFactory.java:235)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.lambda$setDataSource$0(SQLErrorCodeSQLExceptionTranslator.java:140)
+	at org.springframework.util.function.SingletonSupplier.get(SingletonSupplier.java:97)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.setDataSource(SQLErrorCodeSQLExceptionTranslator.java:141)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.<init>(SQLErrorCodeSQLExceptionTranslator.java:102)
+	at org.springframework.jdbc.support.JdbcAccessor.getExceptionTranslator(JdbcAccessor.java:136)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:393)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:431)
+	at com.project.system.service.impl.SandboxInitializeImpl.lambda$initializeSandbox$0(SandboxInitializeImpl.java:50)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1514)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1490)
+	at org.h2.jdbc.JdbcConnection.getMetaData(JdbcConnection.java:400)
+	at com.zaxxer.hikari.pool.ProxyConnection.getMetaData(ProxyConnection.java:380)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.getMetaData(HikariProxyConnection.java)
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:340)
+	... 11 common frames omitted
+2025-07-01 00:24:16.914 [Thread-10] WARN  o.s.jdbc.support.SQLErrorCodesFactory - Error while extracting database name
+org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:366)
+	at org.springframework.jdbc.support.SQLErrorCodesFactory.resolveErrorCodes(SQLErrorCodesFactory.java:235)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.lambda$setDataSource$0(SQLErrorCodeSQLExceptionTranslator.java:140)
+	at org.springframework.util.function.SingletonSupplier.get(SingletonSupplier.java:97)
+	at org.springframework.util.function.SupplierUtils.resolve(SupplierUtils.java:40)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.getSqlErrorCodes(SQLErrorCodeSQLExceptionTranslator.java:171)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:193)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:393)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:431)
+	at com.project.system.service.impl.SandboxInitializeImpl.lambda$initializeSandbox$0(SandboxInitializeImpl.java:50)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1514)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1490)
+	at org.h2.jdbc.JdbcConnection.getMetaData(JdbcConnection.java:400)
+	at com.zaxxer.hikari.pool.ProxyConnection.getMetaData(ProxyConnection.java:380)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.getMetaData(HikariProxyConnection.java)
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:340)
+	... 12 common frames omitted
+2025-07-01 00:24:32.517 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-01 15:13:46.852 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-01 15:14:47.029 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-01 15:15:35.154 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-01 15:21:56.393 [http-nio-8080-exec-20] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state  FROM task_student     WHERE (task_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-01 15:32:33.254 [http-nio-8080-exec-43] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state  FROM task_student     WHERE (task_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-01 15:32:46.514 [http-nio-8080-exec-56] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state  FROM task_student     WHERE (task_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-01 15:33:30.700 [http-nio-8080-exec-15] WARN  c.b.m.e.plugins.inner.PaginationInnerInterceptor - optimize this sql to a count sql has exception, sql:"SELECT  id,param_name,param_key,param_value,within,remark,create_by,create_time,update_by,update_time  FROM param", exception:
+net.sf.jsqlparser.parser.ParseException: Encountered unexpected token: "within" "WITHIN"
+    at line 1, column 45.
+
+Was expecting one of:
+
+    "!"
+    "("
+    "*"
+    "+"
+    "-"
+    ":"
+    "?"
+    "@"
+    "@@"
+    "ACTION"
+    "ANY"
+    "BYTE"
+    "CASCADE"
+    "CASE"
+    "CAST"
+    "CHANGE"
+    "CHAR"
+    "CHARACTER"
+    "COLUMN"
+    "COLUMNS"
+    "COMMENT"
+    "COMMIT"
+    "CREATE"
+    "CURRENT"
+    "CYCLE"
+    "DESCRIBE"
+    "DISABLE"
+    "DO"
+    "DOUBLE"
+    "DUPLICATE"
+    "ENABLE"
+    "END"
+    "EXTRACT"
+    "FALSE"
+    "FIRST"
+    "FN"
+    "FOLLOWING"
+    "GROUP"
+    "GROUP_CONCAT"
+    "IF"
+    "IIF"
+    "INDEX"
+    "INSERT"
+    "INTERVAL"
+    "ISNULL"
+    "KEY"
+    "LAST"
+    "LEFT"
+    "LIMIT"
+    "MATCH"
+    "MATERIALIZED"
+    "NEXTVAL"
+    "NO"
+    "NOLOCK"
+    "NOT"
+    "NULL"
+    "NULLS"
+    "OFFSET"
+    "ON"
+    "OPEN"
+    "OPTIMIZE"
+    "ORDER"
+    "OVER"
+    "PARTITION"
+    "PATH"
+    "PERCENT"
+    "PRECISION"
+    "PRIMARY"
+    "PRIOR"
+    "PROCEDURE"
+    "RANGE"
+    "READ"
+    "REPLACE"
+    "RIGHT"
+    "ROW"
+    "ROWS"
+    "SCHEMA"
+    "SEPARATOR"
+    "SESSION"
+    "SET"
+    "SIBLINGS"
+    "SIZE"
+    "START"
+    "TABLE"
+    "TEMP"
+    "TEMPORARY"
+    "TOP"
+    "TRUE"
+    "TRUNCATE"
+    "TYPE"
+    "UNSIGNED"
+    "VALIDATE"
+    "VALUE"
+    "VALUES"
+    "VIEW"
+    "XML"
+    "ZONE"
+    "{"
+    "{d"
+    "{t"
+    "{ts"
+    "~"
+    <K_DATETIMELITERAL>
+    <K_DATE_LITERAL>
+    <K_TIME_KEY_EXPR>
+    <S_CHAR_LITERAL>
+    <S_DOUBLE>
+    <S_HEX>
+    <S_IDENTIFIER>
+    <S_LONG>
+    <S_QUOTED_IDENTIFIER>
+
+2025-07-01 15:37:14.556 [http-nio-8080-exec-39] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state  FROM task_student     WHERE (task_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-01 15:47:00.898 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'learn.experiment' doesn't exist
+### The error may exist in com/project/system/mapper/ExperimentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,label,url,subject  FROM experiment
+### Cause: java.sql.SQLSyntaxErrorException: Table 'learn.experiment' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'learn.experiment' doesn't exist]
+2025-07-01 15:47:27.077 [http-nio-8080-exec-56] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'learn.experiment' doesn't exist
+### The error may exist in com/project/system/mapper/ExperimentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,label,url,subject  FROM experiment
+### Cause: java.sql.SQLSyntaxErrorException: Table 'learn.experiment' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'learn.experiment' doesn't exist]
+2025-07-01 16:00:23.758 [http-nio-8080-exec-75] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state  FROM task_student     WHERE (task_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-01 16:00:32.028 [http-nio-8080-exec-92] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state  FROM task_student     WHERE (task_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-01 16:02:03.374 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state  FROM task_student     WHERE (task_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-01 16:06:33.902 [http-nio-8080-exec-24] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state  FROM task_student     WHERE (task_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-01 16:13:33.003 [http-nio-8080-exec-44] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state  FROM task_student     WHERE (task_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-01 16:13:33.365 [http-nio-8080-exec-53] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state  FROM task_student     WHERE (task_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-01 16:13:33.690 [http-nio-8080-exec-66] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state  FROM task_student     WHERE (task_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-01 16:14:27.499 [http-nio-8080-exec-11] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state  FROM task_student     WHERE (task_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-01 16:18:08.955 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'shiroEventBusAwareBeanPostProcessor' defined in class path resource [org/apache/shiro/spring/boot/autoconfigure/ShiroBeanAutoConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorizationAttributeSourceAdvisor' defined in class path resource [org/apache/shiro/spring/boot/autoconfigure/ShiroAnnotationProcessorAutoConfiguration.class]: Unsatisfied dependency expressed through method 'authorizationAttributeSourceAdvisor' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityManager' defined in class path resource [org/apache/shiro/spring/boot/autoconfigure/ShiroAutoConfiguration.class]: Unsatisfied dependency expressed through method 'securityManager' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'missingRealm' defined in class path resource [org/apache/shiro/spring/boot/autoconfigure/ShiroAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.shiro.realm.Realm]: Factory method 'missingRealm' threw exception; nested exception is org.apache.shiro.spring.boot.autoconfigure.exception.NoRealmBeanConfiguredException
+2025-07-01 16:18:16.712 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'shiroEventBusAwareBeanPostProcessor' defined in class path resource [org/apache/shiro/spring/boot/autoconfigure/ShiroBeanAutoConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorizationAttributeSourceAdvisor' defined in class path resource [org/apache/shiro/spring/boot/autoconfigure/ShiroAnnotationProcessorAutoConfiguration.class]: Unsatisfied dependency expressed through method 'authorizationAttributeSourceAdvisor' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityManager' defined in class path resource [org/apache/shiro/spring/boot/autoconfigure/ShiroAutoConfiguration.class]: Unsatisfied dependency expressed through method 'securityManager' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'missingRealm' defined in class path resource [org/apache/shiro/spring/boot/autoconfigure/ShiroAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.shiro.realm.Realm]: Factory method 'missingRealm' threw exception; nested exception is org.apache.shiro.spring.boot.autoconfigure.exception.NoRealmBeanConfiguredException
