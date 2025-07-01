@@ -10,6 +10,4 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @date 2023/11/21 03:15
  */
 public interface TaskStudentService extends IService<TaskStudent> {
-    boolean unRead(String taskName);
-    void checked(String taskName,String userName);
 }

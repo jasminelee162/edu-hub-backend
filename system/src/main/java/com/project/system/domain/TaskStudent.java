@@ -110,6 +110,4 @@ public class TaskStudent implements Serializable {
     @TableField(exist = false)
     private String classification;
 
-    private int checked;
-
 }

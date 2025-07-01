@@ -21,8 +21,8 @@ public class UserDocument {
     @TableField("share_token")
     private String shareToken; // 分享标识
 
-    @TableField("base_template_id")
-    private String baseTemplateId;
+    @TableField("base_template")
+    private Template baseTemplate;
 
     @TableField("user_id")
     private String userId;

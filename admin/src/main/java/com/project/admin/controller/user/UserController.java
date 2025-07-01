@@ -310,11 +310,4 @@ public class UserController {
         }
     }
 
-
-    //获取是否有未审核的入驻教师申请
-    @GetMapping("unread")
-    public Result unread() {
-        return Result.success(userService.unRead());
-    }
-
 }

@@ -40,7 +40,7 @@ public class DocumentServiceImpl implements DocumentService {
         UserDocument doc = new UserDocument();
         doc.setTitle(template.getName());
         doc.setUserId(userId);
-        doc.setBaseTemplateId(template.getId());
+        doc.setBaseTemplate(template);
         doc.setCreatedAt(LocalDateTime.now());
         String shareToken = UUID.randomUUID().toString();
         doc.setShareToken(shareToken);
