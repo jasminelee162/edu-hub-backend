@@ -1,7 +1,9 @@
 package com.project.system.domain;
 
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.project.common.enums.SharePermission;
 import lombok.Data;
@@ -13,6 +15,7 @@ import java.time.LocalDateTime;
 @TableName("document_template")
 public class Template {
     @Id
+    @TableId(type = IdType.AUTO)
     private String id;
     private String name;
 

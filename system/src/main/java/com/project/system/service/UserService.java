@@ -4,6 +4,8 @@ import com.project.system.domain.User;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * @author shaozhujie
  * @version 1.0
@@ -20,5 +22,6 @@ public interface UserService extends IService<User> {
     * @date: 2023/8/28 10:49
     */
     Page<User> getUserPage(User user);
+    List<String> unRead();
 
 }
