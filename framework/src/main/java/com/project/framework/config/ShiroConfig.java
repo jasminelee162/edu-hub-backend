@@ -21,10 +21,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * @author shaozhujie
+ *  
  * @version 1.0
  * @description: shiro配置类
- * @date 2023/8/11 9:14
  */
 @Configuration
 public class ShiroConfig {
@@ -33,8 +32,8 @@ public class ShiroConfig {
     * @description: 定义shiro过滤链
     * @param: securityManager
     * @return:
-    * @author shaozhujie
-    * @date: 2023/9/14 11:06
+    *  
+    *
     */
     @Bean("shiroFilter")
     public ShiroFilterFactoryBean shiroFilter(DefaultWebSecurityManager securityManager) {
@@ -68,8 +67,8 @@ public class ShiroConfig {
     * @param: shiroRealm
     	redisProperties
     * @return:
-    * @author shaozhujie
-    * @date: 2023/9/14 11:06
+    *  
+    *
     */
     @Bean("securityManager")
     public DefaultWebSecurityManager securityManager(ShiroRealm shiroRealm, RedisProperties redisProperties) {
@@ -90,8 +89,8 @@ public class ShiroConfig {
     * @description: cacheManager 缓存 redis实现使用的是shiro-redis开源插件
     * @param: redisProperties
     * @return:
-    * @author shaozhujie
-    * @date: 2023/9/14 11:06
+    *
+    *
     */
     public RedisCacheManager redisCacheManager(RedisProperties redisProperties) {
         RedisCacheManager redisCacheManager = new RedisCacheManager();
@@ -107,8 +106,8 @@ public class ShiroConfig {
     * @description: * 配置shiro redisManager使用的是shiro-redis开源插件
     * @param: redisProperties
     * @return:
-    * @author shaozhujie
-    * @date: 2023/9/14 11:06
+    *
+    *
     */
     @Bean
     public RedisManager redisManager(RedisProperties redisProperties) {
@@ -132,8 +131,8 @@ public class ShiroConfig {
     * @description: 高版本shrio增加配置，否则类里方法上有@RequiresPermissions注解的，会导致整个类下的接口无法访问404
     * @param:
     * @return:
-    * @author shaozhujie
-    * @date: 2023/9/14 11:07
+    *
+    *
     */
     @Bean
     public DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator() {

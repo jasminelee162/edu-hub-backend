@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /**
- * @author shaozhujie
+ *  
  * @version 1.0
  * @description: 代码生成字段表
- * @date 2023/10/9 11:28
+ *
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

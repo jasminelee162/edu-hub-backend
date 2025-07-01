@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /**
- * @author 超级管理员
+ *  超级管理员
  * @version 1.0
  * @description: 课程收藏
- * @date 2024/01/18 01:51
+ *
  */
 @Data
 @AllArgsConstructor

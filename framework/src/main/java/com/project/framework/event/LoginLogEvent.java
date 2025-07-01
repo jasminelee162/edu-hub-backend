@@ -4,10 +4,10 @@ import com.project.system.domain.LoginLog;
 import org.springframework.context.ApplicationEvent;
 
 /**
- * @author shaozhujie
+ *  
  * @version 1.0
  * @description: 登陆日志监听类
- * @date 2023/9/23 10:06
+ *
  */
 public class LoginLogEvent extends ApplicationEvent {
 

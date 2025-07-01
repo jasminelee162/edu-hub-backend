@@ -7,8 +7,6 @@ import java.lang.annotation.*;
 
 /**
 * @description: 操作日志注解
-* @author shaozhujie
-* @date 2023/9/22 10:23
 * @version 1.0
 */
 @Target({ElementType.PARAMETER, ElementType.METHOD})

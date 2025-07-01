@@ -3,10 +3,10 @@ package com.ape.apeframework.config;
 import org.apache.shiro.authc.AuthenticationToken;
 
 /**
- * @author shaozhujie
+ *
  * @version 1.0
  * @description: 自定义token
- * @date 2023/9/7 15:21
+ * 
  */
 public class JwtToken implements AuthenticationToken {
 

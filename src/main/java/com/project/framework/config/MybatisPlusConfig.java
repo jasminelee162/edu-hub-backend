@@ -7,10 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 
 /**
- * @author shaozhujie
+ *
  * @version 1.0
  * @description: mybatisplus配置类
- * @date 2023/8/31 9:02
  */
 @Controller
 public class MybatisPlusConfig {

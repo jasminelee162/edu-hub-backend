@@ -6,10 +6,8 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 /**
- * @author shaozhujie
  * @version 1.0
  * @description: 字符编码转换
- * @date 2023/8/10 16:30
  */
 public class CharsetKit {
 

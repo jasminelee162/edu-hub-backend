@@ -17,10 +17,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @author shaozhujie
  * @version 1.0
  * @description: 岗位controller
- * @date 2023/8/30 16:33
  */
 @Controller
 @ResponseBody

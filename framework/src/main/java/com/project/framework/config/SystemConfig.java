@@ -4,10 +4,9 @@ import org.springframework.stereotype.Component;
 //import sun.plugin2.util.SystemUtil;
 
 /**
- * @author jas
+ *  jas
  * @version 1.0
  * @description: 项目整体配置信息
- * @date 2025/6/26
  */
 @Component
 @ConfigurationProperties(prefix = "system")

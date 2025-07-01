@@ -11,10 +11,10 @@ import lombok.experimental.Accessors;
 import java.util.List;
 
 /**
- * @author shaozhujie
+ *  
  * @version 1.0
  * @description: 生成字典编辑DTO
- * @date 2023/10/12 15:43
+ *
  */
 @Data
 @EqualsAndHashCode()

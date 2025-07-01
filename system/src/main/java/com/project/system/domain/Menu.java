@@ -14,10 +14,10 @@ import lombok.experimental.Accessors;
 import java.util.List;
 
 /**
- * @author shaozhujie
+ *  
  * @version 1.0
  * @description: 菜单
- * @date 2023/8/30 9:05
+ *  2023/8/30 9:05
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

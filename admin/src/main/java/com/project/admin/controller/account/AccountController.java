@@ -14,10 +14,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @author shaozhujie
  * @version 1.0
  * @description: 公告controller
- * @date 2023/9/21 8:48
  */
 @Controller
 @ResponseBody

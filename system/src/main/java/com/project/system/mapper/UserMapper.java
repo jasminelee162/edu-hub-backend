@@ -6,10 +6,10 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Param;
 
 /**
- * @author shaozhujie
+ *  
  * @version 1.0
  * @description: 用户mapper
- * @date 2023/8/28 8:41
+ *
  */
 public interface UserMapper extends BaseMapper<User> {
 
