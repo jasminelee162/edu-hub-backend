@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /**
- *  shaozhujie
+ *  
  * @version 1.0
  * @description: 字典数据
  *  2023/10/9 14:23

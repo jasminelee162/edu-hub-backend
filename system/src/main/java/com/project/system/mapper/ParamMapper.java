@@ -4,7 +4,7 @@ import com.project.system.domain.Param;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
- * @author shaozhujie
+ * @author 
  * @version 1.0
  * @description: 参数mapper
  * @date 2023/9/20 16:50

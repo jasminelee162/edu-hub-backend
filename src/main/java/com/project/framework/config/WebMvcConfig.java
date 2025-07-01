@@ -5,7 +5,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * @author shaozhujie
+ * @author 
  * @version 1.0
  * @description: 图片、视频、文件拦截
  * @date 2023/10/20 8:39

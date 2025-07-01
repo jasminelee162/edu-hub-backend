@@ -4,7 +4,7 @@ import com.project.system.domain.OperateLog;
 import org.springframework.context.ApplicationEvent;
 
 /**
- *  shaozhujie
+ *  
  * @version 1.0
  * @description: 操作日志监听类
  *  2023/9/22 10:57

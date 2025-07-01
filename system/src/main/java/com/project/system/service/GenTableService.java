@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import java.util.Map;
 
 /**
- * @author shaozhujie
+ * @author 
  * @version 1.0
  * @description: 代码生成service
  * @date 2023/10/10 9:23
@@ -18,7 +18,7 @@ public interface GenTableService extends IService<GenTable> {
     * @description: 获取数据库表
     * @param:
     * @return:
-    * @author shaozhujie
+    * @author 
     * @date: 2023/10/10 15:36
     */
     Page<Map<String,Object>> getTables(GenTable genTable);
@@ -27,7 +27,7 @@ public interface GenTableService extends IService<GenTable> {
      * @description: 获取数据库表详情
      * @param:
      * @return:
-     * @author shaozhujie
+     * @author 
      * @date: 2023/10/10 15:36
      */
     Map<String, Object> getTablesInfo(String table);

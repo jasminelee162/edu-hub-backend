@@ -13,7 +13,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 /**
- *  shaozhujie
+ *  
  * @version 1.0
  * @description: 登陆日志
  *  2023/9/23 8:47

@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
- * @author shaozhujie
+ * @author 
  * @version 1.0
  * @description: 登陆日志service实现类
  * @date 2023/9/23 8:52

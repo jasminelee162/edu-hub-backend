@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 //import sun.plugin2.util.SystemUtil;
 
 /**
- * @author shaozhujie
+ * @author 
  * @version 1.0
  * @description: 项目整体配置信息
  * @date 2023/9/21 16:42

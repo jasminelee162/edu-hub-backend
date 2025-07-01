@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import java.util.List;
 
 /**
- * @author shaozhujie
+ *
  * @version 1.0
  * @description: 字典mapper
  * @date 2023/10/9 14:29

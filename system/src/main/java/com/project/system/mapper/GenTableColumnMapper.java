@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author shaozhujie
+ * @author
  * @version 1.0
  * @description: 代码生成字段mapper
  * @date 2023/10/10 9:26
@@ -19,7 +19,7 @@ public interface GenTableColumnMapper extends BaseMapper<GenTableColumn> {
      * @description: 获取表字段
      * @param: table
      * @return:
-     * @author shaozhujie
+     * @author
      * @date: 2023/10/11 9:45
      */
     List<Map<String, Object>> getTableField(@Param("table") String table);

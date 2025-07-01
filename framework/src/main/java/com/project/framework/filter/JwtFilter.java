@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @author shaozhujie
+ * @author 
  * @version 1.0
  * @description: jwt过滤器
  * @date 2023/8/11 9:59
@@ -32,7 +32,7 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     	response
     	mappedValue
     * @return:
-    * @author shaozhujie
+    * @author 
     * @date: 2023/9/7 15:02
     */
     private static final List<String> EXCLUDED_URLS = Arrays.asList(

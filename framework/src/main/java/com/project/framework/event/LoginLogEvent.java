@@ -4,7 +4,7 @@ import com.project.system.domain.LoginLog;
 import org.springframework.context.ApplicationEvent;
 
 /**
- *  shaozhujie
+ *  
  * @version 1.0
  * @description: 登陆日志监听类
  *  2023/9/23 10:06

@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /**
- *  shaozhujie
+ *  
  * @version 1.0
  * @description: 代码生成字段表
  *  2023/10/9 11:28

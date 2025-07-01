@@ -21,7 +21,7 @@ import org.springframework.stereotype.Component;
 import java.util.Set;
 
 /**
- *  shaozhujie
+ *  
  * @version 1.0
  * @description: 自定义realm
  * @date 2023/9/7 14:38
@@ -53,7 +53,7 @@ public class ShiroRealm extends AuthorizingRealm {
     * @description: 授权
     * @param: principals
     * @return:
-    * @author shaozhujie
+    * @author 
     * @date: 2023/9/7 15:11
     */
     @Override
@@ -81,7 +81,7 @@ public class ShiroRealm extends AuthorizingRealm {
     * @description: 认证
     * @param: token
     * @return:
-    * @author shaozhujie
+    * @author 
     * @date: 2023/9/7 15:11
     */
     @Override
@@ -101,7 +101,7 @@ public class ShiroRealm extends AuthorizingRealm {
      *因此默认是不是输出message的，只要开启就可以了,否则无法拿到shiro抛出异常信息message
     * @param: token
     * @return:
-    * @author shaozhujie
+    * @author 
     * @date: 2023/9/14 11:12
     */
     public User checkUserTokenIsEffect(String token) throws AuthenticationException {
@@ -139,7 +139,7 @@ public class ShiroRealm extends AuthorizingRealm {
     	userId
     	password
     * @return:
-    * @author shaozhujie
+    * @author 
     * @date: 2023/9/14 11:12
     */
     public boolean jwtTokenRefresh(String token, String userId, String password) {
@@ -159,7 +159,7 @@ public class ShiroRealm extends AuthorizingRealm {
     * @description: 清除当前用户的权限认证缓存
     * @param: principals
     * @return:
-    * @author shaozhujie
+    * @author 
     * @date: 2023/9/7 15:10
     */
     @Override

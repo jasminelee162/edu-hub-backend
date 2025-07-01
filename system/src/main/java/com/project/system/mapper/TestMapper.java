@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.Map;
 
 /**
- * @author 超级管理员
+ *  超级管理员
  * @version 1.0
  * @description: 考试mapper
  * @date 2023/11/20 11:28

@@ -9,7 +9,7 @@ import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
- * @author shaozhujie
+ * @author 
  * @version 1.0
  * @description: redis配置类
  * @date 2023/8/11 9:02
@@ -35,7 +35,7 @@ public class RedisConfig {
     * @param: redisTemplate
     	factory
     * @return:
-    * @author shaozhujie
+    * @author 
     * @date: 2023/9/14 11:05
     */
     private void setSerializer(RedisTemplate<String, Object> redisTemplate,

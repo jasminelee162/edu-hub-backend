@@ -3,7 +3,7 @@ package com.project.framework.config;
 import org.apache.shiro.authc.AuthenticationToken;
 
 /**
- * @author shaozhujie
+ * @author 
  * @version 1.0
  * @description: 自定义token
  * @date 2023/9/7 15:21

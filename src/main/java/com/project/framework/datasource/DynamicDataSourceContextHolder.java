@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author shaozhujie
+ * @author
  * @version 1.0
  * @description: 数据源上下文配置
  * @date 2023/8/10 16:13
@@ -19,7 +19,7 @@ public class DynamicDataSourceContextHolder {
      *  所以每一个线程都可以独立地改变自己的副本，而不会影响其它线程所对应的副本。
     * @param: null
     * @return:
-    * @author shaozhujie
+    * @author
     * @date: 2023/9/14 11:13
     */
     private static final ThreadLocal<String> CONTEXT_HOLDER = new ThreadLocal<>();

@@ -4,7 +4,7 @@ import com.project.system.domain.Dept;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * @author shaozhujie
+ * @author 
  * @version 1.0
  * @description: 部门service
  * @date 2023/8/28 10:13

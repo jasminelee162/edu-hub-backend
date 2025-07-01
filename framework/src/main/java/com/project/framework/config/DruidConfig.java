@@ -77,7 +77,7 @@ public class DruidConfig {
     * @description: 去除监控页面底部的广告
     * @param: properties
     * @return:
-    *  shaozhujie
+    *  
     * @date: 2023/9/14 11:04
     */
     @SuppressWarnings({ "rawtypes", "unchecked" })
