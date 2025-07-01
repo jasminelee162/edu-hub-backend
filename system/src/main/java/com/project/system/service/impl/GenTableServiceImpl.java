@@ -56,6 +56,10 @@ public class GenTableServiceImpl extends ServiceImpl<GenTableMapper, GenTable> i
      */
     @Override
     public Map<String, Object> getTablesInfo(String table) {
-        return baseMapper.getTablesInfo(table);
+        Map<String, Object> tablesInfo = baseMapper.getTablesInfo(table);
+        if (tablesInfo == null) {
+            throw new RuntimeException("表" + table + "不存在于数据库中");
+        }
+        return tablesInfo;
     }
 }

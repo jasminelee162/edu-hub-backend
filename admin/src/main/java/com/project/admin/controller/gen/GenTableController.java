@@ -1,6 +1,7 @@
 package com.project.admin.controller.gen;
 
 import com.alibaba.fastjson2.JSONObject;
+import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.project.common.annotation.Log;
 import com.project.common.domain.Result;
 import com.project.common.enums.BusinessType;
@@ -22,6 +23,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -186,7 +188,7 @@ public class GenTableController {
     }
 
     /** 同步生成表和字段 */
-    @GetMapping("syncTableAndColumns")
+    /*@GetMapping("syncTableAndColumns")
     @Log(name = "同步生成表和字段", type = BusinessType.UPDATE)
     @Transactional(rollbackFor = Exception.class)
     public Result syncTableAndColumns(@RequestParam("id")String id) {
@@ -251,6 +253,122 @@ public class GenTableController {
             genTableColumnService.save(genTableColumn);
         }
         return Result.success();
+    }*/
+
+    /**
+     * 同步生成表和字段
+     */
+    @GetMapping("syncTableAndColumns")
+    @Log(name = "同步生成表和字段", type = BusinessType.UPDATE)
+    @Transactional(rollbackFor = Exception.class)
+    public Result syncTableAndColumns(@RequestParam("id") String id) {
+        try {
+            // 1. 校验ID有效性
+            if (StringUtils.isBlank(id)) {
+                return Result.fail("ID不能为空");
+            }
+
+            // 2. 获取代码生成配置
+            GenTable genTable = genTableService.getById(id);
+            if (genTable == null) {
+                return Result.fail("未找到对应的代码生成配置");
+            }
+
+            String tableName = genTable.getTableName();
+
+            // 3. 检查表是否存在
+            Map<String, Object> tablesInfo = genTableService.getTablesInfo(tableName);
+            if (tablesInfo == null || tablesInfo.isEmpty()) {
+                String errorMsg = String.format("表[%s]不存在于数据库中，请检查表名是否正确", tableName);
+                return Result.fail(errorMsg);
+            }
+
+            // 4. 更新表信息
+            genTable.setTableComment(String.valueOf(tablesInfo.get("tableComment")));
+            genTable.setFunctionName(genTable.getTableComment());
+            genTable.setBusinessName(genTable.getTableComment());
+            boolean updateTable = genTableService.updateById(genTable);
+            if (!updateTable) {
+                throw new RuntimeException("更新表信息失败");
+            }
+
+            // 5. 获取表字段信息
+            List<Map<String, Object>> columns = genTableColumnService.getTableField(tableName);
+            if (CollectionUtils.isEmpty(columns)) {
+                String warnMsg = String.format("表[%s]没有查询到任何字段信息", tableName);
+                return Result.fail(warnMsg);
+            }
+
+            // 6. 先删除原有字段配置
+            QueryWrapper<GenTableColumn> queryWrapper = new QueryWrapper<>();
+            queryWrapper.eq("table_id", genTable.getId());
+            genTableColumnService.remove(queryWrapper);
+
+            // 7. 重新保存字段配置
+            List<GenTableColumn> columnList = new ArrayList<>();
+            for (Map<String, Object> column : columns) {
+                GenTableColumn genTableColumn = new GenTableColumn();
+                // 设置字段基础信息
+                genTableColumn.setTableId(genTable.getId());
+                genTableColumn.setColumnName(String.valueOf(column.get("name")));
+                genTableColumn.setColumnComment(String.valueOf(column.get("comment")));
+                genTableColumn.setColumnType(String.valueOf(column.get("column")));
+
+                // 设置字段属性（主键、必填等）
+                if ("PRI".equalsIgnoreCase(String.valueOf(column.get("key")))) {
+                    genTableColumn.setIsPk(1);
+                    genTableColumn.setIsQuery(0);
+                    genTableColumn.setIsList(0);
+                    genTableColumn.setIsEdit(0);
+                } else {
+                    genTableColumn.setIsPk(0);
+                }
+
+                genTableColumn.setIsRequired("NO".equalsIgnoreCase(String.valueOf(column.get("isNull"))) ? 1 : 0);
+
+                // 设置Java类型
+                String type = String.valueOf(column.get("type")).toLowerCase();
+                switch (type) {
+                    case "varchar":
+                    case "text":
+                    case "longtext":
+                        genTableColumn.setJavaType("String");
+                        break;
+                    case "int":
+                    case "smallint":
+                        genTableColumn.setJavaType("Integer");
+                        break;
+                    case "bigint":
+                        genTableColumn.setJavaType("Long");
+                        break;
+                    case "decimal":
+                        genTableColumn.setJavaType("BigDecimal");
+                        break;
+                    case "datetime":
+                        genTableColumn.setJavaType("Date");
+                        genTableColumn.setHtmlType("日期控件");
+                        break;
+                    case "tinyint":
+                        genTableColumn.setJavaType("Boolean");
+                        break;
+                    default:
+                        genTableColumn.setJavaType("String");
+                }
+
+                genTableColumn.setJavaField(HumpUtils.toSmallCamel(genTableColumn.getColumnName(), "_"));
+                columnList.add(genTableColumn);
+            }
+
+            // 批量保存字段
+            boolean saveBatch = genTableColumnService.saveBatch(columnList);
+            if (!saveBatch) {
+                throw new RuntimeException("保存字段信息失败");
+            }
+
+            return Result.success();
+        } catch (Exception e) {
+            return Result.fail("同步失败: " + e.getMessage());
+        }
     }
 
     /** 预览 */
