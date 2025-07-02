@@ -21,7 +21,7 @@ public interface GenTableMapper extends BaseMapper<GenTable> {
     * @param:
     * @return: 
     * @author shaozhujie
-    * @date: 2023/10/10 15:37
+    * 
     */
     Page<Map<String, Object>> getTables(Page<Map<String, Object>> page, @Param("ew") GenTable genTable, @Param("tables") List<String> tables);
 
@@ -30,7 +30,7 @@ public interface GenTableMapper extends BaseMapper<GenTable> {
      * @param:
      * @return:
      * @author shaozhujie
-     * @date: 2023/10/10 15:37
+     * 
      */
     Map<String, Object> getTablesInfo(@Param("tableName") String table);
 }

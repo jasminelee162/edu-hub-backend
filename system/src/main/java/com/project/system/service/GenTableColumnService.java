@@ -19,7 +19,7 @@ public interface GenTableColumnService extends IService<GenTableColumn> {
     * @param: table
     * @return:
     * @author shaozhujie
-    * @date: 2023/10/11 9:45
+    * 
     */
     List<Map<String, Object>> getTableField(String table);
 }

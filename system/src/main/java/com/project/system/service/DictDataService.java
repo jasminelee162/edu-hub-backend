@@ -3,6 +3,8 @@ package com.project.system.service;
 import com.project.system.domain.DictData;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * @author shaozhujie
  * @version 1.0
@@ -10,4 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @date 2023/10/9 14:30
  */
 public interface DictDataService extends IService<DictData> {
+    List<DictData> getDistinctDictTypes();
 }

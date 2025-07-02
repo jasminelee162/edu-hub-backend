@@ -36,7 +36,7 @@ public class RedisConfig {
     	factory
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:05
+    * 
     */
     private void setSerializer(RedisTemplate<String, Object> redisTemplate,
                                RedisConnectionFactory factory) {
