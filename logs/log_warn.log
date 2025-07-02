@@ -264,3 +264,5 @@ Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is alrea
 	at com.zaxxer.hikari.pool.HikariProxyConnection.getMetaData(HikariProxyConnection.java)
 	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:340)
 	... 12 common frames omitted
+2025-07-02 17:13:07.774 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-02 17:15:18.494 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath

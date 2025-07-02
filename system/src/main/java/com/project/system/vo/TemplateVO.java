@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 @Data
 public class TemplateVO {
-    private String id;
+    private int id;
     private String name;
     private String filetype;
     private LocalDateTime createAt;
