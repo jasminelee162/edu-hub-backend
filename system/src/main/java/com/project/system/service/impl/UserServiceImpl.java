@@ -1,6 +1,7 @@
 package com.project.system.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.project.system.domain.TaskStudent;
 import com.project.system.domain.User;
 import com.project.system.mapper.UserMapper;
@@ -38,10 +39,21 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         List<String> list = new ArrayList<>();
         List<User> userList=userMapper.selectList(null);
         for(User user:userList){
-            if(user.getDelFlag()==1){
+            if(user.getChecked()==1&&user.getUserType()==1){
                 list.add(user.getUserName());
             }
         }
         return list;
     }
+
+    public void checked(String userName){
+        User updateEntity = new User();
+        updateEntity.setChecked(0);    // 要更新的分数
+        LambdaUpdateWrapper<User> userWrapper = new LambdaUpdateWrapper<>();
+        userWrapper
+                .eq(User::getUserName, userName);
+        userMapper.update(updateEntity, userWrapper);
+    }
+
+
 }

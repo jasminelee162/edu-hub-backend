@@ -19,7 +19,7 @@ public interface MenuMapper extends BaseMapper<Menu> {
     * @param: id
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/13 9:39
+    * 
     */
     List<Menu> getMenuByUser(@Param("id") String id);
 

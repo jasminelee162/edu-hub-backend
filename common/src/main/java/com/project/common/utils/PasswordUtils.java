@@ -16,7 +16,7 @@ public class PasswordUtils {
     * @param: password
     * @return: String
     * @author shaozhujie
-    * @date: 2023/9/1 10:21
+    * 
     */
     public static String encrypt(String password) {
         // 1.产生盐值
@@ -33,7 +33,7 @@ public class PasswordUtils {
      * @param: password
      * @return: String
      * @author shaozhujie
-     * @date: 2023/9/1 10:21
+     * 
      */
     public static String encrypt(String password, String salt) {
         // 1.使用(盐值+明文密码)得到加密的密码
@@ -48,7 +48,7 @@ public class PasswordUtils {
      * @param: password
      * @return: String
      * @author shaozhujie
-     * @date: 2023/9/1 10:21
+     * 
      */
     public static boolean decrypt(String password, String dbPassword) {
         boolean result = false;

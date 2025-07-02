@@ -33,11 +33,11 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     	mappedValue
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/7 15:02
+    * 
     */
     private static final List<String> EXCLUDED_URLS = Arrays.asList(
             "/ai","/suggestion","/sandbox/execute","/sandbox/questions","/sandbox/description"
-            ,"/sandbox/title"
+            ,"/sandbox/title","/user/unread","/template/show"
     );
     @SneakyThrows
     @Override

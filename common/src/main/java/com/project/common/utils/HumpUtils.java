@@ -16,7 +16,7 @@ public class HumpUtils {
      * @param: str
      * @return:
      * @author shaozhujie
-     * @date: 2023/10/11 9:30
+     * 
      */
     public static String toCamel(String str,String ch){
         StringBuilder stringBuffer = new StringBuilder();
@@ -36,7 +36,7 @@ public class HumpUtils {
      * @param: str
      * @return:
      * @author shaozhujie
-     * @date: 2023/10/11 9:30
+     * 
      */
     public static String toSmallCamel(String str,String ch){
         StringBuilder stringBuffer = new StringBuilder();
@@ -60,7 +60,7 @@ public class HumpUtils {
      * @param: str
      * @return:
      * @author shaozhujie
-     * @date: 2023/10/11 9:30
+     * 
      */
     public static String CameltoUnderLine(String str){
         Pattern compile = Pattern.compile("[A-Z]");

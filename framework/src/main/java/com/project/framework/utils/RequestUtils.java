@@ -24,7 +24,7 @@ public class RequestUtils {
     	json
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 15:39
+    * 
     */
     public static void returnJson(HttpServletResponse response, String json) throws Exception{
         response.setCharacterEncoding("UTF-8");

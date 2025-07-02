@@ -19,7 +19,7 @@ public interface GenTableService extends IService<GenTable> {
     * @param:
     * @return:
     * @author shaozhujie
-    * @date: 2023/10/10 15:36
+    * 
     */
     Page<Map<String,Object>> getTables(GenTable genTable);
 
@@ -28,7 +28,7 @@ public interface GenTableService extends IService<GenTable> {
      * @param:
      * @return:
      * @author shaozhujie
-     * @date: 2023/10/10 15:36
+     * 
      */
     Map<String, Object> getTablesInfo(String table);
 }

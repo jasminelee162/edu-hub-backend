@@ -18,7 +18,7 @@ public interface DeptMapper extends BaseMapper<Dept> {
     * @description: 查询下拉列表
     * @return: List
     * @author shaozhujie
-    * @date: 2023/8/29 10:43
+    * 
     */
     List<Map<String, Object>> getDeptDrop();
 
@@ -26,7 +26,7 @@ public interface DeptMapper extends BaseMapper<Dept> {
      * @description: 查询一级部门
      * @return: List
      * @author shaozhujie
-     * @date: 2023/8/29 10:43
+     * 
      */
     List<Map<String, Object>> getDeptDropFirst();
 }

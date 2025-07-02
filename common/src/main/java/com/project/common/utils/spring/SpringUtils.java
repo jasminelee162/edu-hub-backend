@@ -41,7 +41,7 @@ public class SpringUtils implements BeanFactoryPostProcessor, ApplicationContext
     * @param: name
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:18
+    * 
     */
     @SuppressWarnings("unchecked")
     public static <T> T getBean(String name) throws BeansException
@@ -54,7 +54,7 @@ public class SpringUtils implements BeanFactoryPostProcessor, ApplicationContext
     * @param: clz
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:18
+    * 
     */
     public static <T> T getBean(Class<T> clz) throws BeansException
     {
@@ -67,7 +67,7 @@ public class SpringUtils implements BeanFactoryPostProcessor, ApplicationContext
     * @param: name
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:18
+    * 
     */
     public static boolean containsBean(String name)
     {
@@ -79,7 +79,7 @@ public class SpringUtils implements BeanFactoryPostProcessor, ApplicationContext
     * @param: name
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:18
+    * 
     */
     public static boolean isSingleton(String name) throws NoSuchBeanDefinitionException
     {
@@ -91,7 +91,7 @@ public class SpringUtils implements BeanFactoryPostProcessor, ApplicationContext
     * @param: name
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:18
+    * 
     */
     public static Class<?> getType(String name) throws NoSuchBeanDefinitionException
     {
@@ -103,7 +103,7 @@ public class SpringUtils implements BeanFactoryPostProcessor, ApplicationContext
     * @param: name
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:18
+    * 
     */
     public static String[] getAliases(String name) throws NoSuchBeanDefinitionException
     {
@@ -115,7 +115,7 @@ public class SpringUtils implements BeanFactoryPostProcessor, ApplicationContext
     * @param: invoker
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:19
+    * 
     */
     @SuppressWarnings("unchecked")
     public static <T> T getAopProxy(T invoker)
@@ -128,7 +128,7 @@ public class SpringUtils implements BeanFactoryPostProcessor, ApplicationContext
     * @param:
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:19
+    * 
     */
     public static String[] getActiveProfiles()
     {
@@ -140,7 +140,7 @@ public class SpringUtils implements BeanFactoryPostProcessor, ApplicationContext
     * @param:
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:19
+    * 
     */
     public static String getActiveProfile()
     {
@@ -153,7 +153,7 @@ public class SpringUtils implements BeanFactoryPostProcessor, ApplicationContext
     * @param: key
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:19
+    * 
     */
     public static String getRequiredProperty(String key)
     {

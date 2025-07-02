@@ -34,7 +34,7 @@ public class ShiroConfig {
     * @param: securityManager
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:06
+    * 
     */
     @Bean("shiroFilter")
     public ShiroFilterFactoryBean shiroFilter(DefaultWebSecurityManager securityManager) {
@@ -44,9 +44,9 @@ public class ShiroConfig {
         Map<String, String> filterMap = new LinkedHashMap<>();
         filterMap.put("/login", "anon");
         filterMap.put("/login/register", "anon");
-        filterMap.put("/classification/getApeClassificationList", "anon");
-        filterMap.put("/school/getApeSchoolList", "anon");
-        filterMap.put("/major/getApeMajorList", "anon");
+        filterMap.put("/classification/getClassificationList", "anon");
+        filterMap.put("/school/getSchoolList", "anon");
+        filterMap.put("/major/getMajorList", "anon");
         filterMap.put("/user/setUserAvatar/**", "anon");
         filterMap.put("/common/**", "anon");
         filterMap.put("/img/**", "anon");
@@ -69,7 +69,7 @@ public class ShiroConfig {
     	redisProperties
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:06
+    * 
     */
     @Bean("securityManager")
     public DefaultWebSecurityManager securityManager(ShiroRealm shiroRealm, RedisProperties redisProperties) {
@@ -91,7 +91,7 @@ public class ShiroConfig {
     * @param: redisProperties
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:06
+    * 
     */
     public RedisCacheManager redisCacheManager(RedisProperties redisProperties) {
         RedisCacheManager redisCacheManager = new RedisCacheManager();
@@ -108,7 +108,7 @@ public class ShiroConfig {
     * @param: redisProperties
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:06
+    * 
     */
     @Bean
     public RedisManager redisManager(RedisProperties redisProperties) {
@@ -133,7 +133,7 @@ public class ShiroConfig {
     * @param:
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:07
+    * 
     */
     @Bean
     public DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator() {

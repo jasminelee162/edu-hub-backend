@@ -20,7 +20,7 @@ public class DynamicDataSourceContextHolder {
     * @param: null
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:13
+    * 
     */
     private static final ThreadLocal<String> CONTEXT_HOLDER = new ThreadLocal<>();
 

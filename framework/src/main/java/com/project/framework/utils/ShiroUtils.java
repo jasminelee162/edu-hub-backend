@@ -16,7 +16,7 @@ public class ShiroUtils {
     * @param:
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/12 10:54
+    * 
     */
     public static User getUserInfo(){
         return (User) SecurityUtils.getSubject().getPrincipal();

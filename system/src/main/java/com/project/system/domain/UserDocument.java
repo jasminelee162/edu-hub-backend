@@ -28,7 +28,6 @@ public class UserDocument {
 
     @TableField("created_at")
     private LocalDateTime createdAt;
-
     @TableField("last_modified")
     private LocalDateTime lastModified;
     @TableField("share_permission")
