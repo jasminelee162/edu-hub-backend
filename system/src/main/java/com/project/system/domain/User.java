@@ -183,4 +183,6 @@ public class User extends BaseEntity {
     @TableField(exist = false)
     private List<String> roleIds;
 
+    private int checked;
+
 }

@@ -96,6 +96,7 @@ public class LoginController {
         user.setSalt(split[1]);
         user.setAvatar("/img/avatar.jpg");
         user.setPwdUpdateDate(new Date());
+        user.setChecked(1);
         boolean save = userService.save(user);
         if (save) {
             return Result.success();
