@@ -11,6 +11,8 @@ import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @Controller
 @ResponseBody
 @RequestMapping("/document")
@@ -24,7 +26,9 @@ public class DocumentController {
 
     //创建共享文档(会返回共享ID)
     @PostMapping("/create")
-    public Result createDocument(@RequestParam String templateId, @RequestParam String userId) {
+    public Result createDocument(@RequestBody Map<String, Object> jsonMap) {
+        String templateId = jsonMap.get("templateId").toString();
+        String userId = jsonMap.get("userId").toString();
         return Result.success(documentService.createFromTemplate(templateId, userId));
     }
 
