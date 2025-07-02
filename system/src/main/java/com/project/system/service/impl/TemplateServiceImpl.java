@@ -25,6 +25,7 @@ public class TemplateServiceImpl implements TemplateService {
     public Result uploadTemplate(MultipartFile file) {
         Template template = new Template();
         try {
+            template.setId(templateMapper.selectList(null).size());
             template.setName(file.getOriginalFilename());
             template.setFileType(file.getOriginalFilename());
             template.setFileContent(file.getBytes());
