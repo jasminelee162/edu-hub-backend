@@ -149,8 +149,10 @@ public class IndexController {
 
                 QueryWrapper<TaskStudent> wrapper = new QueryWrapper<>();
                 wrapper.lambda()
+                        .select(TaskStudent::getUserId)
                         .eq(TaskStudent::getTaskId, task.getId())
-                        .eq(TaskStudent::getState, 0);
+                        .eq(TaskStudent::getState, 0)
+                        .groupBy(TaskStudent::getUserId);
 
                 int count = taskStudentService.count(wrapper);
                 nums.add(count);
