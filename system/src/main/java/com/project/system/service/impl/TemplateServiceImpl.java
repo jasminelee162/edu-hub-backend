@@ -47,7 +47,7 @@ public class TemplateServiceImpl implements TemplateService {
         List<TemplateVO> templateVOList=new ArrayList<>();
         for (Template template : templateList) {
             TemplateVO templateVO=new TemplateVO();
-            templateVO.setId(templateVO.getId());
+            templateVO.setId(template.getId());
             templateVO.setName(template.getName());
             templateVO.setCreateAt(template.getCreatedAt());
             templateVOList.add(templateVO);
