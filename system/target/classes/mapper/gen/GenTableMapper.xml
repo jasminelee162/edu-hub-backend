@@ -11,7 +11,7 @@
             information_schema.tables t
         where
             t.TABLE_TYPE = 'BASE TABLE'
-            and TABLE_schema = 'ape-learn'
+            and TABLE_schema = 'learn'
         <if test="ew.tableName != null and ew.tableName != ''">
             and t.TABLE_NAME like concat('%',#{ew.tableName},'%')
         </if>
@@ -27,16 +27,10 @@
     </select>
 
     <select id="getTablesInfo" resultType="map">
-        select
-        t.TABLE_NAME as tableName,
-        t.TABLE_COMMENT as tableComment
-        from
-        information_schema.tables t
-        where
-        t.TABLE_TYPE = 'BASE TABLE'
-        and TABLE_schema = 'ape-learn'
-        <if test="tableName != null and tableName != ''">
-            and t.TABLE_NAME like concat('%',#{tableName},'%')
-        </if>
+        SELECT t.TABLE_NAME as tableName, t.TABLE_COMMENT as tableComment
+        FROM information_schema.tables t
+        WHERE t.TABLE_TYPE = 'BASE TABLE'
+        AND TABLE_schema = 'learn'
+        AND t.TABLE_NAME = #{tableName}  <!-- 改为精确匹配 -->
     </select>
 </mapper>
