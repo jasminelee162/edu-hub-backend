@@ -98,6 +98,7 @@ public class UserController {
         user.setSalt(split[1]);
         user.setAvatar("/img/avatar.jpg");
         user.setPwdUpdateDate(new Date());
+
         //保存用户
         boolean save = userService.save(user);
         //再保存用户角色关系
@@ -310,9 +311,15 @@ public class UserController {
 
 
     //获取是否有未审核的入驻教师申请
-    @GetMapping("unread")
+    @GetMapping("/unread")
     public Result unread() {
         return Result.success(userService.unRead());
+    }
+
+    //点击后表示已读（红点取消）
+    @PostMapping("/checked")
+    public void checked(@RequestParam String userName){
+        userService.checked(userName);
     }
 
 }
