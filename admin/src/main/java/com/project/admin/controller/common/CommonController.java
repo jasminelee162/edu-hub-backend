@@ -25,7 +25,7 @@ public class CommonController {
     	msg
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 15:05
+    * 
     */
     @GetMapping("/error/{code}/{msg}")
     public Result error (@PathVariable("code")Integer code, @PathVariable("msg") String msg){
@@ -37,7 +37,7 @@ public class CommonController {
      * @param: file
      * @return:
      * @author shaozhujie
-     * @date: 2023/10/13 10:44
+     * 
      */
     @PostMapping("uploadImg")
     public Result uploadImg(@RequestParam("file") MultipartFile img) {
@@ -77,7 +77,7 @@ public class CommonController {
      * @param: file
      * @return:
      * @author shaozhujie
-     * @date: 2023/10/13 10:44
+     * 
      */
     @PostMapping("uploadVideo")
     public Result uploadVideo(@RequestParam("file") MultipartFile file) {
@@ -114,7 +114,7 @@ public class CommonController {
     * @param: file
     * @return:
     * @author shaozhujie
-    * @date: 2023/10/13 10:44
+    * 
     */
     @PostMapping("uploadFile")
     public Result uploadFile(@RequestParam("file") MultipartFile file) {

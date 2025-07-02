@@ -34,7 +34,7 @@ public class ShiroConfig {
     * @param: securityManager
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:06
+    * 
     */
     @Bean("shiroFilter")
     public ShiroFilterFactoryBean shiroFilter(DefaultWebSecurityManager securityManager) {
@@ -69,7 +69,7 @@ public class ShiroConfig {
     	redisProperties
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:06
+    * 
     */
     @Bean("securityManager")
     public DefaultWebSecurityManager securityManager(ShiroRealm shiroRealm, RedisProperties redisProperties) {
@@ -91,7 +91,7 @@ public class ShiroConfig {
     * @param: redisProperties
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:06
+    * 
     */
     public RedisCacheManager redisCacheManager(RedisProperties redisProperties) {
         RedisCacheManager redisCacheManager = new RedisCacheManager();
@@ -108,7 +108,7 @@ public class ShiroConfig {
     * @param: redisProperties
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:06
+    * 
     */
     @Bean
     public RedisManager redisManager(RedisProperties redisProperties) {
@@ -133,7 +133,7 @@ public class ShiroConfig {
     * @param:
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:07
+    * 
     */
     @Bean
     public DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator() {

@@ -19,7 +19,7 @@ public interface RoleMenuMapper extends BaseMapper<RoleMenu> {
     * @param: role
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/8 8:56
+    * 
     */
     Set<String> getRoleMenusSet(@Param("role") String role);
 }

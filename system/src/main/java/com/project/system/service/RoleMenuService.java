@@ -18,7 +18,7 @@ public interface RoleMenuService extends IService<RoleMenu> {
      * @param: loginAccount
      * @return:
      * @author shaozhujie
-     * @date: 2023/9/7 17:01
+     * 
      */
     Set<String> getRoleMenusSet(String role);
 }

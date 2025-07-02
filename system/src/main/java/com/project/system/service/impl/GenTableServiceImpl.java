@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * @author shaozhujie
@@ -24,7 +25,7 @@ public class GenTableServiceImpl extends ServiceImpl<GenTableMapper, GenTable> i
     /**
     * 获取数据库表
     */
-    @Override
+        /*@Override
     public Page<Map<String, Object>> getTables(GenTable genTable) {
         Page<Map<String, Object>> page = new Page<>(genTable.getPageNumber(), genTable.getPageSize());
         QueryWrapper<GenTable> queryWrapper = new QueryWrapper<>();
@@ -35,6 +36,19 @@ public class GenTableServiceImpl extends ServiceImpl<GenTableMapper, GenTable> i
             tables.add(item.getTableName());
         });
         return baseMapper.getTables(page, genTable,tables);
+    }*/
+
+    /* 7.1 bug修改*/
+    @Override
+    public Page<Map<String, Object>> getTables(GenTable genTable) {
+        Page<Map<String, Object>> page = new Page<>(genTable.getPageNumber(), genTable.getPageSize());
+        QueryWrapper<GenTable> queryWrapper = new QueryWrapper<>();
+        queryWrapper.select("DISTINCT table_name"); // 只查询唯一的table_name
+        List<GenTable> genTables = baseMapper.selectList(queryWrapper);
+        List<String> tables = genTables.stream()
+                .map(GenTable::getTableName)
+                .collect(Collectors.toList());
+        return baseMapper.getTables(page, genTable, tables);
     }
 
     /**

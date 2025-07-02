@@ -48,12 +48,19 @@ public class DictDataController {
     /**
      * 查询
      */
-    @Log(name = "查询全部字典类型", type = BusinessType.OTHER)
+    /*@Log(name = "查询全部字典类型", type = BusinessType.OTHER)
     @GetMapping("getDictTypeList")
     public Result getDictTypeList() {
         QueryWrapper<DictData> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().groupBy(DictData::getDictCode);
         List<DictData> dataList = dictDataService.list(queryWrapper);
+        return Result.success(dataList);
+    }*/
+    //7.1 bug修改
+    @Log(name = "查询全部字典类型", type = BusinessType.OTHER)
+    @GetMapping("getDictTypeList")
+    public Result getDictTypeList() {
+        List<DictData> dataList = dictDataService.getDistinctDictTypes();
         return Result.success(dataList);
     }
 

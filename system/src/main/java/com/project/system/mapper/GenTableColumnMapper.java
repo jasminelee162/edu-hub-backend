@@ -20,7 +20,7 @@ public interface GenTableColumnMapper extends BaseMapper<GenTableColumn> {
      * @param: table
      * @return:
      * @author shaozhujie
-     * @date: 2023/10/11 9:45
+     * 
      */
     List<Map<String, Object>> getTableField(@Param("table") String table);
 }

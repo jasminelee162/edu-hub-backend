@@ -64,7 +64,7 @@ public class DruidConfig {
     	beanName
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:04
+    * 
     */
     public void setDataSource(Map<Object, Object> targetDataSources, String sourceName, String beanName)
     {
@@ -83,7 +83,7 @@ public class DruidConfig {
     * @param: properties
     * @return:
     * @author shaozhujie
-    * @date: 2023/9/14 11:04
+    * 
     */
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Bean
