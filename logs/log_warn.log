@@ -266,3 +266,22 @@ Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is alrea
 	... 12 common frames omitted
 2025-07-02 17:13:07.774 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
 2025-07-02 17:15:18.494 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-02 17:39:58.285 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-02 17:40:15.583 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException: Error attempting to get column 'id' from result set.  Cause: java.sql.SQLDataException: Value '1940329740032303105' is outside of valid range for type java.lang.Integer
+; Value '1940329740032303105' is outside of valid range for type java.lang.Integer; nested exception is java.sql.SQLDataException: Value '1940329740032303105' is outside of valid range for type java.lang.Integer]
+2025-07-02 17:40:52.781 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'id' doesn't have a default value
+### The error may exist in com/project/system/mapper/TemplateMapper.java (best guess)
+### The error may involve com.project.system.mapper.TemplateMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO document_template  ( name, file_type, file_content,  created_at, share_permission )  VALUES  ( ?, ?, ?,  ?, ? )
+### Cause: java.sql.SQLException: Field 'id' doesn't have a default value
+; Field 'id' doesn't have a default value; nested exception is java.sql.SQLException: Field 'id' doesn't have a default value]
+2025-07-02 17:42:20.047 [http-nio-8080-exec-11] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'id' doesn't have a default value
+### The error may exist in com/project/system/mapper/TemplateMapper.java (best guess)
+### The error may involve com.project.system.mapper.TemplateMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO document_template  ( name, file_type, file_content,  created_at, share_permission )  VALUES  ( ?, ?, ?,  ?, ? )
+### Cause: java.sql.SQLException: Field 'id' doesn't have a default value
+; Field 'id' doesn't have a default value; nested exception is java.sql.SQLException: Field 'id' doesn't have a default value]
