@@ -1819,3 +1819,10 @@ Caused by: java.lang.LinkageError: loader 'app' attempted duplicate class defini
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.cglib.core.ReflectUtils.defineClass(ReflectUtils.java:555)
 	... 27 common frames omitted
+2025-07-03 23:56:01.913 [http-nio-8080-exec-3] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1084 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-03 23:56:04.194 [http-nio-8080-exec-12] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1143 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["1b07280c-c84a-4664-9630-cc4920a9c9b0"]
+2025-07-03 23:56:04.223 [http-nio-8080-exec-11] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1172 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["1b07280c-c84a-4664-9630-cc4920a9c9b0"]

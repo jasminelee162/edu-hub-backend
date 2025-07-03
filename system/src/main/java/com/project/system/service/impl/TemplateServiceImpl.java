@@ -27,7 +27,12 @@ public class TemplateServiceImpl implements TemplateService {
         try {
             template.setId(templateMapper.selectList(null).size());
             template.setName(file.getOriginalFilename());
-            template.setFileType(file.getOriginalFilename());
+            int lastDotIndex = file.getOriginalFilename().lastIndexOf('.');
+            String extension="";
+            if (lastDotIndex != -1 && lastDotIndex < file.getOriginalFilename().length() - 1) {
+                extension= file.getOriginalFilename().substring(lastDotIndex + 1);
+            }
+            template.setFileType(extension);
             template.setFileContent(file.getBytes());
             template.setCreatedAt(LocalDateTime.now());
             templateMapper.insert(template);
@@ -47,7 +52,7 @@ public class TemplateServiceImpl implements TemplateService {
         List<TemplateVO> templateVOList=new ArrayList<>();
         for (Template template : templateList) {
             TemplateVO templateVO=new TemplateVO();
-            templateVO.setId(templateVO.getId());
+            templateVO.setId(template.getId());
             templateVO.setName(template.getName());
             templateVO.setCreateAt(template.getCreatedAt());
             templateVOList.add(templateVO);
@@ -56,8 +61,8 @@ public class TemplateServiceImpl implements TemplateService {
     }
 
     //展示文档内容
-    public byte[] getTemplateById(String id) {
-        return templateMapper.selectById(id).getFileContent();
+    public Template getTemplateById(String id) {
+        return templateMapper.selectById(id);
     }
 
 
