@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 @TableName("document_template")
 public class Template {
     @Id
-    @TableId(type = IdType.AUTO)
     private int id;
     private String name;
 
