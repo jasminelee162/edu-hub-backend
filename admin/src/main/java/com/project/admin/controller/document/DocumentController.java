@@ -45,19 +45,12 @@ public class DocumentController {
 
     //共享初始化
     @MessageMapping("/{documentId}/init")
-    public void initDocument(@PathVariable String documentId,@RequestParam String userId) {
+    public void initDocument(@RequestParam String Id,@RequestParam String userId) {
         messagingTemplate.convertAndSendToUser(
                 userId,           // 目标用户
                 "/queue/init",      // 目标路径（用户专属队列）
-                documentService.getContent(documentId)  // 消息内容
+                documentService.getContent(Id)  // 消息内容
         );
-        documentService.joinCollaboration(documentId,userId);
-    }
-
-    @PostMapping("/exit/{documentId}")
-    @SendTo("/topic/document/{documentId}")
-    public Result exitDocument(@PathVariable String documentId,@RequestParam String userId) {
-        return Result.success(documentService.exitCollaboration(documentId,userId));
     }
 
 }

@@ -42,7 +42,7 @@ public class ForumItemController {
                 .like(StringUtils.isNotBlank(forumItem.getUserName()), ForumItem::getUserName, forumItem.getUserName())
                 .eq(StringUtils.isNotBlank(forumItem.getCreateBy()), ForumItem::getCreateBy, forumItem.getCreateBy())
                 .eq(forumItem.getCreateTime() != null, ForumItem::getCreateTime, forumItem.getCreateTime())
-                .orderByAsc(ForumItem::getCreateTime);
+                .orderByDesc(ForumItem::getCreateTime);
         Page<ForumItem> forumItemPage = forumItemService.page(page, queryWrapper);
         return Result.success(forumItemPage);
     }
@@ -51,8 +51,11 @@ public class ForumItemController {
     public Result getForumItemList(@RequestBody ForumItem forumItem) {
         QueryWrapper<ForumItem> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
-                .eq(ForumItem::getForumId,forumItem.getForumId());
-
+                .eq(StringUtils.isNotBlank(forumItem.getForumId()), ForumItem::getForumId, forumItem.getForumId())
+                .like(StringUtils.isNotBlank(forumItem.getUserName()), ForumItem::getUserName, forumItem.getUserName())
+                .eq(StringUtils.isNotBlank(forumItem.getCreateBy()), ForumItem::getCreateBy, forumItem.getCreateBy())
+                .eq(forumItem.getCreateTime() != null, ForumItem::getCreateTime, forumItem.getCreateTime())
+                .orderByDesc(ForumItem::getCreateTime);
         List<ForumItem> forumItemPage = forumItemService.list(queryWrapper);
         return Result.success(forumItemPage);
     }

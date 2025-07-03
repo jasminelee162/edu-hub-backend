@@ -76,44 +76,28 @@ public class HomeworkStudentController {
     @GetMapping("getMyHomework")
     public Result getMyHomework() {
         User userInfo = ShiroUtils.getUserInfo();
-
-        // 1. 先获取用户有作业的所有章节ID列表
-        QueryWrapper<HomeworkStudent> chapterQuery = new QueryWrapper<>();
-        chapterQuery.select("DISTINCT chapter_id")
-                .eq("user_id", userInfo.getId());
-        List<HomeworkStudent> chapters = homeworkStudentService.list(chapterQuery);
-
-        // 2. 为每个章节查询所有作业
-        List<HomeworkStudent> result = new ArrayList<>();
-        for (HomeworkStudent chapter : chapters) {
-            QueryWrapper<HomeworkStudent> detailQuery = new QueryWrapper<>();
-            detailQuery.eq("chapter_id", chapter.getChapterId())
-                    .eq("user_id", userInfo.getId());
-            List<HomeworkStudent> chapterHomeworks = homeworkStudentService.list(detailQuery);
-
-            // 为每个作业设置章节名称
-            for (HomeworkStudent homework : chapterHomeworks) {
-                Chapter chapterInfo = chapterService.getById(homework.getChapterId());
-                homework.setTaskName(chapterInfo.getTaskName());
-                result.add(homework);
-            }
+        QueryWrapper<HomeworkStudent> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda().eq(HomeworkStudent::getUserId,userInfo.getId())
+                .groupBy(HomeworkStudent::getChapterId);
+        List<HomeworkStudent> studentList = homeworkStudentService.list(queryWrapper);
+        for (HomeworkStudent student : studentList) {
+            Chapter chapter = chapterService.getById(student.getChapterId());
+            student.setTaskName(chapter.getTaskName());
         }
-
-        return Result.success(result);
+        return Result.success(studentList);
     }
 
     @PostMapping("getHomeworkStudentList")
     public Result getHomeworkStudentList(@RequestBody HomeworkStudent homeworkStudent1) {
-        System.out.println("homeworkStudent1"+homeworkStudent1);
         User userInfo = ShiroUtils.getUserInfo();
         QueryWrapper<Homework> queryWrapper = new QueryWrapper<>();
-        queryWrapper.lambda().eq(Homework::getChapterId, homeworkStudent1.getChapterId()).orderByAsc(Homework::getSort);
+        queryWrapper.lambda().eq(Homework::getChapterId,homeworkStudent1.getChapterId()).orderByAsc(Homework::getSort);
         List<Homework> homeworkList = homeworkService.list(queryWrapper);
         List<HomeworkStudent> homeworkStudentList = new ArrayList<>();
         for (Homework homework : homeworkList) {
             QueryWrapper<HomeworkStudent> wrapper = new QueryWrapper<>();
-            wrapper.lambda().eq(HomeworkStudent::getUserId, userInfo.getId())
-                    .eq(HomeworkStudent::getWorkId, homework.getId());
+            wrapper.lambda().eq(HomeworkStudent::getUserId,userInfo.getId())
+                            .eq(HomeworkStudent::getWorkId,homework.getId());
             HomeworkStudent homeworkStudent = homeworkStudentService.getOne(wrapper);
             if (homeworkStudent == null) {
                 homeworkStudent = new HomeworkStudent();
@@ -131,9 +115,6 @@ public class HomeworkStudentController {
                 homeworkStudent.setPoint(0);
             }
             homeworkStudentList.add(homeworkStudent);
-        }
-        if (homeworkStudentList.isEmpty()) {
-            System.out.println("未找到匹配的作业记录");
         }
         return Result.success(homeworkStudentList);
     }
