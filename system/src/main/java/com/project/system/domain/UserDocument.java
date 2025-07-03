@@ -26,6 +26,9 @@ public class UserDocument {
     @TableField("user_id")
     private String userId;
 
+    @TableField("user_collaboration")
+    private String userCollaboration;
+
     @TableField("created_at")
     private LocalDateTime createdAt;
     @TableField("last_modified")

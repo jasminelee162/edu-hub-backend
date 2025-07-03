@@ -61,8 +61,8 @@ public class TemplateServiceImpl implements TemplateService {
     }
 
     //展示文档内容
-    public byte[] getTemplateById(String id) {
-        return templateMapper.selectById(id).getFileContent();
+    public Template getTemplateById(String id) {
+        return templateMapper.selectById(id);
     }
 
 
