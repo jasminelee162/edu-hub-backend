@@ -37,7 +37,7 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     */
     private static final List<String> EXCLUDED_URLS = Arrays.asList(
             "/ai","/suggestion","/sandbox/execute","/sandbox/questions","/sandbox/description"
-            ,"/sandbox/title","/user/unread","/template/show","/document/create"
+            ,"/sandbox/title","/user/unread","/template/show","/document/create","/template/content"
     );
     @SneakyThrows
     @Override
