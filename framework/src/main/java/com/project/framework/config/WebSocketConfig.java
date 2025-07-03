@@ -18,8 +18,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/ws-doc")
+        registry.addEndpoint("/ws-doc/{documentId}")
                 .setAllowedOriginPatterns("*")
-                .withSockJS(); // 不能带 {documentId}
+                .withSockJS();
     }
 }

@@ -7,7 +7,6 @@ import com.project.system.domain.UserDocument;
 import com.project.system.mapper.DocumentVersionMapper;
 import com.project.system.service.DocumentVersionService;
 import com.project.system.vo.DocumentVersionVO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -17,7 +16,6 @@ import java.util.List;
 @Service
 public class DocumentVersionServiceImpl implements DocumentVersionService {
 
-    @Autowired
     private DocumentVersionMapper documentVersionMapper;
 
     //记录版本
