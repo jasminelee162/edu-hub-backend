@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.io.Serializable;
 
@@ -67,6 +69,8 @@ public class Test implements Serializable {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date endTime;
+
+
 
     /**
      * 审核：0：通过 1：未通过 2：审核中
