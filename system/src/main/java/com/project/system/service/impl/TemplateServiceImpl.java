@@ -27,7 +27,12 @@ public class TemplateServiceImpl implements TemplateService {
         try {
             template.setId(templateMapper.selectList(null).size());
             template.setName(file.getOriginalFilename());
-            template.setFileType(file.getOriginalFilename());
+            int lastDotIndex = file.getOriginalFilename().lastIndexOf('.');
+            String extension="";
+            if (lastDotIndex != -1 && lastDotIndex < file.getOriginalFilename().length() - 1) {
+                extension= file.getOriginalFilename().substring(lastDotIndex + 1);
+            }
+            template.setFileType(extension);
             template.setFileContent(file.getBytes());
             template.setCreatedAt(LocalDateTime.now());
             templateMapper.insert(template);
