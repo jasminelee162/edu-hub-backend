@@ -18,9 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -98,7 +96,7 @@ public class TestController {
     }
 
     /** 编辑考试 */
-    @Log(name = "编辑考试", type = BusinessType.UPDATE)
+    /*@Log(name = "编辑考试", type = BusinessType.UPDATE)
     @PostMapping("editTest")
     public Result editTest(@RequestBody Test test) {
         if (StringUtils.isNotBlank(test.getTaskId())) {
@@ -111,8 +109,43 @@ public class TestController {
         } else {
             return Result.fail(ResultCode.COMMON_DATA_OPTION_ERROR.getMessage());
         }
-    }
+    }*/
+    /*7.3修改*/
+    @Log(name = "编辑考试", type = BusinessType.UPDATE)
+    @PostMapping("editTest")
+    public Result editTest(@RequestBody Test test) {
+        try {
+            // 1. 处理任务名称
+            if (StringUtils.isNotBlank(test.getTaskId())) {
+                Task task = taskService.getById(test.getTaskId());
+                test.setTaskName(task.getName());
+            }
 
+            // 2. 处理日期时间（防止自动加一天）
+            if (test.getStartTime() != null) {
+                test.setStartTime(addOneDay(test.getStartTime()));
+            }
+            if (test.getEndTime() != null) {
+                test.setEndTime(addOneDay(test.getEndTime()));
+            }
+
+            // 3. 更新考试信息
+            boolean success = testService.updateById(test);
+            return success ? Result.success() : Result.fail(ResultCode.COMMON_DATA_OPTION_ERROR.getMessage());
+        } catch (Exception e) {
+
+            return Result.fail("编辑考试失败：" + e.getMessage());
+        }
+    }
+    public Date addOneDay(Date date) {
+        if (date == null) {
+            return null;
+        }
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(Calendar.DAY_OF_MONTH, 1);
+        return calendar.getTime();
+    }
     /** 删除考试 */
     @GetMapping("removeTest")
     @Log(name = "删除考试", type = BusinessType.DELETE)
