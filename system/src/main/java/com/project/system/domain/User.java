@@ -103,7 +103,7 @@ public class User extends BaseEntity {
     private String loginIp;
 
     /**
-     * 登陆日期
+     * 登录日期
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
@@ -184,5 +184,7 @@ public class User extends BaseEntity {
     private List<String> roleIds;
 
     private int checked;
+
+    private String phone;
 
 }
