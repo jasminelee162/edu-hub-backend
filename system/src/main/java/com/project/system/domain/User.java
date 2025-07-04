@@ -185,6 +185,4 @@ public class User extends BaseEntity {
 
     private int checked;
 
-    private String phone;
-
 }

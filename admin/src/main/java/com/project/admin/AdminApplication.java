@@ -20,15 +20,9 @@ import org.springframework.core.env.ConfigurableEnvironment;
 public class AdminApplication {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(AdminApplication.class, args);
+       SpringApplication.run(AdminApplication.class, args);
 
-        ConfigurableEnvironment env = context.getEnvironment();
 
-        System.out.println("===== 邮件配置 =====");
-        System.out.println("SMTP Host: " + env.getProperty("spring.mail.host"));
-        System.out.println("SMTP Port: " + env.getProperty("spring.mail.port"));
-        System.out.println("Username: " + env.getProperty("spring.mail.username"));
-        System.out.println("===================");
     }
 
 }
