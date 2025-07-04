@@ -83,6 +83,10 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>jakarta.mail</artifactId>
+        </dependency>
 
     </dependencies>
 
@@ -100,5 +104,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>

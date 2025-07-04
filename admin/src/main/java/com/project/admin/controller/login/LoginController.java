@@ -79,15 +79,19 @@ public class LoginController {
         String token = JwtUtil.sign(user.getId(), password);
         JSONObject json = new JSONObject();
         json.put("token", token);
-        saveLoginLog(request,"登陆成功",username,ipAddr,0);
+        saveLoginLog(request,"登录成功",username,ipAddr,0);
         return Result.success(json);
     }
 
     @PostMapping("register")
     public Result register(@RequestBody User user) {
         boolean account = checkAccount(user);
+        boolean email = checkEmail(user.getEmail());
         if (!account) {
-            return Result.fail("登陆账号已存在不可重复！");
+            return Result.fail("登录账号已存在不可重复！");
+        }
+        if (!email) {
+            return Result.fail("邮箱已被注册不可重复！");
         }
         //密码加盐加密
         String encrypt = PasswordUtils.encrypt(user.getPassword());
@@ -113,6 +117,15 @@ public class LoginController {
         int count = userService.count(queryWrapper);
         return count <= 0;
     }
+
+    public boolean checkEmail(String email) {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda().eq(User::getEmail, email);
+        int count = userService.count(queryWrapper);
+        return count <= 0;
+    }
+
+
 
     @Log(name = "登出", type = BusinessType.OTHER)
     @GetMapping("logout")

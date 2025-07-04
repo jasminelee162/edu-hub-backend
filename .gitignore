@@ -1,0 +1,39 @@
+# 忽略日志文件
+#logs/log_error.log
+#logs/log_info.log
+#logs/log_warn.log
+#logs/*.log
+#/logs/
+# 忽略配置文件
+application.yml
+application-dev.yml
+
+# 忽略其他常见的临时文件和文件夹
+*.class
+*.log
+*.tmp
+*.swp
+*.bak
+*.orig
+*.rej
+*.swo
+*.swn
+
+# 忽略编译生成的文件
+target/
+build/
+out/
+dist/
+
+# 忽略IDE相关的文件和文件夹
+.idea/
+*.iml
+
+# 忽略Node.js相关的文件和文件夹
+node_modules/
+package-lock.json
+yarn.lock
+
+# 忽略其他常见的工具生成的文件
+.DS_Store
+Thumbs.db
