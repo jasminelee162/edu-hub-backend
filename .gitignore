@@ -1,9 +1,9 @@
 # 忽略日志文件
-logs/log_error.log
-logs/log_info.log
-logs/log_warn.log
-logs/*.log
-
+#logs/log_error.log
+#logs/log_info.log
+#logs/log_warn.log
+#logs/*.log
+#/logs/
 # 忽略配置文件
 application.yml
 application-dev.yml

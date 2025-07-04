@@ -2,10 +2,8 @@ package com.project.admin.controller.document;
 
 import com.project.common.domain.Result;
 import com.project.system.domain.UserDocument;
-import com.project.system.mapper.UserDocumentMapper;
 import com.project.system.service.DocumentService;
 import com.project.system.service.DocumentVersionService;
-import com.project.system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -19,18 +17,13 @@ public class DocumentVersionController {
     private DocumentVersionService documentVersionService;
     @Autowired
     private DocumentService documentService;
-    @Autowired
-    private UserDocumentMapper userDocumentMapper;
 
 
     //回滚
     @GetMapping("/rollback")
-    public Result rollback(@RequestParam String documentId,@RequestParam String userId) {
-        if (!userDocumentMapper.selectById(documentId).getUserId().equals(userId)) {
-            return Result.fail("只有共享文档创建者才可执行历史回滚功能");
-        }
-        documentService.updateContent(documentId,documentVersionService.getVersionById(documentId));
-        return Result.success(documentVersionService.getVersionById(documentId));
+    public Result rollback(String id) {
+        documentService.updateContent(id,documentVersionService.getVersionById(id));
+        return Result.success(documentVersionService.getVersionById(id));
     }
 
     //获得所有版本

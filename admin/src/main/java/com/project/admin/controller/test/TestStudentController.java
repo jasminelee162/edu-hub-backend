@@ -182,19 +182,4 @@ public class TestStudentController {
         List<TestStudent> wrongAnswers = testStudentService.getWrongAnswers(userId);
         return Result.success(wrongAnswers);
     }
-
-    @Log(name = "判断是否可以进入试卷")
-    @GetMapping("canEnterTest")
-    public Result canEnterTest(@RequestParam("testId") String testId) {
-        Test test = testService.getById(testId);
-        if (test == null) {
-            return Result.fail("试卷不存在");
-        }
-        Date now = new Date();
-        if (test.getEndTime().before(now)) {
-            return Result.fail("考试已结束，无法进入试卷");
-        }
-        return Result.success("可以进入试卷");
-    }
-
 }

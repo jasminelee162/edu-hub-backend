@@ -6,7 +6,6 @@ import com.project.system.domain.UserDocument;
 import com.project.system.mapper.DocumentVersionMapper;
 import com.project.system.mapper.TemplateMapper;
 import com.project.system.mapper.UserDocumentMapper;
-import com.project.system.mapper.UserMapper;
 import com.project.system.service.DocumentService;
 import com.project.system.service.DocumentVersionService;
 import com.project.system.service.TemplateService;
@@ -15,7 +14,6 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -34,8 +32,6 @@ public class DocumentServiceImpl implements DocumentService {
 
     @Autowired
     private DocumentVersionService documentVersionService;
-    @Autowired
-    private UserMapper userMapper;
 
     //从模板创建文件
     public String createFromTemplate(String templateId,String userId) {
@@ -49,7 +45,6 @@ public class DocumentServiceImpl implements DocumentService {
         String shareToken = UUID.randomUUID().toString();
         doc.setShareToken(shareToken);
         doc.setId(shareToken);
-        doc.setUserCollaboration(userMapper.selectById(userId).getUserName());
 
         // 从模板创建可编辑副本
         doc.setContent(template.getFileContent());
@@ -74,21 +69,5 @@ public class DocumentServiceImpl implements DocumentService {
     public byte[] getContent(String docId) {
         UserDocument doc = userDocumentMapper.selectById(docId);
         return doc.getContent();
-    }
-
-    //更新协作列表
-    public void joinCollaboration(String docId, String userId) {
-        UserDocument doc = userDocumentMapper.selectById(docId);
-        doc.setUserCollaboration(doc.getUserCollaboration()+"#"+userMapper.selectById(userId).getUserName());
-        UpdateWrapper<UserDocument> wrapper = new UpdateWrapper<>();
-        wrapper.eq("id", docId);
-        userDocumentMapper.update(doc,wrapper);
-    }
-
-    public List<String> exitCollaboration(String docId,String userId) {
-        UserDocument doc = userDocumentMapper.selectById(docId);
-        List<String> users= List.of(doc.getUserCollaboration().split("#"));
-        users.remove(userMapper.selectById(userId));
-        return users;
     }
 }

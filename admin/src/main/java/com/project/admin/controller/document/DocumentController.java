@@ -4,6 +4,7 @@ package com.project.admin.controller.document;
 import com.project.common.domain.Result;
 import com.project.system.service.DocumentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -35,7 +36,7 @@ public class DocumentController {
     //编辑文档
     @MessageMapping("/{documentId}/edit")
     @SendTo("/topic/document/{documentId}")
-    public byte[] editDocument(@PathVariable String documentId,  // 从路径获取文档ID
+    public byte[] editDocument(@DestinationVariable String documentId,  // 从路径获取文档ID
                                @Payload byte[] documentData) {
         return documentData;
     }
@@ -44,19 +45,12 @@ public class DocumentController {
 
     //共享初始化
     @MessageMapping("/{documentId}/init")
-    public void initDocument(@PathVariable String documentId,@RequestParam String userId) {
+    public void initDocument(@RequestParam String Id,@RequestParam String userId) {
         messagingTemplate.convertAndSendToUser(
                 userId,           // 目标用户
                 "/queue/init",      // 目标路径（用户专属队列）
-                documentService.getContent(documentId)  // 消息内容
+                documentService.getContent(Id)  // 消息内容
         );
-        documentService.joinCollaboration(documentId,userId);
-    }
-
-    @PostMapping("/exit/{documentId}")
-    @SendTo("/topic/document/{documentId}")
-    public Result exitDocument(@PathVariable String documentId,@RequestParam String userId) {
-        return Result.success(documentService.exitCollaboration(documentId,userId));
     }
 
 }
