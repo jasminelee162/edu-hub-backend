@@ -4,6 +4,7 @@ package com.project.admin.controller.document;
 import com.project.common.domain.Result;
 import com.project.system.service.DocumentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -35,7 +36,7 @@ public class DocumentController {
     //编辑文档
     @MessageMapping("/{documentId}/edit")
     @SendTo("/topic/document/{documentId}")
-    public byte[] editDocument(@PathVariable String documentId,  // 从路径获取文档ID
+    public byte[] editDocument(@DestinationVariable String documentId,  // 从路径获取文档ID
                                @Payload byte[] documentData) {
         return documentData;
     }
