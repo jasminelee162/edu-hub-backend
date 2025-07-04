@@ -45,11 +45,12 @@ public class DocumentController {
 
     //共享初始化
     @MessageMapping("/{documentId}/init")
-    public void initDocument(@RequestParam String Id,@RequestParam String userId) {
+    public void initDocument(@DestinationVariable String documentId, @Payload Map<String, Object> payload) {
+        String userId = (String) payload.get("userId");
         messagingTemplate.convertAndSendToUser(
-                userId,           // 目标用户
-                "/queue/init",      // 目标路径（用户专属队列）
-                documentService.getContent(Id)  // 消息内容
+                userId,
+                "/queue/init",
+                documentService.getContent(documentId)
         );
     }
 
