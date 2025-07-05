@@ -3,6 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BACK_STAGE_SERVER.iml" filepath="$PROJECT_DIR$/BACK_STAGE_SERVER.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ape-admin/ape-admin.iml" filepath="$PROJECT_DIR$/ape-admin/ape-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ape-common/ape-common.iml" filepath="$PROJECT_DIR$/ape-common/ape-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ape-framework.iml" filepath="$PROJECT_DIR$/ape-framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ape-generator/ape-generator.iml" filepath="$PROJECT_DIR$/ape-generator/ape-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ape-quartz/ape-quartz.iml" filepath="$PROJECT_DIR$/ape-quartz/ape-quartz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ape-system/ape-system.iml" filepath="$PROJECT_DIR$/ape-system/ape-system.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework.iml" filepath="$PROJECT_DIR$/framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/system/system.iml" filepath="$PROJECT_DIR$/system/system.iml" />
