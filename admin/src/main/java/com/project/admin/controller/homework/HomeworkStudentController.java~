@@ -76,14 +76,16 @@ public class HomeworkStudentController {
     @GetMapping("getMyHomework")
     public Result getMyHomework() {
         User userInfo = ShiroUtils.getUserInfo();
-        List<HomeworkStudent> studentList = homeworkStudentService.selectOnePerChapter(userInfo.getId());
+        QueryWrapper<HomeworkStudent> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda().eq(HomeworkStudent::getUserId,userInfo.getId())
+                .groupBy(HomeworkStudent::getChapterId);
+        List<HomeworkStudent> studentList = homeworkStudentService.list(queryWrapper);
         for (HomeworkStudent student : studentList) {
             Chapter chapter = chapterService.getById(student.getChapterId());
             student.setTaskName(chapter.getTaskName());
         }
         return Result.success(studentList);
     }
-
 
     @PostMapping("getHomeworkStudentList")
     public Result getHomeworkStudentList(@RequestBody HomeworkStudent homeworkStudent1) {

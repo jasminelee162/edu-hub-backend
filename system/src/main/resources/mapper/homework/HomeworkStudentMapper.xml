@@ -4,4 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.system.mapper.HomeworkStudentMapper">
 
+    <select id="selectOnePerChapter" resultType="com.project.system.domain.HomeworkStudent">
+        SELECT hs.*
+        FROM homework_student hs
+                 INNER JOIN (
+            SELECT MIN(id) AS min_id
+            FROM homework_student
+            WHERE user_id = #{userId}
+            GROUP BY chapter_id
+        ) t ON hs.id = t.min_id
+    </select>
+
 </mapper>
