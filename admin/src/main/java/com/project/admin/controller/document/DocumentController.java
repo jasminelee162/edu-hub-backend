@@ -45,7 +45,7 @@ public class DocumentController {
 
     //共享初始化
     @MessageMapping("/{documentId}/init")
-    public void initDocument(@RequestParam String documentId, @RequestParam String userId) {
+    public void initDocument(@PathVariable String documentId, @RequestParam String userId) {
         List<String> users=documentService.joinCollaboration(documentId,userId);
         messagingTemplate.convertAndSendToUser(
                 userId,           // 目标用户
@@ -54,8 +54,7 @@ public class DocumentController {
         );
         messagingTemplate.convertAndSend(
                 "/topic/document/" + documentId + "/join",
-                users
-        );
+                users);
     }
 }
 
