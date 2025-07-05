@@ -4,14 +4,17 @@ package com.project.admin.controller.document;
 import com.project.common.domain.Result;
 import com.project.system.service.DocumentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.Message;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
+import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Map;
 
@@ -44,18 +47,34 @@ public class DocumentController {
 
 
     //共享初始化
+    // ✅ 推荐写法：确保 principal 不为 null
     @MessageMapping("/{documentId}/init")
-    public void initDocument(@DestinationVariable String documentId, @Payload Map<String, String> body) {
-        String userId = body.get("userId");
-        List<String> users=documentService.joinCollaboration(documentId,userId);
+    public void initDocument(@DestinationVariable String documentId, Message<?> message) {
+        StompHeaderAccessor accessor = StompHeaderAccessor.wrap(message);
+        Principal principal = accessor.getUser();
+
+        if (principal == null) {
+            System.out.println("⚠️ WebSocket 用户未认证（principal 为 null）");
+            return;
+        }
+
+        String userId = principal.getName(); //  取出 userId
+        System.out.println("✅ WebSocket 用户认证成功: " + userId);
+
+        List<String> users = documentService.joinCollaboration(documentId, userId);
+
         messagingTemplate.convertAndSendToUser(
-                userId,           // 目标用户
-                "/queue/init",      // 目标路径（用户专属队列）
-                documentService.getContent(documentId)  // 消息内容
+                userId,
+                "/queue/init",
+                documentService.getContent(documentId)
         );
+
+        System.out.println("✅ 已发送初始内容给用户: " + userId);
+
         messagingTemplate.convertAndSend(
                 "/topic/document/" + documentId + "/join",
-                users);
+                users
+        );
     }
 }
 
