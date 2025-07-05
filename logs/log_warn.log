@@ -514,7 +514,7 @@ Caused by: java.io.IOException: Broken pipe
 	... 84 common frames omitted
 2025-07-05 11:02:37.339 [http-nio-8080-exec-55] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'userId' is not present]
 2025-07-05 11:03:06.285 [http-nio-8080-exec-25] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'userId' is not present]
-2025-07-05 11:04:26.427 [http-nio-8080-exec-58] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
+2025-07-05 11:04:26.427 [http-nio-8080-exec-58] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list'
 ### The error may exist in com/project/system/mapper/UserDocumentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -522,7 +522,7 @@ Caused by: java.io.IOException: Broken pipe
 ### SQL: SELECT id,title,content,share_token,base_template_id,user_id,user_collaboration,created_at,last_modified,share_permission FROM user_document WHERE id=?
 ### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list'
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list']
-2025-07-05 11:05:24.047 [http-nio-8080-exec-51] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
+2025-07-05 11:05:24.047 [http-nio-8080-exec-51] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list'
 ### The error may exist in com/project/system/mapper/UserDocumentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -532,7 +532,7 @@ Caused by: java.io.IOException: Broken pipe
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list']
 2025-07-05 11:05:43.609 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
 2025-07-05 11:05:53.267 [restartedMain] WARN  o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
-2025-07-05 11:06:31.757 [http-nio-8080-exec-34] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
+2025-07-05 11:06:31.757 [http-nio-8080-exec-34] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list'
 ### The error may exist in com/project/system/mapper/UserDocumentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -544,7 +544,7 @@ Caused by: java.io.IOException: Broken pipe
 2025-07-05 11:18:17.254 [restartedMain] WARN  o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
 2025-07-05 11:18:17.304 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
 2025-07-05 11:20:50.651 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-05 11:21:30.628 [http-nio-8080-exec-62] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
+2025-07-05 11:21:30.628 [http-nio-8080-exec-62] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list'
 ### The error may exist in com/project/system/mapper/UserDocumentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -561,7 +561,7 @@ Caused by: java.io.IOException: Broken pipe
 2025-07-05 11:33:14.629 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
 2025-07-05 11:33:17.094 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentController': Unsatisfied dependency expressed through field 'documentService'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'documentServiceImpl': Bean with name 'documentServiceImpl' has been injected into other beans [documentServiceImpl] in its raw version as part of a circular reference, but has eventually been wrapped. This means that said other beans do not use the final version of the bean. This is often the result of over-eager type matching - consider using 'getBeanNamesForType' with the 'allowEagerInit' flag turned off, for example.
 2025-07-05 11:34:57.977 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-05 11:35:14.315 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException:
+2025-07-05 11:35:14.315 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException: 
 ### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Incorrect datetime value: 'EDIT' for column 'share_permission' at row 1
 ### The error may exist in com/project/system/mapper/UserDocumentMapper.java (best guess)
 ### The error may involve com.project.system.mapper.UserDocumentMapper.insert-Inline
@@ -570,7 +570,7 @@ Caused by: java.io.IOException: Broken pipe
 ### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Incorrect datetime value: 'EDIT' for column 'share_permission' at row 1
 ; Data truncation: Incorrect datetime value: 'EDIT' for column 'share_permission' at row 1; nested exception is com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Incorrect datetime value: 'EDIT' for column 'share_permission' at row 1]
 2025-07-05 11:41:07.827 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-05 11:42:04.432 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException:
+2025-07-05 11:42:04.432 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException: 
 ### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Incorrect datetime value: 'EDIT' for column 'share_permission' at row 1
 ### The error may exist in com/project/system/mapper/UserDocumentMapper.java (best guess)
 ### The error may involve com.project.system.mapper.UserDocumentMapper.insert-Inline
@@ -578,7 +578,7 @@ Caused by: java.io.IOException: Broken pipe
 ### SQL: INSERT INTO user_document  ( id, title, content, share_token, base_template_id, user_id, user_collaboration, created_at,  share_permission )  VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?,  ? )
 ### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Incorrect datetime value: 'EDIT' for column 'share_permission' at row 1
 ; Data truncation: Incorrect datetime value: 'EDIT' for column 'share_permission' at row 1; nested exception is com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Incorrect datetime value: 'EDIT' for column 'share_permission' at row 1]
-2025-07-05 11:42:26.085 [http-nio-8080-exec-32] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException:
+2025-07-05 11:42:26.085 [http-nio-8080-exec-32] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException: 
 ### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Incorrect datetime value: 'EDIT' for column 'share_permission' at row 1
 ### The error may exist in com/project/system/mapper/UserDocumentMapper.java (best guess)
 ### The error may involve com.project.system.mapper.UserDocumentMapper.insert-Inline
@@ -617,8 +617,96 @@ Caused by: java.io.IOException: Broken pipe
 2025-07-05 19:01:25.003 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
 2025-07-05 19:06:40.324 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
 2025-07-05 19:16:25.464 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-05 19:37:28.228 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:40:39.881 [http-nio-8080-exec-12] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:42:29.782 [http-nio-8080-exec-16] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:44:04.633 [http-nio-8080-exec-32] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:45:27.647 [http-nio-8080-exec-62] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:51:59.234 [http-nio-8080-exec-68] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:52:30.596 [http-nio-8080-exec-73] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:53:33.181 [http-nio-8080-exec-78] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:54:03.505 [http-nio-8080-exec-83] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:55:48.337 [http-nio-8080-exec-88] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 20:27:56.772 [http-nio-8080-exec-82] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
 2025-07-05 20:17:29.829 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-05 20:24:00.593 [http-nio-8080-exec-31] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-05 20:24:00.593 [http-nio-8080-exec-31] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -629,7 +717,7 @@ Caused by: java.io.IOException: Broken pipe
 2025-07-05 20:25:46.649 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
 2025-07-05 20:25:51.786 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
 2025-07-05 20:26:03.610 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-05 20:26:22.758 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-05 20:26:22.758 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap

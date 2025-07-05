@@ -3977,7 +3977,7 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2025-07-05 10:19:02.504 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
 2025-07-05 10:19:02.504 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
 2025-07-05 10:19:02.505 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
-2025-07-05 10:19:02.519 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+2025-07-05 10:19:02.519 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-07-05 10:20:23.715 [restartedMain] INFO  com.project.admin.AdminApplication - Starting AdminApplication using Java 17.0.15 on caominshandeMacBook-Air.local with PID 11346 (/Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend/admin/target/classes started by caominshan in /Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend)
@@ -4134,7 +4134,7 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2025-07-05 10:31:15.386 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
 2025-07-05 10:31:15.390 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
 2025-07-05 10:31:15.390 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
-2025-07-05 10:31:15.395 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+2025-07-05 10:31:15.395 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-07-05 10:38:33.253 [restartedMain] INFO  com.project.admin.AdminApplication - Starting AdminApplication using Java 17.0.15 on caominshandeMacBook-Air.local with PID 14319 (/Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend/admin/target/classes started by caominshan in /Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend)
@@ -4372,7 +4372,7 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2025-07-05 11:18:17.321 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
 2025-07-05 11:18:17.324 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
 2025-07-05 11:18:17.324 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
-2025-07-05 11:18:17.328 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+2025-07-05 11:18:17.328 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-07-05 11:20:50.543 [restartedMain] INFO  com.project.admin.AdminApplication - Starting AdminApplication using Java 17.0.15 on caominshandeMacBook-Air.local with PID 20378 (/Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend/admin/target/classes started by caominshan in /Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend)
@@ -4595,7 +4595,7 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2025-07-05 11:31:49.946 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} closing ...
 2025-07-05 11:31:49.951 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
 2025-07-05 11:31:49.952 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
-2025-07-05 11:31:49.958 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+2025-07-05 11:31:49.958 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-07-05 11:32:34.092 [restartedMain] INFO  com.project.admin.AdminApplication - Starting AdminApplication using Java 17.0.15 on caominshandeMacBook-Air.local with PID 21896 (/Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend/admin/target/classes started by caominshan in /Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend)
@@ -4656,7 +4656,7 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2025-07-05 11:32:36.732 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
 2025-07-05 11:32:36.734 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
 2025-07-05 11:32:36.735 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
-2025-07-05 11:32:36.742 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+2025-07-05 11:32:36.742 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-07-05 11:33:14.555 [restartedMain] INFO  com.project.admin.AdminApplication - Starting AdminApplication using Java 17.0.15 on caominshandeMacBook-Air.local with PID 21997 (/Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend/admin/target/classes started by caominshan in /Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend)
@@ -4717,7 +4717,7 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2025-07-05 11:33:17.100 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
 2025-07-05 11:33:17.103 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
 2025-07-05 11:33:17.104 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
-2025-07-05 11:33:17.110 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+2025-07-05 11:33:17.110 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-07-05 11:34:57.904 [restartedMain] INFO  com.project.admin.AdminApplication - Starting AdminApplication using Java 17.0.15 on caominshandeMacBook-Air.local with PID 22199 (/Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend/admin/target/classes started by caominshan in /Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend)
@@ -5272,7 +5272,7 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2025-07-05 13:15:44.050 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
 2025-07-05 13:15:44.058 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
 2025-07-05 13:15:44.058 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
-2025-07-05 13:15:44.062 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+2025-07-05 13:15:44.062 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-07-05 13:15:48.983 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
@@ -6448,7 +6448,7 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2025-07-05 17:46:53.601 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-3} closing ...
 2025-07-05 17:46:53.603 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-3} closed
 2025-07-05 17:46:53.603 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
-2025-07-05 17:46:53.606 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+2025-07-05 17:46:53.606 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-07-05 17:46:59.240 [restartedMain] INFO  com.project.admin.AdminApplication - Starting AdminApplication using Java 17.0.15 on caominshandeMacBook-Air.local with PID 44013 (/Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend/admin/target/classes started by caominshan in /Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend)
@@ -6507,7 +6507,7 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2025-07-05 17:47:00.733 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-4} closing ...
 2025-07-05 17:47:00.734 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-4} closed
 2025-07-05 17:47:00.734 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
-2025-07-05 17:47:00.737 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+2025-07-05 17:47:00.737 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-07-05 17:47:55.534 [restartedMain] INFO  com.project.admin.AdminApplication - Starting AdminApplication using Java 17.0.15 on caominshandeMacBook-Air.local with PID 44013 (/Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend/admin/target/classes started by caominshan in /Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend)
@@ -6566,7 +6566,7 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2025-07-05 17:47:56.752 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-5} closing ...
 2025-07-05 17:47:56.753 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-5} closed
 2025-07-05 17:47:56.754 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
-2025-07-05 17:47:56.756 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+2025-07-05 17:47:56.756 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-07-05 17:48:09.508 [restartedMain] INFO  com.project.admin.AdminApplication - Starting AdminApplication using Java 17.0.15 on caominshandeMacBook-Air.local with PID 44013 (/Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend/admin/target/classes started by caominshan in /Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend)
@@ -6625,7 +6625,7 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2025-07-05 17:48:10.694 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-6} closing ...
 2025-07-05 17:48:10.695 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-6} closed
 2025-07-05 17:48:10.695 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
-2025-07-05 17:48:10.698 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+2025-07-05 17:48:10.698 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-07-05 17:49:10.895 [restartedMain] INFO  com.project.admin.AdminApplication - Starting AdminApplication using Java 17.0.15 on caominshandeMacBook-Air.local with PID 44013 (/Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend/admin/target/classes started by caominshan in /Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend)
@@ -8433,6 +8433,8 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2025-07-05 19:16:34.321 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2025-07-05 19:16:34.325 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
 2025-07-05 19:17:29.248 [MessageBroker-4] INFO  o.s.web.socket.config.WebSocketMessageBrokerStats - WebSocketSession[2 current WS(2)-HttpStream(0)-HttpPoll(0), 4 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(4)-CONNECTED(4)-DISCONNECT(1)], stompBrokerRelay[null], inboundChannel[pool size = 16, active threads = 0, queued tasks = 0, completed tasks = 66], outboundChannel[pool size = 8, active threads = 0, queued tasks = 0, completed tasks = 8], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 3, completed tasks = 11]
+2025-07-05 19:49:43.544 [MessageBroker-8] INFO  o.s.web.socket.config.WebSocketMessageBrokerStats - WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 8 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(8)-CONNECTED(8)-DISCONNECT(1)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 141], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 17], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 2, completed tasks = 443]
+2025-07-05 20:19:43.501 [MessageBroker-3] INFO  o.s.web.socket.config.WebSocketMessageBrokerStats - WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 8 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(8)-CONNECTED(8)-DISCONNECT(1)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 141], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 17], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 2, completed tasks = 876]
 2025-07-05 20:17:29.624 [restartedMain] INFO  com.project.admin.AdminApplication - Starting AdminApplication using Java 17.0.12 on jasmine with PID 16304 (E:\project\java\edu-hub-backend\admin\target\classes started by 15560 in E:\project\java\edu-hub-backend)
 2025-07-05 20:17:29.628 [restartedMain] INFO  com.project.admin.AdminApplication - The following profiles are active: dev
 2025-07-05 20:17:29.696 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
