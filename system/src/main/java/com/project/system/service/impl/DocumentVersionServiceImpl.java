@@ -1,6 +1,5 @@
 package com.project.system.service.impl;
 
-
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.project.system.domain.DocumentVersion;
 import com.project.system.domain.UserDocument;
@@ -45,6 +44,7 @@ public class DocumentVersionServiceImpl implements DocumentVersionService {
         List<DocumentVersionVO> voList=new ArrayList<>();
         for(DocumentVersion documentVersion:documentVersions){
             DocumentVersionVO documentVersionVO=new DocumentVersionVO();
+            documentVersionVO.setDocumentId(documentVersion.getId());
             documentVersionVO.setChangeVersion(documentVersion.getChangeVersion());
             documentVersionVO.setChangeNote(documentVersion.getChangeNote());
             voList.add(documentVersionVO);
