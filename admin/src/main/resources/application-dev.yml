@@ -81,3 +81,17 @@ spring:
         max-active: 8
         # #连接池最大阻塞等待时间（使用负值表示没有限制）
         max-wait: -1ms
+  #邮箱验证
+  mail:
+    host: smtp.qq.com #邮件服务器地址
+    port: 587
+    username:  1842678503@qq.com
+    password:  dqmigfrvkwiwjefj
+    default-encoding: utf-8
+    properties:
+      mail:
+        smtp:
+          auth: true        # 启用认证
+          starttls:
+            enable: true    # 启用TLS加密
+            required: true  # 强制TLS
