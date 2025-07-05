@@ -12,11 +12,11 @@ import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @Controller
 @ResponseBody
-@RequestMapping("/document")
 public class DocumentController {
 
 
@@ -45,13 +45,17 @@ public class DocumentController {
 
     //共享初始化
     @MessageMapping("/{documentId}/init")
-    public void initDocument(@RequestParam String Id,@RequestParam String userId) {
+    public void initDocument(@RequestParam String documentId, @RequestParam String userId) {
+        List<String> users=documentService.joinCollaboration(documentId,userId);
         messagingTemplate.convertAndSendToUser(
                 userId,           // 目标用户
                 "/queue/init",      // 目标路径（用户专属队列）
-                documentService.getContent(Id)  // 消息内容
+                documentService.getContent(documentId)  // 消息内容
+        );
+        messagingTemplate.convertAndSend(
+                "/topic/document/" + documentId + "/join",
+                users
         );
     }
-
 }
 

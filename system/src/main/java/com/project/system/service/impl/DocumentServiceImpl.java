@@ -6,6 +6,7 @@ import com.project.system.domain.UserDocument;
 import com.project.system.mapper.DocumentVersionMapper;
 import com.project.system.mapper.TemplateMapper;
 import com.project.system.mapper.UserDocumentMapper;
+import com.project.system.mapper.UserMapper;
 import com.project.system.service.DocumentService;
 import com.project.system.service.DocumentVersionService;
 import com.project.system.service.TemplateService;
@@ -14,6 +15,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -33,6 +35,9 @@ public class DocumentServiceImpl implements DocumentService {
     @Autowired
     private DocumentVersionService documentVersionService;
 
+    @Autowired
+    private UserMapper userMapper;
+
     //从模板创建文件
     public String createFromTemplate(String templateId,String userId) {
         Template template = templateMapper.selectById(templateId);
@@ -45,6 +50,7 @@ public class DocumentServiceImpl implements DocumentService {
         String shareToken = UUID.randomUUID().toString();
         doc.setShareToken(shareToken);
         doc.setId(shareToken);
+        doc.setUserCollaboration(userMapper.selectById(userId).getUserName());
 
         // 从模板创建可编辑副本
         doc.setContent(template.getFileContent());
@@ -70,4 +76,12 @@ public class DocumentServiceImpl implements DocumentService {
         UserDocument doc = userDocumentMapper.selectById(docId);
         return doc.getContent();
     }
+
+    public List<String> joinCollaboration(String docId, String userId) {
+        UserDocument doc = userDocumentMapper.selectById(docId);
+        doc.setUserCollaboration(doc.getUserCollaboration()+"#"+userMapper.selectById(userId).getUserName());
+        List<String> users= List.of(doc.getUserCollaboration().split("#"));
+        return users;
+    }
+
 }
