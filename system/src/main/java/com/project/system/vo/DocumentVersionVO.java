@@ -7,4 +7,5 @@ public class DocumentVersionVO {
     private String documentId;
     private String changeVersion;
     private String changeNote;
+
 }
