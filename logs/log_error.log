@@ -7648,3 +7648,578 @@ java.lang.NullPointerException: Cannot invoke "java.security.Principal.getName()
 2025-07-05 20:26:02.204 [http-nio-8080-exec-61] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1163 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
  
  WHERE (document_id = ?)["0c48cfa8-a321-49f0-8adb-613e96b07cf2"]
+2025-07-05 21:18:43.913 [http-nio-8080-exec-7] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3222 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 21:18:48.637 [http-nio-8080-exec-15] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3210 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["6a049001-a317-4c4f-82b9-394bbd580bd7"]
+2025-07-05 21:27:23.063 [clientInboundChannel-4] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+java.lang.NullPointerException: Cannot invoke "java.security.Principal.getName()" because "principal" is null
+	at com.project.admin.controller.document.DocumentController.initDocument(DocumentController.java:50)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 21:27:23.475 [clientInboundChannel-2] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.converter.MessageConversionException: Could not read JSON: Cannot deserialize instance of `java.lang.String` out of START_OBJECT token
+ at [Source: (byte[])"{"userId":"1940980760492228610"}"; line: 1, column: 1]; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `java.lang.String` out of START_OBJECT token
+ at [Source: (byte[])"{"userId":"1940980760492228610"}"; line: 1, column: 1]
+	at org.springframework.messaging.converter.MappingJackson2MessageConverter.convertFromInternal(MappingJackson2MessageConverter.java:236)
+	at org.springframework.messaging.converter.AbstractMessageConverter.fromMessage(AbstractMessageConverter.java:185)
+	at org.springframework.messaging.converter.CompositeMessageConverter.fromMessage(CompositeMessageConverter.java:70)
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:138)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `java.lang.String` out of START_OBJECT token
+ at [Source: (byte[])"{"userId":"1940980760492228610"}"; line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1468)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1242)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1148)
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:63)
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:10)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4526)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3563)
+	at org.springframework.messaging.converter.MappingJackson2MessageConverter.convertFromInternal(MappingJackson2MessageConverter.java:222)
+	... 15 common frames omitted
+2025-07-05 21:27:24.924 [http-nio-8080-exec-7] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1074 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["6a049001-a317-4c4f-82b9-394bbd580bd7"]
+2025-07-05 21:28:31.777 [clientInboundChannel-4] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.converter.MessageConversionException: Could not read JSON: Cannot deserialize instance of `java.lang.String` out of START_OBJECT token
+ at [Source: (byte[])"{"userId":"769dc998d617bff4e30c4bde94f37e90"}"; line: 1, column: 1]; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `java.lang.String` out of START_OBJECT token
+ at [Source: (byte[])"{"userId":"769dc998d617bff4e30c4bde94f37e90"}"; line: 1, column: 1]
+	at org.springframework.messaging.converter.MappingJackson2MessageConverter.convertFromInternal(MappingJackson2MessageConverter.java:236)
+	at org.springframework.messaging.converter.AbstractMessageConverter.fromMessage(AbstractMessageConverter.java:185)
+	at org.springframework.messaging.converter.CompositeMessageConverter.fromMessage(CompositeMessageConverter.java:70)
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:138)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `java.lang.String` out of START_OBJECT token
+ at [Source: (byte[])"{"userId":"769dc998d617bff4e30c4bde94f37e90"}"; line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1468)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1242)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1148)
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:63)
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:10)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4526)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3563)
+	at org.springframework.messaging.converter.MappingJackson2MessageConverter.convertFromInternal(MappingJackson2MessageConverter.java:222)
+	... 15 common frames omitted
+2025-07-05 21:28:49.452 [clientInboundChannel-25] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+java.lang.NullPointerException: Cannot invoke "java.security.Principal.getName()" because "principal" is null
+	at com.project.admin.controller.document.DocumentController.initDocument(DocumentController.java:50)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 21:28:49.659 [clientInboundChannel-20] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.converter.MessageConversionException: Could not read JSON: Cannot deserialize instance of `java.lang.String` out of START_OBJECT token
+ at [Source: (byte[])"{"userId":"769dc998d617bff4e30c4bde94f37e90"}"; line: 1, column: 1]; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `java.lang.String` out of START_OBJECT token
+ at [Source: (byte[])"{"userId":"769dc998d617bff4e30c4bde94f37e90"}"; line: 1, column: 1]
+	at org.springframework.messaging.converter.MappingJackson2MessageConverter.convertFromInternal(MappingJackson2MessageConverter.java:236)
+	at org.springframework.messaging.converter.AbstractMessageConverter.fromMessage(AbstractMessageConverter.java:185)
+	at org.springframework.messaging.converter.CompositeMessageConverter.fromMessage(CompositeMessageConverter.java:70)
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:138)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `java.lang.String` out of START_OBJECT token
+ at [Source: (byte[])"{"userId":"769dc998d617bff4e30c4bde94f37e90"}"; line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1468)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1242)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1148)
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:63)
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:10)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4526)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3563)
+	at org.springframework.messaging.converter.MappingJackson2MessageConverter.convertFromInternal(MappingJackson2MessageConverter.java:222)
+	... 15 common frames omitted
+2025-07-05 21:32:55.450 [clientInboundChannel-28] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.handler.annotation.support.MethodArgumentNotValidException: Could not resolve method parameter at index 0 in public void com.project.admin.controller.document.DocumentController.initDocument(java.lang.String,java.security.Principal): 1 error(s): [Error in object 'documentId': codes []; arguments []; default message [Payload value must not be empty]] 
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:122)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 21:33:00.248 [http-nio-8080-exec-72] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 4245 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0b93fc29-94d8-4bea-8a94-562594ea9c9e"]
+2025-07-05 21:33:00.248 [http-nio-8080-exec-76] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 4244 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0b93fc29-94d8-4bea-8a94-562594ea9c9e"]
+2025-07-05 21:33:10.638 [http-nio-8080-exec-87] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1224 millis. SELECT id,post_id,id_arrary,dept_id,user_name,login_account,user_type,email,tel,sex,avatar,password,salt,status,login_ip,login_date,pwd_update_date,school,country,major,agree,age,birth,flair,address,work_date,del_flag,remark,checked,create_by,create_time,update_by,update_time FROM user WHERE id=?  AND del_flag=0["769dc998d617bff4e30c4bde94f37e90"]
+2025-07-05 21:33:10.638 [http-nio-8080-exec-88] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1224 millis. SELECT id,name,file_type,file_content,html_content,created_at,share_permission FROM document_template WHERE id=? ["0"]
+2025-07-05 21:33:10.969 [clientInboundChannel-28] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.handler.annotation.support.MethodArgumentNotValidException: Could not resolve method parameter at index 0 in public void com.project.admin.controller.document.DocumentController.initDocument(java.lang.String,java.security.Principal): 1 error(s): [Error in object 'documentId': codes []; arguments []; default message [Payload value must not be empty]] 
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:122)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 21:33:17.758 [http-nio-8080-exec-87] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 6755 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0b93fc29-94d8-4bea-8a94-562594ea9c9e"]
+2025-07-05 21:33:17.759 [http-nio-8080-exec-97] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 6756 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0b93fc29-94d8-4bea-8a94-562594ea9c9e"]
+2025-07-05 21:33:18.769 [http-nio-8080-exec-7] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 4117 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 21:33:24.302 [clientInboundChannel-40] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.handler.annotation.support.MethodArgumentNotValidException: Could not resolve method parameter at index 0 in public void com.project.admin.controller.document.DocumentController.initDocument(java.lang.String,java.security.Principal): 1 error(s): [Error in object 'documentId': codes []; arguments []; default message [Payload value must not be empty]] 
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:122)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 21:33:27.843 [http-nio-8080-exec-20] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 4530 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["21fa0215-a727-4e65-a10d-79bd01d6ba4a"]
+2025-07-05 21:33:52.267 [clientInboundChannel-28] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+java.lang.NullPointerException: Cannot invoke "java.security.Principal.getName()" because "principal" is null
+	at com.project.admin.controller.document.DocumentController.initDocument(DocumentController.java:50)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 21:33:53.088 [clientInboundChannel-29] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.handler.annotation.support.MethodArgumentNotValidException: Could not resolve method parameter at index 0 in public void com.project.admin.controller.document.DocumentController.initDocument(java.lang.String,java.security.Principal): 1 error(s): [Error in object 'documentId': codes []; arguments []; default message [Payload value must not be empty]] 
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:122)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 21:33:54.503 [clientInboundChannel-34] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.handler.annotation.support.MethodArgumentNotValidException: Could not resolve method parameter at index 0 in public void com.project.admin.controller.document.DocumentController.initDocument(java.lang.String,java.security.Principal): 1 error(s): [Error in object 'documentId': codes []; arguments []; default message [Payload value must not be empty]] 
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:122)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 21:33:54.704 [clientInboundChannel-38] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.handler.annotation.support.MethodArgumentNotValidException: Could not resolve method parameter at index 0 in public void com.project.admin.controller.document.DocumentController.initDocument(java.lang.String,java.security.Principal): 1 error(s): [Error in object 'documentId': codes []; arguments []; default message [Payload value must not be empty]] 
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:122)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 21:33:54.779 [http-nio-8080-exec-42] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1199 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["21fa0215-a727-4e65-a10d-79bd01d6ba4a"]
+2025-07-05 21:33:58.368 [clientInboundChannel-37] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.handler.annotation.support.MethodArgumentNotValidException: Could not resolve method parameter at index 0 in public void com.project.admin.controller.document.DocumentController.initDocument(java.lang.String,java.security.Principal): 1 error(s): [Error in object 'documentId': codes []; arguments []; default message [Payload value must not be empty]] 
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:122)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 21:33:58.744 [clientInboundChannel-37] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.handler.annotation.support.MethodArgumentNotValidException: Could not resolve method parameter at index 0 in public void com.project.admin.controller.document.DocumentController.initDocument(java.lang.String,java.security.Principal): 1 error(s): [Error in object 'documentId': codes []; arguments []; default message [Payload value must not be empty]] 
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:122)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 21:39:51.944 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-07-05 21:40:59.596 [http-nio-8080-exec-7] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1520 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 21:41:02.625 [clientInboundChannel-13] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.handler.annotation.support.MethodArgumentNotValidException: Could not resolve method parameter at index 0 in public void com.project.admin.controller.document.DocumentController.initDocument(java.lang.String,java.security.Principal): 1 error(s): [Error in object 'documentId': codes []; arguments []; default message [Payload value must not be empty]] 
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:122)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 21:41:03.532 [http-nio-8080-exec-12] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1031 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["caed7c7c-a73d-4b22-ae04-7c61b82e0323"]
+2025-07-05 21:41:14.545 [clientInboundChannel-2] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+java.lang.NullPointerException: Cannot invoke "java.security.Principal.getName()" because "principal" is null
+	at com.project.admin.controller.document.DocumentController.initDocument(DocumentController.java:50)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:171)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 21:41:14.585 [clientInboundChannel-14] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.handler.annotation.support.MethodArgumentNotValidException: Could not resolve method parameter at index 0 in public void com.project.admin.controller.document.DocumentController.initDocument(java.lang.String,java.security.Principal): 1 error(s): [Error in object 'documentId': codes []; arguments []; default message [Payload value must not be empty]] 
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:122)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 21:52:26.953 [http-nio-8080-exec-16] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 5459 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["caed7c7c-a73d-4b22-ae04-7c61b82e0323"]
+2025-07-05 21:52:26.953 [http-nio-8080-exec-6] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 16661 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["caed7c7c-a73d-4b22-ae04-7c61b82e0323"]
+2025-07-05 21:53:03.545 [http-nio-8080-exec-27] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1898 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["6a049001-a317-4c4f-82b9-394bbd580bd7"]
+2025-07-05 21:53:43.581 [http-nio-8080-exec-42] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 5786 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["caed7c7c-a73d-4b22-ae04-7c61b82e0323"]
+2025-07-05 21:53:43.581 [http-nio-8080-exec-44] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 5786 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["caed7c7c-a73d-4b22-ae04-7c61b82e0323"]
+2025-07-05 21:54:31.307 [http-nio-8080-exec-11] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3597 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["f61d4fff-862a-4f02-a9eb-356912166b99"]
+2025-07-05 21:54:40.093 [clientInboundChannel-16] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.MessageHandlingException: Missing header 'simpUser' for method parameter type [interface java.security.Principal]
+	at org.springframework.messaging.handler.annotation.support.HeaderMethodArgumentResolver.handleMissingValue(HeaderMethodArgumentResolver.java:111)
+	at org.springframework.messaging.handler.annotation.support.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:108)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 21:56:17.767 [http-nio-8080-exec-58] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3395 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["f61d4fff-862a-4f02-a9eb-356912166b99"]
+2025-07-05 21:56:17.767 [http-nio-8080-exec-56] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3395 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["f61d4fff-862a-4f02-a9eb-356912166b99"]
+2025-07-05 21:56:29.549 [http-nio-8080-exec-77] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2397 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["f61d4fff-862a-4f02-a9eb-356912166b99"]
+2025-07-05 21:56:32.519 [http-nio-8080-exec-89] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1336 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 21:56:56.912 [clientInboundChannel-24] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.MessageHandlingException: Missing header 'simpUser' for method parameter type [interface java.security.Principal]
+	at org.springframework.messaging.handler.annotation.support.HeaderMethodArgumentResolver.handleMissingValue(HeaderMethodArgumentResolver.java:111)
+	at org.springframework.messaging.handler.annotation.support.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:108)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 21:57:01.001 [http-nio-8080-exec-27] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3443 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["c5d41731-d3bb-41e1-b794-46d0c09f07c5"]
+2025-07-05 22:04:09.623 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field messagingTemplate in com.project.admin.controller.document.DocumentController required a bean of type 'org.springframework.messaging.simp.SimpMessageSendingOperations' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.messaging.simp.SimpMessageSendingOperations' in your configuration.
+
+2025-07-05 22:04:47.887 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field messagingTemplate in com.project.admin.controller.document.DocumentController required a bean of type 'org.springframework.messaging.simp.SimpMessageSendingOperations' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.messaging.simp.SimpMessageSendingOperations' in your configuration.
+
+2025-07-05 22:11:31.335 [http-nio-8080-exec-6] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1352 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["c5d41731-d3bb-41e1-b794-46d0c09f07c5"]
+2025-07-05 22:12:05.888 [clientInboundChannel-10] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.MessageHandlingException: Missing header 'simpUser' for method parameter type [interface java.security.Principal]
+	at org.springframework.messaging.handler.annotation.support.HeaderMethodArgumentResolver.handleMissingValue(HeaderMethodArgumentResolver.java:111)
+	at org.springframework.messaging.handler.annotation.support.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:108)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 22:15:03.005 [http-nio-8080-exec-54] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 4115 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0cd8f00f-b410-423b-beac-fe1f05db9968"]
+2025-07-05 22:15:37.832 [http-nio-8080-exec-66] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1735 millis. SELECT id,post_id,id_arrary,dept_id,user_name,login_account,user_type,email,tel,sex,avatar,password,salt,status,login_ip,login_date,pwd_update_date,school,country,major,agree,age,birth,flair,address,work_date,del_flag,remark,checked,create_by,create_time,update_by,update_time FROM user WHERE id=?  AND del_flag=0["769dc998d617bff4e30c4bde94f37e90"]
+2025-07-05 22:15:37.889 [http-nio-8080-exec-65] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1806 millis. SELECT id,name,file_type,file_content,html_content,created_at,share_permission FROM document_template WHERE id=? ["1"]
+2025-07-05 22:15:47.896 [http-nio-8080-exec-66] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 9321 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0cd8f00f-b410-423b-beac-fe1f05db9968"]
+2025-07-05 22:15:47.895 [http-nio-8080-exec-87] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3021 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0cd8f00f-b410-423b-beac-fe1f05db9968"]
+2025-07-05 22:15:47.895 [http-nio-8080-exec-2] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2615 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0cd8f00f-b410-423b-beac-fe1f05db9968"]
+2025-07-05 22:15:47.895 [http-nio-8080-exec-80] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3021 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0cd8f00f-b410-423b-beac-fe1f05db9968"]
+2025-07-05 22:15:47.895 [http-nio-8080-exec-95] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2935 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0cd8f00f-b410-423b-beac-fe1f05db9968"]
+2025-07-05 22:16:25.463 [http-nio-8080-exec-16] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2461 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["6a049001-a317-4c4f-82b9-394bbd580bd7"]
+2025-07-05 22:16:57.523 [http-nio-8080-exec-27] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 4289 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0cd8f00f-b410-423b-beac-fe1f05db9968"]
+2025-07-05 22:16:57.523 [http-nio-8080-exec-28] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 4289 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0cd8f00f-b410-423b-beac-fe1f05db9968"]
+2025-07-05 22:17:30.647 [http-nio-8080-exec-50] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 9339 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["6a049001-a317-4c4f-82b9-394bbd580bd7"]
+2025-07-05 22:17:56.861 [http-nio-8080-exec-60] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 9333 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0cd8f00f-b410-423b-beac-fe1f05db9968"]
+2025-07-05 22:17:56.861 [http-nio-8080-exec-58] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 9333 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0cd8f00f-b410-423b-beac-fe1f05db9968"]
+2025-07-05 22:18:14.329 [http-nio-8080-exec-83] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3780 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0cd8f00f-b410-423b-beac-fe1f05db9968"]
+2025-07-05 22:18:14.329 [http-nio-8080-exec-85] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3780 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0cd8f00f-b410-423b-beac-fe1f05db9968"]
+2025-07-05 22:18:41.068 [http-nio-8080-exec-5] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 4979 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0cd8f00f-b410-423b-beac-fe1f05db9968"]
+2025-07-05 22:18:55.677 [http-nio-8080-exec-18] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 8644 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0cd8f00f-b410-423b-beac-fe1f05db9968"]
+2025-07-05 22:19:14.187 [http-nio-8080-exec-3] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1387 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["6a049001-a317-4c4f-82b9-394bbd580bd7"]
+2025-07-05 22:20:01.849 [http-nio-8080-exec-6] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1462 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 22:20:06.025 [http-nio-8080-exec-11] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1123 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["ae36dfae-e6c5-4417-a2dd-854bd98adaee"]
+2025-07-05 22:20:34.128 [http-nio-8080-exec-42] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1089 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 22:20:45.410 [clientInboundChannel-5] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.MessageHandlingException: Missing header 'simpUser' for method parameter type [interface java.security.Principal]
+	at org.springframework.messaging.handler.annotation.support.HeaderMethodArgumentResolver.handleMissingValue(HeaderMethodArgumentResolver.java:111)
+	at org.springframework.messaging.handler.annotation.support.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:108)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 22:22:29.095 [clientInboundChannel-20] ERROR o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Unhandled exception from message handler method
+org.springframework.messaging.MessageHandlingException: Missing header 'simpUser' for method parameter type [interface java.security.Principal]
+	at org.springframework.messaging.handler.annotation.support.HeaderMethodArgumentResolver.handleMissingValue(HeaderMethodArgumentResolver.java:111)
+	at org.springframework.messaging.handler.annotation.support.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:108)
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:117)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:148)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:116)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMatch(AbstractMethodMessageHandler.java:565)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:511)
+	at org.springframework.messaging.simp.annotation.support.SimpAnnotationMethodMessageHandler.handleMatch(SimpAnnotationMethodMessageHandler.java:94)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessageInternal(AbstractMethodMessageHandler.java:520)
+	at org.springframework.messaging.handler.invocation.AbstractMethodMessageHandler.handleMessage(AbstractMethodMessageHandler.java:454)
+	at org.springframework.messaging.support.ExecutorSubscribableChannel$SendTask.run(ExecutorSubscribableChannel.java:144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 22:22:32.032 [http-nio-8080-exec-68] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2128 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["6b81479c-9d43-495d-81ea-1bbf5e9c7e9c"]
