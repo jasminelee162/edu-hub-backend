@@ -52,10 +52,12 @@ public class DocumentServiceImpl implements DocumentService {
         doc.setId(shareToken);
         doc.setUserCollaboration(userMapper.selectById(userId).getUserName());
 
+
         // 从模板创建可编辑副本
         doc.setContent(template.getFileContent());
 
         // 保存初始版本
+        userDocumentMapper.insert(doc);
         documentVersionService.saveVersion(doc,"0","初始化");
         return shareToken;
     }

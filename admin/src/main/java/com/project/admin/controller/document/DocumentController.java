@@ -45,7 +45,8 @@ public class DocumentController {
 
     //共享初始化
     @MessageMapping("/{documentId}/init")
-    public void initDocument(@PathVariable String documentId, @RequestParam String userId) {
+    public void initDocument(@DestinationVariable String documentId, @Payload Map<String, String> body) {
+        String userId = body.get("userId");
         List<String> users=documentService.joinCollaboration(documentId,userId);
         messagingTemplate.convertAndSendToUser(
                 userId,           // 目标用户

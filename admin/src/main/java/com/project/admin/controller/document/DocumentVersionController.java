@@ -25,12 +25,14 @@ public class DocumentVersionController {
 
     //回滚
     @GetMapping("/rollback")
-    public Result rollback(@RequestParam String documentId,@RequestParam String userId) {
-        if (!userDocumentMapper.selectById(documentId).getUserId().equals(userId)) {
+    public Result rollback(@RequestParam String versionId,@RequestParam String userId) {
+        System.out.println("aaaaaaaaaaaa:"+userId);
+        System.out.println("bbbbbbbbbbbb:"+versionId);
+        if (!userDocumentMapper.selectById(versionId.substring(0,versionId.length()-1)).getUserId().equals(userId)) {
             return Result.fail("只有共享文档创建者才可执行历史回滚功能");
         }
-        documentService.updateContent(documentId,documentVersionService.getVersionById(documentId));
-        return Result.success(documentVersionService.getVersionById(documentId));
+        documentService.updateContent(versionId.substring(0,versionId.length()-1),documentVersionService.getVersionById(versionId));
+        return Result.success(documentVersionService.getVersionById(versionId));
     }
 
     //获得所有版本
@@ -41,12 +43,13 @@ public class DocumentVersionController {
 
     //版本记录
     @PostMapping("/record")
-    public void record(@RequestParam String documentId,@RequestParam byte[] content, @RequestParam String changeNote) {
+    public Result record(@RequestParam String documentId,@RequestParam byte[] content, @RequestParam String changeNote) {
         UserDocument userDocument = new UserDocument();
         userDocument.setId(documentId);
         userDocument.setContent(content);
         String id=String.valueOf(documentVersionService.getAllVersion(documentId).size());
         documentVersionService.saveVersion(userDocument,id,changeNote);
+        return Result.success("操作成功");
     }
 
 }

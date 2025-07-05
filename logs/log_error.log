@@ -6488,3 +6488,635 @@ Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'fie
  
  WHERE (document_id = ?)["78cd04b7-3618-46e9-a727-ebead0c192cc"]
 2025-07-04 14:37:20.378 [http-nio-8080-exec-33] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2152 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 10:19:01.462 [restartedMain] ERROR com.alibaba.druid.pool.DruidDataSource - init datasource error, url: jdbc:mysql://localhost:3306/learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:118)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:232)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:112)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:925)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1444)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1440)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:83)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.getConnection(AbstractRoutingDataSource.java:194)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.lambda$h2Console$0(H2ConsoleAutoConfiguration.java:67)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.ifAvailable(DefaultListableBeanFactory.java:2035)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.h2Console(H2ConsoleAutoConfiguration.java:66)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1179)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:571)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:203)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:259)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:233)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5166)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:451)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:200)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:582)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at com.project.admin.AdminApplication.main(AdminApplication.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2025-07-05 10:19:01.464 [restartedMain] ERROR com.alibaba.druid.pool.DruidDataSource - {dataSource-1} init error
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:118)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:232)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:112)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:925)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1444)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1440)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:83)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.getConnection(AbstractRoutingDataSource.java:194)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.lambda$h2Console$0(H2ConsoleAutoConfiguration.java:67)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.ifAvailable(DefaultListableBeanFactory.java:2035)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.h2Console(H2ConsoleAutoConfiguration.java:66)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1179)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:571)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:203)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:259)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:233)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5166)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:451)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:200)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:582)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at com.project.admin.AdminApplication.main(AdminApplication.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2025-07-05 10:19:01.477 [Druid-ConnectionPool-Create-2124903393] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:118)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:232)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:112)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+2025-07-05 10:19:01.489 [Druid-ConnectionPool-Create-2124903393] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:118)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:232)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:112)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+2025-07-05 10:19:02.034 [Druid-ConnectionPool-Create-2124903393] ERROR com.alibaba.druid.pool.DruidDataSource - create connection SQLException, url: jdbc:mysql://localhost:3306/learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:118)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:232)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:112)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1703)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1786)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2910)
+2025-07-05 10:19:02.526 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'emailController': Unsatisfied dependency expressed through field 'emailService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emailServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.mail.username' in value "${spring.mail.username}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at com.project.admin.AdminApplication.main(AdminApplication.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emailServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.mail.username' in value "${spring.mail.username}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 25 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.mail.username' in value "${spring.mail.username}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:936)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1321)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	... 36 common frames omitted
+2025-07-05 10:20:34.732 [http-nio-8080-exec-3] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1194 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 10:22:45.666 [http-nio-8080-exec-19] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1513 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 10:24:11.723 [http-nio-8080-exec-28] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1402 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 10:24:20.005 [http-nio-8080-exec-37] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2199 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["15e653a2-10a8-45dc-b3d5-a5b0d1909082"]
+2025-07-05 10:24:20.005 [http-nio-8080-exec-36] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2199 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["15e653a2-10a8-45dc-b3d5-a5b0d1909082"]
+2025-07-05 10:24:34.624 [http-nio-8080-exec-18] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1968 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["15e653a2-10a8-45dc-b3d5-a5b0d1909082"]
+2025-07-05 10:26:06.080 [http-nio-8080-exec-24] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1698 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["15e653a2-10a8-45dc-b3d5-a5b0d1909082"]
+2025-07-05 10:26:06.080 [http-nio-8080-exec-25] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1698 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["15e653a2-10a8-45dc-b3d5-a5b0d1909082"]
+2025-07-05 10:28:04.814 [http-nio-8080-exec-10] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 4060 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["9573dfb0-d039-45e6-a2c1-f479520cd3ba"]
+2025-07-05 10:28:04.814 [http-nio-8080-exec-11] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 4060 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["9573dfb0-d039-45e6-a2c1-f479520cd3ba"]
+2025-07-05 10:28:11.858 [http-nio-8080-exec-14] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1149 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 10:31:15.404 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-07-05 10:40:38.095 [http-nio-8080-exec-64] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1155 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["6f43ec82-2411-43c1-a145-37d73200bc52"]
+2025-07-05 10:40:38.095 [http-nio-8080-exec-66] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1156 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["6f43ec82-2411-43c1-a145-37d73200bc52"]
+2025-07-05 10:45:49.043 [http-nio-8080-exec-1] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1517 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["42f65ae8-e42e-447d-a7cb-4f3594738614"]
+2025-07-05 10:45:49.043 [http-nio-8080-exec-100] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1517 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["42f65ae8-e42e-447d-a7cb-4f3594738614"]
+2025-07-05 10:45:49.788 [http-nio-8080-exec-20] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1825 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 10:50:18.476 [http-nio-8080-exec-87] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 4998 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["db2cc520-af6e-450c-86ec-27204980183d"]
+2025-07-05 10:50:18.476 [http-nio-8080-exec-64] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 4996 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["db2cc520-af6e-450c-86ec-27204980183d"]
+2025-07-05 10:50:25.384 [http-nio-8080-exec-58] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3282 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["db2cc520-af6e-450c-86ec-27204980183d"]
+2025-07-05 10:50:25.388 [http-nio-8080-exec-51] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3280 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["db2cc520-af6e-450c-86ec-27204980183d"]
+2025-07-05 10:50:37.000 [http-nio-8080-exec-22] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3947 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 10:50:44.096 [http-nio-8080-exec-70] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2826 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["d3eb5ec0-5bc6-453a-9246-658704824b2d"]
+2025-07-05 10:50:44.096 [http-nio-8080-exec-24] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2826 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["d3eb5ec0-5bc6-453a-9246-658704824b2d"]
+2025-07-05 10:50:52.724 [http-nio-8080-exec-50] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1307 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["d3eb5ec0-5bc6-453a-9246-658704824b2d"]
+2025-07-05 10:51:32.634 [http-nio-8080-exec-80] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3304 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["d3eb5ec0-5bc6-453a-9246-658704824b2d"]
+2025-07-05 10:51:32.634 [http-nio-8080-exec-79] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3304 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["d3eb5ec0-5bc6-453a-9246-658704824b2d"]
+2025-07-05 10:53:24.280 [http-nio-8080-exec-96] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3333 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["d3eb5ec0-5bc6-453a-9246-658704824b2d"]
+2025-07-05 10:53:24.280 [http-nio-8080-exec-95] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3335 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["d3eb5ec0-5bc6-453a-9246-658704824b2d"]
+2025-07-05 10:53:45.473 [http-nio-8080-exec-5] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1574 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["d3eb5ec0-5bc6-453a-9246-658704824b2d"]
+2025-07-05 10:53:45.473 [http-nio-8080-exec-8] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1574 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["d3eb5ec0-5bc6-453a-9246-658704824b2d"]
+2025-07-05 10:53:50.634 [http-nio-8080-exec-79] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2706 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 10:56:41.782 [http-nio-8080-exec-32] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2955 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["76d57ada-7521-4b9a-9e92-a8d59c16a8fc"]
+2025-07-05 10:56:41.782 [http-nio-8080-exec-27] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2954 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["76d57ada-7521-4b9a-9e92-a8d59c16a8fc"]
+2025-07-05 10:56:46.059 [http-nio-8080-exec-33] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1455 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 10:58:03.733 [http-nio-8080-exec-11] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2875 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 10:58:04.899 [http-nio-8080-exec-20] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3764 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["7780d58a-c898-463c-a2af-4222cd20afbf"]
+2025-07-05 10:58:04.904 [http-nio-8080-exec-21] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3675 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["7780d58a-c898-463c-a2af-4222cd20afbf"]
+2025-07-05 10:59:05.039 [http-nio-8080-exec-66] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3676 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 10:59:13.531 [http-nio-8080-exec-3] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3111 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["b4b01fac-81fa-45cf-9dd1-854b1c6f0675"]
+2025-07-05 10:59:13.532 [http-nio-8080-exec-62] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3111 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["b4b01fac-81fa-45cf-9dd1-854b1c6f0675"]
+2025-07-05 11:02:22.926 [http-nio-8080-exec-32] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 5039 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["b4b01fac-81fa-45cf-9dd1-854b1c6f0675"]
+2025-07-05 11:02:22.926 [http-nio-8080-exec-46] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 5038 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["b4b01fac-81fa-45cf-9dd1-854b1c6f0675"]
+2025-07-05 11:02:37.030 [http-nio-8080-exec-65] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1982 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["b4b01fac-81fa-45cf-9dd1-854b1c6f0675"]
+2025-07-05 11:02:37.030 [http-nio-8080-exec-81] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1979 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["b4b01fac-81fa-45cf-9dd1-854b1c6f0675"]
+2025-07-05 11:02:42.638 [http-nio-8080-exec-49] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3341 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 11:02:47.978 [http-nio-8080-exec-68] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2515 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["fe833eac-1971-43f5-b5ec-ef78d0bc7688"]
+2025-07-05 11:02:47.978 [http-nio-8080-exec-54] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2515 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["fe833eac-1971-43f5-b5ec-ef78d0bc7688"]
+2025-07-05 11:03:58.593 [http-nio-8080-exec-69] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3704 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 11:04:02.219 [http-nio-8080-exec-79] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2326 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["55bff433-c4d1-4bdd-89b3-899a993a39e1"]
+2025-07-05 11:04:02.219 [http-nio-8080-exec-88] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 2314 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["55bff433-c4d1-4bdd-89b3-899a993a39e1"]
+2025-07-05 11:04:11.284 [http-nio-8080-exec-2] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3211 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["55bff433-c4d1-4bdd-89b3-899a993a39e1"]
+2025-07-05 11:04:19.547 [http-nio-8080-exec-14] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1449 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["55bff433-c4d1-4bdd-89b3-899a993a39e1"]
+2025-07-05 11:05:23.904 [http-nio-8080-exec-35] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1005 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["55bff433-c4d1-4bdd-89b3-899a993a39e1"]
+2025-07-05 11:05:23.904 [http-nio-8080-exec-28] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1005 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["55bff433-c4d1-4bdd-89b3-899a993a39e1"]
+2025-07-05 11:05:26.884 [http-nio-8080-exec-24] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1011 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 11:06:06.703 [http-nio-8080-exec-7] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 4072 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0e771105-a58b-4c53-836f-148ff9421b9e"]
+2025-07-05 11:06:06.703 [http-nio-8080-exec-6] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 4072 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0e771105-a58b-4c53-836f-148ff9421b9e"]
+2025-07-05 11:18:17.337 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-07-05 11:26:07.912 [http-nio-8080-exec-8] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1051 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["a766ae1e-75bb-4ea6-af29-e39aa38f0fe5"]
+2025-07-05 11:26:07.912 [http-nio-8080-exec-9] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1051 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["a766ae1e-75bb-4ea6-af29-e39aa38f0fe5"]
+2025-07-05 11:31:49.973 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field documentService in com.project.admin.controller.document.DocumentController required a bean of type 'com.project.system.service.DocumentService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.project.system.service.DocumentService' in your configuration.
+
+2025-07-05 11:32:36.749 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentController': Unsatisfied dependency expressed through field 'documentService'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'documentServiceImpl': Bean with name 'documentServiceImpl' has been injected into other beans [documentServiceImpl] in its raw version as part of a circular reference, but has eventually been wrapped. This means that said other beans do not use the final version of the bean. This is often the result of over-eager type matching - consider using 'getBeanNamesForType' with the 'allowEagerInit' flag turned off, for example.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at com.project.admin.AdminApplication.main(AdminApplication.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'documentServiceImpl': Bean with name 'documentServiceImpl' has been injected into other beans [documentServiceImpl] in its raw version as part of a circular reference, but has eventually been wrapped. This means that said other beans do not use the final version of the bean. This is often the result of over-eager type matching - consider using 'getBeanNamesForType' with the 'allowEagerInit' flag turned off, for example.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 25 common frames omitted
+2025-07-05 11:33:17.116 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentController': Unsatisfied dependency expressed through field 'documentService'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'documentServiceImpl': Bean with name 'documentServiceImpl' has been injected into other beans [documentServiceImpl] in its raw version as part of a circular reference, but has eventually been wrapped. This means that said other beans do not use the final version of the bean. This is often the result of over-eager type matching - consider using 'getBeanNamesForType' with the 'allowEagerInit' flag turned off, for example.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at com.project.admin.AdminApplication.main(AdminApplication.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'documentServiceImpl': Bean with name 'documentServiceImpl' has been injected into other beans [documentServiceImpl] in its raw version as part of a circular reference, but has eventually been wrapped. This means that said other beans do not use the final version of the bean. This is often the result of over-eager type matching - consider using 'getBeanNamesForType' with the 'allowEagerInit' flag turned off, for example.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 25 common frames omitted
+2025-07-05 11:35:11.198 [http-nio-8080-exec-3] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1763 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 11:42:02.620 [http-nio-8080-exec-3] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1699 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 11:42:06.207 [http-nio-8080-exec-9] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1418 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)[""]
+2025-07-05 11:42:06.207 [http-nio-8080-exec-8] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1418 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)[""]
+2025-07-05 11:42:17.948 [http-nio-8080-exec-29] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1200 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 11:45:36.243 [http-nio-8080-exec-14] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1215 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 11:45:39.047 [http-nio-8080-exec-20] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1541 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["298a6bf6-2ab3-4d2d-8378-5c3fc4e5afe9"]
+2025-07-05 11:45:39.047 [http-nio-8080-exec-19] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1541 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["298a6bf6-2ab3-4d2d-8378-5c3fc4e5afe9"]
+2025-07-05 13:06:44.883 [http-nio-8080-exec-44] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1685 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["96e6c0f8-d55b-4444-b256-bca7f78da078"]
+2025-07-05 13:06:44.883 [http-nio-8080-exec-43] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1685 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["96e6c0f8-d55b-4444-b256-bca7f78da078"]
+2025-07-05 13:06:53.037 [asyncExecutor-3] ERROR o.s.a.i.SimpleAsyncUncaughtExceptionHandler - Unexpected exception occurred invoking async method: public void com.project.system.service.impl.DocumentServiceImpl.updateContent(java.lang.String,byte[])
+java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.setContent(byte[])" because "doc" is null
+	at com.project.system.service.impl.DocumentServiceImpl.updateContent(DocumentServiceImpl.java:69)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at com.project.framework.config.AsyncPoolConfig$ContextDecorator.lambda$decorate$0(AsyncPoolConfig.java:73)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-05 13:10:44.061 [http-nio-8080-exec-3] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1071 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 13:10:49.717 [http-nio-8080-exec-13] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3445 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["d08dda7b-0600-4b6e-821e-563d48a2d6ac"]
+2025-07-05 13:10:49.717 [http-nio-8080-exec-12] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 3445 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["d08dda7b-0600-4b6e-821e-563d48a2d6ac"]
+2025-07-05 13:13:38.191 [http-nio-8080-exec-4] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1101 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 13:13:41.327 [http-nio-8080-exec-10] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1481 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["70179974-eb29-43d1-a3ed-e687a3e1d71d"]
+2025-07-05 13:13:41.327 [http-nio-8080-exec-9] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1481 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["70179974-eb29-43d1-a3ed-e687a3e1d71d"]
+2025-07-05 13:15:44.073 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-07-05 13:15:50.781 [http-nio-8080-exec-3] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1590 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 13:27:34.177 [http-nio-8080-exec-5] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1006 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 13:27:37.528 [http-nio-8080-exec-13] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1750 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["747e444f-24ed-4afd-845a-8d3114ffc942"]
+2025-07-05 13:27:37.528 [http-nio-8080-exec-11] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1750 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["747e444f-24ed-4afd-845a-8d3114ffc942"]
+2025-07-05 13:30:52.912 [http-nio-8080-exec-3] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1698 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 13:30:56.121 [http-nio-8080-exec-9] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1190 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["6ae31916-a8a7-4671-9318-c15c4657dce6"]
+2025-07-05 13:30:56.121 [http-nio-8080-exec-8] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1190 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["6ae31916-a8a7-4671-9318-c15c4657dce6"]
