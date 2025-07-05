@@ -7644,3 +7644,7 @@ java.lang.NullPointerException: Cannot invoke "java.security.Principal.getName()
 2025-07-05 19:16:36.315 [http-nio-8080-exec-5] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1297 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
  
  WHERE (document_id = ?)["4fcfac37-002a-484c-93f5-35fdb60c170e"]
+2025-07-05 20:25:49.936 [http-nio-8080-exec-47] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1147 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template[]
+2025-07-05 20:26:02.204 [http-nio-8080-exec-61] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1163 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
+ 
+ WHERE (document_id = ?)["0c48cfa8-a321-49f0-8adb-613e96b07cf2"]
