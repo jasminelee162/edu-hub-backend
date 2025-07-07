@@ -1751,3 +1751,75 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 2025-07-07 09:33:05.287 [http-nio-8080-exec-65] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1246 millis. SELECT  id,content,document_id,created_by,created_at,change_note,change_version  FROM document_version 
  
  WHERE (document_id = ?)["525f1764-af37-4c45-8e78-a6cc426c2078"]
+2025-07-07 17:18:29.405 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field templateService in com.project.system.service.impl.DocumentServiceImpl required a bean of type 'com.project.system.service.TemplateService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.project.system.service.TemplateService' in your configuration.
+
+2025-07-07 17:19:24.027 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field templateService in com.project.system.service.impl.DocumentServiceImpl required a bean of type 'com.project.system.service.TemplateService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.project.system.service.TemplateService' in your configuration.
+
+2025-07-07 17:20:35.555 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field templateService in com.project.system.service.impl.DocumentServiceImpl required a bean of type 'com.project.system.service.TemplateService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.project.system.service.TemplateService' in your configuration.
+
+2025-07-07 17:21:24.901 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field templateService in com.project.system.service.impl.DocumentServiceImpl required a bean of type 'com.project.system.service.TemplateService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.project.system.service.TemplateService' in your configuration.
+

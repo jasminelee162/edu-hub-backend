@@ -13,4 +13,8 @@ public interface TemplateService {
     Result uploadTemplate(MultipartFile file);
     List<TemplateVO> getAllTemplates();
     Template getTemplateById(String id);
+    // 新增分页查询方法
+    Result queryTemplates(String name, Integer pageNumber, Integer pageSize, String startDate, String endDate);
+    //删除资料
+    Result deleteTemplatesByIds(List<Integer> ids);
 }
