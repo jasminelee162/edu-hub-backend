@@ -1823,3 +1823,4 @@ Action:
 
 Consider defining a bean of type 'com.project.system.service.TemplateService' in your configuration.
 
+2025-07-07 22:54:38.397 [http-nio-8080-exec-16] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1069 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template LIMIT ?[10]
