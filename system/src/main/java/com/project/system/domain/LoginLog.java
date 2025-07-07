@@ -15,7 +15,7 @@ import java.util.Date;
 /**
  * @author shaozhujie
  * @version 1.0
- * @description: 登陆日志
+ * @description: 登录日志
  * @date 2023/9/23 8:47
  */
 @Data
@@ -57,7 +57,7 @@ public class LoginLog {
     private Integer status;
 
     /**
-     *登陆时间
+     *登录时间
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")

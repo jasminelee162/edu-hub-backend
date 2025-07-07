@@ -183,24 +183,5 @@ public class TestStudentController {
         return Result.success(wrongAnswers);
     }
 
-    @GetMapping("canEnterTest")
-    public Result canEnterTest(@RequestParam("testId") String testId) {
-        Test test = testService.getById(testId);
-        if (test == null) {
-            return Result.fail("考试不存在");
-        }
-
-        Date now = new Date();
-
-        if (test.getStartTime().after(now)) {
-            return Result.fail("考试尚未开始，无法进入试卷");
-        }
-
-        if (test.getEndTime().before(now)) {
-            return Result.fail("考试时间已截止，无法进入试卷");
-        }
-
-        return Result.success("可以进入考试");
-    }
-
+    
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 /**
  * @author shaozhujie
  * @version 1.0
- * @description: 登陆日志service实现类
+ * @description: 登录日志service实现类
  * @date 2023/9/23 8:52
  */
 @Service

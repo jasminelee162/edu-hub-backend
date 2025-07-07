@@ -12,7 +12,7 @@ import org.apache.shiro.SecurityUtils;
 public class ShiroUtils {
 
     /**
-    * @description: 获取当前登陆用户
+    * @description: 获取当前登录用户
     * @param:
     * @return:
     * @author shaozhujie
