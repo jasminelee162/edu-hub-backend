@@ -1,124 +1,35 @@
-2025-07-01 00:20:01.500 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-01 00:20:18.726 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-01 00:21:13.059 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.transaction.CannotCreateTransactionException: Could not open JDBC Connection for transaction; nested exception is java.sql.SQLSyntaxErrorException: Unknown database 'learn']
-2025-07-01 00:21:33.640 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-01 00:22:02.088 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under '' to com.zaxxer.hikari.HikariDataSource]
-2025-07-01 00:23:31.643 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-01 00:24:16.912 [Thread-10] WARN  o.s.jdbc.support.SQLErrorCodesFactory - Error while extracting database name
-org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
-	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:366)
-	at org.springframework.jdbc.support.SQLErrorCodesFactory.resolveErrorCodes(SQLErrorCodesFactory.java:235)
-	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.lambda$setDataSource$0(SQLErrorCodeSQLExceptionTranslator.java:140)
-	at org.springframework.util.function.SingletonSupplier.get(SingletonSupplier.java:97)
-	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.setDataSource(SQLErrorCodeSQLExceptionTranslator.java:141)
-	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.<init>(SQLErrorCodeSQLExceptionTranslator.java:102)
-	at org.springframework.jdbc.support.JdbcAccessor.getExceptionTranslator(JdbcAccessor.java:136)
-	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:393)
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:431)
-	at com.project.system.service.impl.SandboxInitializeImpl.lambda$initializeSandbox$0(SandboxInitializeImpl.java:50)
-	at java.base/java.lang.Thread.run(Thread.java:842)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
-	at org.h2.message.DbException.get(DbException.java:205)
-	at org.h2.message.DbException.get(DbException.java:181)
-	at org.h2.message.DbException.get(DbException.java:170)
-	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1514)
-	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1490)
-	at org.h2.jdbc.JdbcConnection.getMetaData(JdbcConnection.java:400)
-	at com.zaxxer.hikari.pool.ProxyConnection.getMetaData(ProxyConnection.java:380)
-	at com.zaxxer.hikari.pool.HikariProxyConnection.getMetaData(HikariProxyConnection.java)
-	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:340)
-	... 11 common frames omitted
-2025-07-01 00:24:16.914 [Thread-10] WARN  o.s.jdbc.support.SQLErrorCodesFactory - Error while extracting database name
-org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
-	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:366)
-	at org.springframework.jdbc.support.SQLErrorCodesFactory.resolveErrorCodes(SQLErrorCodesFactory.java:235)
-	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.lambda$setDataSource$0(SQLErrorCodeSQLExceptionTranslator.java:140)
-	at org.springframework.util.function.SingletonSupplier.get(SingletonSupplier.java:97)
-	at org.springframework.util.function.SupplierUtils.resolve(SupplierUtils.java:40)
-	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.getSqlErrorCodes(SQLErrorCodeSQLExceptionTranslator.java:171)
-	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:193)
-	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
-	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:393)
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:431)
-	at com.project.system.service.impl.SandboxInitializeImpl.lambda$initializeSandbox$0(SandboxInitializeImpl.java:50)
-	at java.base/java.lang.Thread.run(Thread.java:842)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
-	at org.h2.message.DbException.get(DbException.java:205)
-	at org.h2.message.DbException.get(DbException.java:181)
-	at org.h2.message.DbException.get(DbException.java:170)
-	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1514)
-	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1490)
-	at org.h2.jdbc.JdbcConnection.getMetaData(JdbcConnection.java:400)
-	at com.zaxxer.hikari.pool.ProxyConnection.getMetaData(ProxyConnection.java:380)
-	at com.zaxxer.hikari.pool.HikariProxyConnection.getMetaData(HikariProxyConnection.java)
-	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:340)
-	... 12 common frames omitted
-2025-07-01 00:24:32.517 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-01 22:18:42.604 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-01 22:19:03.558 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-01 22:35:36.558 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-01 23:03:56.452 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-02 15:15:27.827 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-02 15:16:08.752 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-02 15:53:27.944 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-02 15:59:21.961 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-02 16:00:17.765 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-02 16:15:11.718 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-02 16:16:21.075 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-02 16:23:05.837 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'checked' in 'field list'
-### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (task_id = ?) LIMIT ?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'checked' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'checked' in 'field list']
-2025-07-02 16:29:36.924 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-02 16:29:53.434 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Failure in @ExceptionHandler com.project.admin.controller.GlobalExceptionHandler#handleException(Exception)
-org.apache.catalina.connector.ClientAbortException: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
-	at org.apache.catalina.connector.OutputBuffer.realWriteBytes(OutputBuffer.java:351)
-	at org.apache.catalina.connector.OutputBuffer.flushByteBuffer(OutputBuffer.java:776)
-	at org.apache.catalina.connector.OutputBuffer.append(OutputBuffer.java:681)
-	at org.apache.catalina.connector.OutputBuffer.writeBytes(OutputBuffer.java:386)
-	at org.apache.catalina.connector.OutputBuffer.write(OutputBuffer.java:364)
-	at org.apache.catalina.connector.CoyoteOutputStream.write(CoyoteOutputStream.java:96)
-	at org.springframework.util.StreamUtils$NonClosingOutputStream.write(StreamUtils.java:287)
-	at com.fasterxml.jackson.core.json.UTF8JsonGenerator._flushBuffer(UTF8JsonGenerator.java:2161)
-	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1175)
-	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1008)
-	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:345)
-	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104)
-	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:277)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.handleReturnValue(RequestResponseBodyMethodProcessor.java:181)
-	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:124)
-	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:428)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:75)
-	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141)
-	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
-	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1320)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1131)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
-	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
-	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+2025-07-07 08:04:12.706 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-07 08:05:07.876 [http-nio-8080-exec-7] WARN  org.apache.shiro.authc.AbstractAuthenticator - Authentication failed for token submission [com.project.framework.custom.JwtToken@6855b5d5].  Possible unexpected error? (Typical or expected login exceptions should extend from AuthenticationException).
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException
+### The error may exist in com/project/system/mapper/UserMapper.java (best guess)
+### The error may involve com.project.system.mapper.UserMapper.selectById
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at jdk.proxy2/jdk.proxy2.$Proxy67.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:90)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at jdk.proxy3/jdk.proxy3.$Proxy68.selectById(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.IService.getById(IService.java:201)
+	at com.project.framework.config.ShiroRealm.checkUserTokenIsEffect(ShiroRealm.java:115)
+	at com.project.framework.config.ShiroRealm.doGetAuthenticationInfo(ShiroRealm.java:94)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:571)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:273)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:275)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:260)
+	at com.project.framework.filter.JwtFilter.executeLogin(JwtFilter.java:93)
+	at com.project.framework.filter.JwtFilter.isAccessAllowed(JwtFilter.java:54)
+	at org.apache.shiro.web.filter.AccessControlFilter.onPreHandle(AccessControlFilter.java:162)
+	at org.apache.shiro.web.filter.PathMatchingFilter.isFilterChainContinued(PathMatchingFilter.java:223)
+	at org.apache.shiro.web.filter.PathMatchingFilter.preHandle(PathMatchingFilter.java:198)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:131)
 	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
 	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
 	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
@@ -168,215 +79,195 @@ org.apache.catalina.connector.ClientAbortException: java.io.IOException: 你的�
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
-	at java.base/sun.nio.ch.SocketDispatcher.write0(Native Method)
-	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:54)
-	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:132)
-	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:97)
-	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:53)
-	at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:532)
-	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:138)
-	at org.apache.tomcat.util.net.NioBlockingSelector.write(NioBlockingSelector.java:101)
-	at org.apache.tomcat.util.net.NioSelectorPool.write(NioSelectorPool.java:152)
-	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1253)
-	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:764)
-	at org.apache.tomcat.util.net.SocketWrapperBase.writeBlocking(SocketWrapperBase.java:584)
-	at org.apache.tomcat.util.net.SocketWrapperBase.write(SocketWrapperBase.java:528)
-	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.doWrite(Http11OutputBuffer.java:546)
-	at org.apache.coyote.http11.filters.ChunkedOutputFilter.doWrite(ChunkedOutputFilter.java:110)
-	at org.apache.coyote.http11.Http11OutputBuffer.doWrite(Http11OutputBuffer.java:193)
-	at org.apache.coyote.Response.doWrite(Response.java:601)
-	at org.apache.catalina.connector.OutputBuffer.realWriteBytes(OutputBuffer.java:339)
-	... 86 common frames omitted
-2025-07-02 16:30:01.538 [http-nio-8080-exec-26] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'checked' in 'field list'
-### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (task_id = ?) LIMIT ?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'checked' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'checked' in 'field list']
-2025-07-02 16:32:10.671 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-02 16:32:29.141 [http-nio-8080-exec-22] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'checked' in 'field list'
-### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (task_id = ?) LIMIT ?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'checked' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'checked' in 'field list']
-2025-07-02 16:36:51.883 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-02 16:44:09.859 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-02 16:56:25.865 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-02 17:09:15.648 [Thread-10] WARN  o.s.jdbc.support.SQLErrorCodesFactory - Error while extracting database name
-org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
-	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:366)
-	at org.springframework.jdbc.support.SQLErrorCodesFactory.resolveErrorCodes(SQLErrorCodesFactory.java:235)
-	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.lambda$setDataSource$0(SQLErrorCodeSQLExceptionTranslator.java:140)
-	at org.springframework.util.function.SingletonSupplier.get(SingletonSupplier.java:97)
-	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.setDataSource(SQLErrorCodeSQLExceptionTranslator.java:141)
-	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.<init>(SQLErrorCodeSQLExceptionTranslator.java:102)
-	at org.springframework.jdbc.support.JdbcAccessor.getExceptionTranslator(JdbcAccessor.java:136)
-	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:393)
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:431)
-	at com.project.system.service.impl.SandboxInitializeImpl.lambda$initializeSandbox$0(SandboxInitializeImpl.java:50)
-	at java.base/java.lang.Thread.run(Thread.java:842)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
-	at org.h2.message.DbException.get(DbException.java:205)
-	at org.h2.message.DbException.get(DbException.java:181)
-	at org.h2.message.DbException.get(DbException.java:170)
-	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1514)
-	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1490)
-	at org.h2.jdbc.JdbcConnection.getMetaData(JdbcConnection.java:400)
-	at com.zaxxer.hikari.pool.ProxyConnection.getMetaData(ProxyConnection.java:380)
-	at com.zaxxer.hikari.pool.HikariProxyConnection.getMetaData(HikariProxyConnection.java)
-	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:340)
-	... 11 common frames omitted
-2025-07-02 17:09:15.650 [Thread-10] WARN  o.s.jdbc.support.SQLErrorCodesFactory - Error while extracting database name
-org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
-	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:366)
-	at org.springframework.jdbc.support.SQLErrorCodesFactory.resolveErrorCodes(SQLErrorCodesFactory.java:235)
-	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.lambda$setDataSource$0(SQLErrorCodeSQLExceptionTranslator.java:140)
-	at org.springframework.util.function.SingletonSupplier.get(SingletonSupplier.java:97)
-	at org.springframework.util.function.SupplierUtils.resolve(SupplierUtils.java:40)
-	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.getSqlErrorCodes(SQLErrorCodeSQLExceptionTranslator.java:171)
-	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:193)
-	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
-	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:393)
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:431)
-	at com.project.system.service.impl.SandboxInitializeImpl.lambda$initializeSandbox$0(SandboxInitializeImpl.java:50)
-	at java.base/java.lang.Thread.run(Thread.java:842)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
-	at org.h2.message.DbException.get(DbException.java:205)
-	at org.h2.message.DbException.get(DbException.java:181)
-	at org.h2.message.DbException.get(DbException.java:170)
-	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1514)
-	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1490)
-	at org.h2.jdbc.JdbcConnection.getMetaData(JdbcConnection.java:400)
-	at com.zaxxer.hikari.pool.ProxyConnection.getMetaData(ProxyConnection.java:380)
-	at com.zaxxer.hikari.pool.HikariProxyConnection.getMetaData(HikariProxyConnection.java)
-	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:340)
-	... 12 common frames omitted
-2025-07-02 17:13:07.774 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-02 17:15:18.494 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-02 17:39:58.285 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-02 17:40:15.583 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException: Error attempting to get column 'id' from result set.  Cause: java.sql.SQLDataException: Value '1940329740032303105' is outside of valid range for type java.lang.Integer
-; Value '1940329740032303105' is outside of valid range for type java.lang.Integer; nested exception is java.sql.SQLDataException: Value '1940329740032303105' is outside of valid range for type java.lang.Integer]
-2025-07-02 17:40:52.781 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException: 
-### Error updating database.  Cause: java.sql.SQLException: Field 'id' doesn't have a default value
-### The error may exist in com/project/system/mapper/TemplateMapper.java (best guess)
-### The error may involve com.project.system.mapper.TemplateMapper.insert-Inline
-### The error occurred while setting parameters
-### SQL: INSERT INTO document_template  ( name, file_type, file_content,  created_at, share_permission )  VALUES  ( ?, ?, ?,  ?, ? )
-### Cause: java.sql.SQLException: Field 'id' doesn't have a default value
-; Field 'id' doesn't have a default value; nested exception is java.sql.SQLException: Field 'id' doesn't have a default value]
-2025-07-02 17:42:20.047 [http-nio-8080-exec-11] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException: 
-### Error updating database.  Cause: java.sql.SQLException: Field 'id' doesn't have a default value
-### The error may exist in com/project/system/mapper/TemplateMapper.java (best guess)
-### The error may involve com.project.system.mapper.TemplateMapper.insert-Inline
-### The error occurred while setting parameters
-### SQL: INSERT INTO document_template  ( name, file_type, file_content,  created_at, share_permission )  VALUES  ( ?, ?, ?,  ?, ? )
-### Cause: java.sql.SQLException: Field 'id' doesn't have a default value
-; Field 'id' doesn't have a default value; nested exception is java.sql.SQLException: Field 'id' doesn't have a default value]
-2025-07-03 23:47:51.681 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-03 23:48:02.554 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.mapper.DocumentVersionMapper.selectList(com.baomidou.mybatisplus.core.conditions.Wrapper)" because "this.documentVersionMapper" is null]
-2025-07-03 23:48:02.554 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.mapper.DocumentVersionMapper.selectList(com.baomidou.mybatisplus.core.conditions.Wrapper)" because "this.documentVersionMapper" is null]
-2025-07-03 23:55:29.679 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-03 23:56:50.015 [http-nio-8080-exec-100] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 11:33:02.749 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-04 11:33:06.029 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-04 11:33:20.572 [restartedMain] WARN  o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
-2025-07-04 11:33:20.725 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
-2025-07-04 11:34:32.712 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-04 00:00:22.928 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-04 00:04:39.905 [http-nio-8080-exec-14] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 00:04:49.808 [http-nio-8080-exec-98] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 00:33:54.334 [http-nio-8080-exec-41] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 00:37:11.842 [http-nio-8080-exec-28] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 00:37:21.560 [http-nio-8080-exec-88] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 00:38:34.076 [http-nio-8080-exec-77] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 00:39:03.343 [http-nio-8080-exec-71] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 00:43:50.615 [http-nio-8080-exec-51] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 00:44:14.673 [http-nio-8080-exec-40] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 00:44:29.856 [http-nio-8080-exec-66] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 09:56:12.590 [http-nio-8080-exec-55] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 10:06:40.755 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentController': Unsatisfied dependency expressed through field 'documentService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentServiceImpl': Unsatisfied dependency expressed through field 'documentVersionService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.project.system.service.DocumentVersionService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2025-07-04 10:07:19.649 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-04 10:12:22.733 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-04 10:16:40.409 [http-nio-8080-exec-94] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 10:16:41.076 [http-nio-8080-exec-100] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 10:17:36.827 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-04 11:23:33.402 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 11:23:33.402 [http-nio-8080-exec-15] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 11:23:46.830 [http-nio-8080-exec-86] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 11:23:46.831 [http-nio-8080-exec-90] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 11:24:06.098 [http-nio-8080-exec-52] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.DocumentVersion.getContent()" because the return value of "com.project.system.mapper.DocumentVersionMapper.selectById(java.io.Serializable)" is null]
-2025-07-04 14:15:21.981 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-04 14:16:15.740 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-04 14:23:40.042 [http-nio-8080-exec-67] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-04 14:23:40.537 [http-nio-8080-exec-66] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-04 14:24:41.470 [http-nio-8080-exec-56] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-04 14:24:41.473 [http-nio-8080-exec-53] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-04 14:26:40.384 [http-nio-8080-exec-72] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-04 14:26:40.384 [http-nio-8080-exec-66] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-04 14:31:15.298 [http-nio-8080-exec-50] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-04 14:33:42.921 [http-nio-8080-exec-66] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-04 14:34:08.472 [http-nio-8080-exec-86] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-04 14:34:53.943 [http-nio-8080-exec-78] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-04 14:36:49.562 [http-nio-8080-exec-60] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-04 21:09:31.216 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-04 21:11:16.404 [http-nio-8080-exec-100] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-04 21:11:16.404 [http-nio-8080-exec-94] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-04 21:11:16.405 [http-nio-8080-exec-96] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-04 21:11:16.404 [http-nio-8080-exec-99] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-04 21:11:16.404 [http-nio-8080-exec-97] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-04 21:11:16.404 [http-nio-8080-exec-93] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-05 10:18:58.742 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-05 10:19:02.494 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'emailController': Unsatisfied dependency expressed through field 'emailService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emailServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.mail.username' in value "${spring.mail.username}"
-2025-07-05 10:20:23.820 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-05 10:20:28.723 [restartedMain] WARN  o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
-2025-07-05 10:26:06.209 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-05 10:28:08.337 [http-nio-8080-exec-89] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
-2025-07-05 10:31:10.163 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-05 10:31:15.314 [restartedMain] WARN  o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
-2025-07-05 10:31:15.363 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
-2025-07-05 10:38:33.326 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-05 10:38:38.451 [restartedMain] WARN  o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
-2025-07-05 10:39:05.883 [http-nio-8080-exec-58] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'versionId' is not present]
-2025-07-05 10:40:38.155 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'versionId' is not present]
-2025-07-05 10:43:00.226 [http-nio-8080-exec-46] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'versionId' is not present]
-2025-07-05 10:43:48.620 [http-nio-8080-exec-56] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'versionId' is not present]
-2025-07-05 10:46:09.058 [http-nio-8080-exec-81] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'versionId' is not present]
-2025-07-05 10:50:29.152 [http-nio-8080-exec-16] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'versionId' is not present]
-2025-07-05 10:51:05.840 [http-nio-8080-exec-59] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'versionId' is not present]
-2025-07-05 10:51:33.815 [http-nio-8080-exec-84] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'versionId' is not present]
-2025-07-05 10:53:25.168 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'versionId' is not present]
-2025-07-05 10:53:45.562 [http-nio-8080-exec-54] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'versionId' is not present]
-2025-07-05 10:54:14.133 [http-nio-8080-exec-77] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'versionId' is not present]
-2025-07-05 10:56:43.483 [http-nio-8080-exec-65] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'versionId' is not present]
-2025-07-05 10:57:08.199 [http-nio-8080-exec-100] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'versionId' is not present]
-2025-07-05 10:58:23.421 [http-nio-8080-exec-93] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'versionId' is not present]
-2025-07-05 10:59:31.180 [http-nio-8080-exec-72] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'versionId' is not present]
-2025-07-05 11:02:24.928 [http-nio-8080-exec-41] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Failure in @ExceptionHandler com.project.admin.controller.GlobalExceptionHandler#handleException(Exception)
-org.apache.catalina.connector.ClientAbortException: java.io.IOException: Broken pipe
-	at org.apache.catalina.connector.OutputBuffer.realWriteBytes(OutputBuffer.java:351)
-	at org.apache.catalina.connector.OutputBuffer.flushByteBuffer(OutputBuffer.java:776)
-	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:298)
-	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:272)
-	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:118)
-	at java.base/java.io.FilterOutputStream.flush(FilterOutputStream.java:153)
-	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1178)
-	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1008)
-	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:345)
-	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104)
-	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:277)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException
+### The error may exist in com/project/system/mapper/UserMapper.java (best guess)
+### The error may involve com.project.system.mapper.UserMapper.selectById
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 72 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:82)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.prepareStatement(MybatisSimpleExecutor.java:93)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:68)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:165)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:65)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy210.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 79 common frames omitted
+Caused by: java.sql.SQLException: null
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1772)
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:1470)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5058)
+	at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:704)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5054)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1448)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1440)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:83)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.getConnection(AbstractRoutingDataSource.java:194)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79)
+	... 91 common frames omitted
+Caused by: java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1667)
+	at com.alibaba.druid.pool.DruidDataSource.pollLast(DruidDataSource.java:2334)
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1753)
+	... 102 common frames omitted
+2025-07-07 08:05:07.876 [http-nio-8080-exec-5] WARN  org.apache.shiro.authc.AbstractAuthenticator - Authentication failed for token submission [com.project.framework.custom.JwtToken@4bb98aa0].  Possible unexpected error? (Typical or expected login exceptions should extend from AuthenticationException).
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException
+### The error may exist in com/project/system/mapper/UserMapper.java (best guess)
+### The error may involve com.project.system.mapper.UserMapper.selectById
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at jdk.proxy2/jdk.proxy2.$Proxy67.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:90)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at jdk.proxy3/jdk.proxy3.$Proxy68.selectById(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.IService.getById(IService.java:201)
+	at com.project.framework.config.ShiroRealm.checkUserTokenIsEffect(ShiroRealm.java:115)
+	at com.project.framework.config.ShiroRealm.doGetAuthenticationInfo(ShiroRealm.java:94)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:571)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:273)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:275)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:260)
+	at com.project.framework.filter.JwtFilter.executeLogin(JwtFilter.java:93)
+	at com.project.framework.filter.JwtFilter.isAccessAllowed(JwtFilter.java:54)
+	at org.apache.shiro.web.filter.AccessControlFilter.onPreHandle(AccessControlFilter.java:162)
+	at org.apache.shiro.web.filter.PathMatchingFilter.isFilterChainContinued(PathMatchingFilter.java:223)
+	at org.apache.shiro.web.filter.PathMatchingFilter.preHandle(PathMatchingFilter.java:198)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:131)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:450)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:114)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException
+### The error may exist in com/project/system/mapper/UserMapper.java (best guess)
+### The error may involve com.project.system.mapper.UserMapper.selectById
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 72 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:82)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.prepareStatement(MybatisSimpleExecutor.java:93)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:68)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:165)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:65)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy210.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 79 common frames omitted
+Caused by: java.sql.SQLException: null
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1772)
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:1470)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5058)
+	at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:704)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5054)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1448)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1440)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:83)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.getConnection(AbstractRoutingDataSource.java:194)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79)
+	... 91 common frames omitted
+Caused by: java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1686)
+	at com.alibaba.druid.pool.DruidDataSource.pollLast(DruidDataSource.java:2334)
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1753)
+	... 102 common frames omitted
+2025-07-07 08:05:07.897 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Failure in @ExceptionHandler com.project.admin.controller.GlobalExceptionHandler#handleException(Exception)
+java.lang.NullPointerException: Cannot invoke "String.indexOf(String)" because "path" is null
+	at org.springframework.web.util.UrlPathHelper.getSanitizedPath(UrlPathHelper.java:409)
+	at org.springframework.web.util.UrlPathHelper.decodeAndCleanUriString(UrlPathHelper.java:550)
+	at org.springframework.web.util.UrlPathHelper.getOriginatingRequestUri(UrlPathHelper.java:495)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.addContentDispositionHeader(AbstractMessageConverterMethodProcessor.java:423)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:275)
 	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.handleReturnValue(RequestResponseBodyMethodProcessor.java:181)
 	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78)
 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:124)
@@ -451,33 +342,32 @@ org.apache.catalina.connector.ClientAbortException: java.io.IOException: Broken 
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:840)
-Caused by: java.io.IOException: Broken pipe
-	at java.base/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
-	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:62)
-	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:132)
-	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:97)
-	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:53)
-	at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:532)
-	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:138)
-	at org.apache.tomcat.util.net.NioBlockingSelector.write(NioBlockingSelector.java:101)
-	at org.apache.tomcat.util.net.NioSelectorPool.write(NioSelectorPool.java:152)
-	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1253)
-	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:764)
-	at org.apache.tomcat.util.net.SocketWrapperBase.writeBlocking(SocketWrapperBase.java:584)
-	at org.apache.tomcat.util.net.SocketWrapperBase.write(SocketWrapperBase.java:528)
-	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.doWrite(Http11OutputBuffer.java:546)
-	at org.apache.coyote.http11.filters.ChunkedOutputFilter.doWrite(ChunkedOutputFilter.java:110)
-	at org.apache.coyote.http11.Http11OutputBuffer.doWrite(Http11OutputBuffer.java:193)
-	at org.apache.coyote.Response.doWrite(Response.java:601)
-	at org.apache.catalina.connector.OutputBuffer.realWriteBytes(OutputBuffer.java:339)
-	... 84 common frames omitted
-2025-07-05 11:02:37.339 [http-nio-8080-exec-55] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'userId' is not present]
-2025-07-05 11:03:06.285 [http-nio-8080-exec-25] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'userId' is not present]
-2025-07-05 11:04:26.427 [http-nio-8080-exec-58] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list'
-### The error may exist in com/project/system/mapper/UserDocumentMapper.java (best guess)
-### The error may involve defaultParameterMap
+2025-07-07 08:05:23.761 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-07 08:32:08.983 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-07 08:37:01.063 [http-nio-8080-exec-76] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'documentId' is not present]
+2025-07-07 10:20:26.876 [http-nio-8080-exec-13] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.mail.MailSendException: Mail server connection failed; nested exception is javax.mail.MessagingException: Got bad greeting from SMTP host: smtp.qq.com, port: 587, response: [EOF]. Failed messages: javax.mail.MessagingException: Got bad greeting from SMTP host: smtp.qq.com, port: 587, response: [EOF]; message exceptions (1) are:
+Failed message 1: javax.mail.MessagingException: Got bad greeting from SMTP host: smtp.qq.com, port: 587, response: [EOF]]
+2025-07-07 11:13:57.523 [http-nio-8080-exec-26] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'id' is not present]
+2025-07-07 11:14:07.808 [http-nio-8080-exec-51] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'id' is not present]
+2025-07-07 11:14:20.685 [http-nio-8080-exec-45] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'id' is not present]
+2025-07-07 11:15:55.252 [http-nio-8080-exec-67] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'id' is not present]
+2025-07-07 11:15:57.979 [http-nio-8080-exec-89] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'id' is not present]
+2025-07-07 11:25:58.875 [http-nio-8080-exec-96] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'id' is not present]
+2025-07-07 11:26:33.327 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'id' is not present]
+2025-07-07 11:26:36.449 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'id' is not present]
+2025-07-07 11:27:20.632 [http-nio-8080-exec-13] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'id' is not present]
+2025-07-07 11:27:24.681 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'id' is not present]
+2025-07-07 11:28:26.158 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'id' is not present]
+2025-07-07 11:31:29.114 [http-nio-8080-exec-52] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'id' is not present]
+2025-07-07 11:42:12.188 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'id' is not present]
+2025-07-07 11:43:06.318 [http-nio-8080-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'id' is not present]
+2025-07-07 11:43:17.047 [http-nio-8080-exec-40] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'id' is not present]
+2025-07-07 13:22:30.018 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1942058137846558721' for key 'article.PRIMARY'
+### The error may exist in com/project/system/mapper/ArticleMapper.java (best guess)
+### The error may involve com.project.system.mapper.ArticleMapper.insert-Inline
 ### The error occurred while setting parameters
+<<<<<<< HEAD
 ### SQL: SELECT id,title,content,share_token,base_template_id,user_id,user_collaboration,created_at,last_modified,share_permission FROM user_document WHERE id=?
 ### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list'
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list']
@@ -576,3 +466,382 @@ Caused by: java.io.IOException: Broken pipe
 2025-07-05 19:01:25.003 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
 2025-07-05 19:06:40.324 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
 2025-07-05 19:16:25.464 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-05 19:37:28.228 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:40:39.881 [http-nio-8080-exec-12] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:42:29.782 [http-nio-8080-exec-16] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:44:04.633 [http-nio-8080-exec-32] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:45:27.647 [http-nio-8080-exec-62] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:51:59.234 [http-nio-8080-exec-68] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:52:30.596 [http-nio-8080-exec-73] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:53:33.181 [http-nio-8080-exec-78] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:54:03.505 [http-nio-8080-exec-83] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 19:55:48.337 [http-nio-8080-exec-88] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 20:27:56.772 [http-nio-8080-exec-82] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/HomeworkStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,chapter_id,chapter_name,work_id,title,sort,answer,type,score,content,point,solution,user_id,remark,create_by,create_time,update_by,update_time  FROM homework_student     WHERE (user_id = ?) GROUP BY chapter_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.homework_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-05 21:12:53.041 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-05 21:19:38.272 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-05 21:27:10.682 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-05 21:39:45.970 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-05 21:39:47.160 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-05 21:39:51.858 [restartedMain] WARN  o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-07-05 21:39:51.914 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2025-07-05 21:40:42.018 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-05 21:54:11.282 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-05 22:04:09.175 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentController': Unsatisfied dependency expressed through field 'messagingTemplate'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.messaging.simp.SimpMessageSendingOperations' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2025-07-05 22:04:47.814 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentController': Unsatisfied dependency expressed through field 'messagingTemplate'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.messaging.simp.SimpMessageSendingOperations' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2025-07-05 22:10:23.784 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-05 22:19:06.340 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-05 22:19:36.589 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-05 22:20:05.264 [clientOutboundChannel-2] WARN  o.s.w.socket.messaging.SubProtocolWebSocketHandler - Terminating 'WebSocketServerSockJsSession[id=nk3fh0ie]': Buffer size 0 bytes for session 'nk3fh0ie' exceeds the allowed limit 524288
+2025-07-07 08:25:30.423 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-07 08:37:10.768 [http-nio-8080-exec-26] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 4]
+2025-07-07 08:37:10.856 [http-nio-8080-exec-23] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-07 08:37:10.856 [http-nio-8080-exec-25] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-07 08:40:41.089 [http-nio-8080-exec-38] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-07 08:40:41.097 [http-nio-8080-exec-37] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 4]
+2025-07-07 08:40:41.097 [http-nio-8080-exec-40] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-07 08:59:33.870 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.scheduling.annotation.ProxyAsyncConfiguration': Unsatisfied dependency expressed through method 'setConfigurers' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'shiroFilter' defined in class path resource [com/project/framework/config/ShiroConfig.class]: Unsatisfied dependency expressed through method 'shiroFilter' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityManager' defined in class path resource [com/project/framework/config/ShiroConfig.class]: Unsatisfied dependency expressed through method 'securityManager' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'shiroRealm': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [E:\project\java\edu-hub-backend\system\target\classes\com\project\system\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [E:\project\java\edu-hub-backend\system\target\classes\mapper\log\LoginLogMapper.xml]'; nested exception is java.lang.TypeNotPresentException: Type com.project.system.domain.LoginLog not present
+2025-07-07 09:01:26.715 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.project.admin.AdminApplication]; nested exception is java.io.FileNotFoundException: class path resource [com/project/system/service/LoginLogService.class] cannot be opened because it does not exist
+2025-07-07 09:05:10.323 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:05:33.664 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:05:37.553 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:05:37.952 [http-nio-8080-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:05:46.716 [http-nio-8080-exec-18] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:05:47.357 [http-nio-8080-exec-22] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:05:47.969 [http-nio-8080-exec-25] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:06:03.248 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-07 09:09:47.432 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:09:47.452 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:09:47.532 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Failure in @ExceptionHandler com.project.admin.controller.GlobalExceptionHandler#handleException(Exception)
+org.apache.catalina.connector.ClientAbortException: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:309)
+	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:272)
+	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:118)
+	at java.base/java.io.FilterOutputStream.flush(FilterOutputStream.java:153)
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1178)
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1008)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:345)
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:277)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.handleReturnValue(RequestResponseBodyMethodProcessor.java:181)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:124)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:428)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:75)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1320)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1131)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:450)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:114)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
+	at java.base/sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:54)
+	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:132)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:97)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:53)
+	at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:532)
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:138)
+	at org.apache.tomcat.util.net.NioBlockingSelector.write(NioBlockingSelector.java:101)
+	at org.apache.tomcat.util.net.NioSelectorPool.write(NioSelectorPool.java:152)
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1253)
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:764)
+	at org.apache.tomcat.util.net.SocketWrapperBase.flushBlocking(SocketWrapperBase.java:717)
+	at org.apache.tomcat.util.net.SocketWrapperBase.flush(SocketWrapperBase.java:707)
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.flush(Http11OutputBuffer.java:572)
+	at org.apache.coyote.http11.filters.ChunkedOutputFilter.flush(ChunkedOutputFilter.java:157)
+	at org.apache.coyote.http11.Http11OutputBuffer.flush(Http11OutputBuffer.java:220)
+	at org.apache.coyote.http11.Http11Processor.flush(Http11Processor.java:1195)
+	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:402)
+	at org.apache.coyote.Response.action(Response.java:209)
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:305)
+	... 82 common frames omitted
+2025-07-07 09:09:48.291 [http-nio-8080-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:09:52.084 [http-nio-8080-exec-12] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:09:52.734 [http-nio-8080-exec-15] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:09:53.958 [http-nio-8080-exec-16] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:09:56.202 [http-nio-8080-exec-21] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:10:03.291 [http-nio-8080-exec-26] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:10:03.293 [http-nio-8080-exec-28] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:10:03.293 [http-nio-8080-exec-27] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:10:36.942 [http-nio-8080-exec-37] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:10:36.949 [http-nio-8080-exec-38] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:10:36.950 [http-nio-8080-exec-39] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:10:46.353 [http-nio-8080-exec-49] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:10:47.314 [http-nio-8080-exec-60] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:10:50.065 [http-nio-8080-exec-65] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:10:50.853 [http-nio-8080-exec-68] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:11:03.227 [http-nio-8080-exec-69] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:11:33.542 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-07 09:18:02.758 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:18:04.881 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:18:10.074 [http-nio-8080-exec-11] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:18:11.376 [http-nio-8080-exec-18] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:18:11.376 [http-nio-8080-exec-17] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:18:11.381 [http-nio-8080-exec-19] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:18:22.218 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-07 09:31:01.774 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-07 09:44:31.300 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:44:31.300 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:44:42.594 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-07 09:45:05.061 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list'
+### The error may exist in com/project/system/mapper/UserDocumentMapper.java (best guess)
+### The error may involve com.project.system.mapper.UserDocumentMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO user_document  ( id, title, content, share_token, base_template_id, user_id, user_collaboration, created_at,  share_permission )  VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?,  ? )
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list']
+2025-07-07 09:45:17.616 [http-nio-8080-exec-30] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list'
+### The error may exist in com/project/system/mapper/UserDocumentMapper.java (best guess)
+### The error may involve com.project.system.mapper.UserDocumentMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO user_document  ( id, title, content, share_token, base_template_id, user_id, user_collaboration, created_at,  share_permission )  VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?,  ? )
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list']
+2025-07-07 09:57:24.097 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:57:24.985 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:57:27.999 [http-nio-8080-exec-18] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 09:57:41.570 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-07 10:08:42.508 [http-nio-8080-exec-88] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 4]
+2025-07-07 10:08:42.585 [http-nio-8080-exec-87] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-07 10:08:42.585 [http-nio-8080-exec-84] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-07 10:31:09.575 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 10:31:19.336 [http-nio-8080-exec-17] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 10:31:19.342 [http-nio-8080-exec-18] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 10:31:19.346 [http-nio-8080-exec-19] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 10:31:22.108 [http-nio-8080-exec-21] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 10:31:22.111 [http-nio-8080-exec-22] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
+2025-07-07 10:31:45.022 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-07 10:32:14.116 [http-nio-8080-exec-20] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list'
+### The error may exist in com/project/system/mapper/UserDocumentMapper.java (best guess)
+### The error may involve com.project.system.mapper.UserDocumentMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO user_document  ( id, title, content, share_token, base_template_id, user_id, user_collaboration, created_at,  share_permission )  VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?,  ? )
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'created_at' in 'field list']
+2025-07-07 10:50:39.574 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-07 11:05:25.600 [http-nio-8080-exec-57] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 4]
+2025-07-07 11:05:25.674 [http-nio-8080-exec-56] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-07 11:05:25.674 [http-nio-8080-exec-55] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
+### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
+2025-07-07 13:41:25.307 [http-nio-8080-exec-15] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:41:39.883 [http-nio-8080-exec-17] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:42:05.128 [http-nio-8080-exec-25] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:42:10.774 [http-nio-8080-exec-34] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:42:15.638 [http-nio-8080-exec-20] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:42:18.622 [http-nio-8080-exec-30] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:44:31.179 [http-nio-8080-exec-27] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:44:31.754 [http-nio-8080-exec-35] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:44:32.072 [http-nio-8080-exec-28] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:44:32.432 [http-nio-8080-exec-24] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:44:32.604 [http-nio-8080-exec-32] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:44:32.750 [http-nio-8080-exec-36] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:44:32.878 [http-nio-8080-exec-37] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:44:33.008 [http-nio-8080-exec-29] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:44:37.149 [http-nio-8080-exec-33] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:45:22.974 [http-nio-8080-exec-38] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:45:32.250 [http-nio-8080-exec-39] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:45:35.306 [http-nio-8080-exec-40] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+2025-07-07 13:46:04.793 [http-nio-8080-exec-41] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.Chapter.getName()" because "chapter" is null]
+=======
+### SQL: INSERT INTO article  ( id, task_id, update_time, title, article_desc, content, avatar, state,  user_id, create_by, create_time, update_by, task_name )  VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?,  ?, ?, ?, ?, ? )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1942058137846558721' for key 'article.PRIMARY'
+; Duplicate entry '1942058137846558721' for key 'article.PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1942058137846558721' for key 'article.PRIMARY']
+>>>>>>> 9dbc0c85c16375aa438e0756ec31bda2208c9f23
