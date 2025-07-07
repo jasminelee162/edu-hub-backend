@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 /**
  * @author shaozhujie
  * @version 1.0
- * @description: 登陆日志controller
+ * @description: 登录日志controller
  * @date 2023/9/25 8:35
  */
 @Controller
@@ -27,7 +27,7 @@ public class LoginLogController {
     private LoginLogService loginLogService;
 
     /** 查询 */
-    @Log(name = "查询登陆日志", type = BusinessType.OTHER)
+    @Log(name = "查询登录日志", type = BusinessType.OTHER)
     @PostMapping("getLogPage")
     public Result getLogPage(@RequestBody LoginLog loginLog) {
         Page<LoginLog> page = new Page<>(loginLog.getPageNumber(), loginLog.getPageSize());
@@ -42,7 +42,7 @@ public class LoginLogController {
     }
 
     /** 删除 */
-    @Log(name = "删除登陆日志", type = BusinessType.DELETE)
+    @Log(name = "删除登录日志", type = BusinessType.DELETE)
     @GetMapping("removeLog")
     public Result removeLog(@RequestParam("ids")String ids) {
         if (StringUtils.isNotBlank(ids)) {
@@ -57,7 +57,7 @@ public class LoginLogController {
     }
 
     /** 清空 */
-    @Log(name = "清空登陆日志", type = BusinessType.DELETE)
+    @Log(name = "清空登录日志", type = BusinessType.DELETE)
     @GetMapping("clearLog")
     public Result clearLog() {
         boolean remove = loginLogService.remove(null);

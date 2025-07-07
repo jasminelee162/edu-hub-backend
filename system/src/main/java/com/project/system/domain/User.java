@@ -53,7 +53,7 @@ public class User extends BaseEntity {
     private String userName;
 
     /**
-     * 登陆账号
+     * 登录账号
      */
     private String loginAccount;
 
