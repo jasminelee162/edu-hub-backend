@@ -32,3 +32,31 @@ Caused by: java.lang.UnsupportedOperationException: null
 	at com.project.system.service.impl.DocumentServiceImpl.exitCollaboration(DocumentServiceImpl.java:107)
 	at com.project.framework.server.DocWebSocketServer.onClose(DocWebSocketServer.java:99)
 	... 23 common frames omitted
+2025-07-08 09:20:37.559 [http-nio-8080-exec-52] ERROR org.apache.tomcat.websocket.pojo.PojoEndpointBase - Failed to call onClose method of POJO end point for POJO of type [com.project.framework.server.DocWebSocketServer]
+java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.tomcat.websocket.pojo.PojoEndpointBase.onClose(PojoEndpointBase.java:103)
+	at org.apache.tomcat.websocket.WsSession.fireEndpointOnClose(WsSession.java:556)
+	at org.apache.tomcat.websocket.WsSession.doClose(WsSession.java:502)
+	at org.apache.tomcat.websocket.WsSession.doClose(WsSession.java:460)
+	at org.apache.tomcat.websocket.WsSession.close(WsSession.java:447)
+	at org.apache.tomcat.websocket.WsSession.close(WsSession.java:441)
+	at org.apache.tomcat.websocket.pojo.PojoEndpointBase.handleOnOpenOrCloseError(PojoEndpointBase.java:92)
+	at org.apache.tomcat.websocket.pojo.PojoEndpointBase.doOnOpen(PojoEndpointBase.java:77)
+	at org.apache.tomcat.websocket.pojo.PojoEndpointServer.onOpen(PojoEndpointServer.java:64)
+	at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler.init(WsHttpUpgradeHandler.java:135)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:935)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null
+	at com.project.system.service.impl.DocumentServiceImpl.exitCollaboration(DocumentServiceImpl.java:103)
+	at com.project.framework.server.DocWebSocketServer.onClose(DocWebSocketServer.java:99)
+	... 21 common frames omitted
+2025-07-08 10:18:22.538 [http-nio-8080-exec-49] ERROR com.alibaba.druid.filter.stat.StatFilter - slow sql 1093 millis. SELECT  id,name,file_type,file_content,html_content,created_at,share_permission  FROM document_template LIMIT ?[10]

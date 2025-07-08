@@ -1,9 +1,12 @@
 package com.project.system.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.project.common.domain.Result;
+import com.project.system.domain.DocumentVersion;
 import com.project.system.domain.Template;
+import com.project.system.domain.User;
 import com.project.system.domain.UserDocument;
 import com.project.system.mapper.DocumentVersionMapper;
 import com.project.system.mapper.TemplateMapper;
@@ -12,6 +15,8 @@ import com.project.system.mapper.UserMapper;
 import com.project.system.service.DocumentService;
 import com.project.system.service.DocumentVersionService;
 import com.project.system.service.TemplateService;
+import com.project.system.vo.DocumentVO;
+import com.project.system.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -40,6 +45,7 @@ public class DocumentServiceImpl implements DocumentService {
 
     @Autowired
     private UserMapper userMapper;
+
 
     //从模板创建文件
     public String createFromTemplate(String templateId,String userId) {
@@ -111,6 +117,39 @@ public class DocumentServiceImpl implements DocumentService {
             str=str+users.get(i)+"#";
         }
         return Result.success(str);
+    }
+
+    public Result getUserList(String docId){
+        UserDocument doc = userDocumentMapper.selectById(docId);
+        String docString=doc.getUserCollaboration();
+        List<String> users =List.of(docString.split("#"));
+        List<UserVO> userVOList=new ArrayList<>();
+        for (int i=0;i<users.size();i++){
+            UserVO userVO=new UserVO();
+            userVO.setUserName(users.get(i));
+            LambdaQueryWrapper<User> wrapper = new LambdaQueryWrapper<>();
+            wrapper.eq(User::getUserName,users.get(i));
+            User user = userMapper.selectOne(wrapper);
+            userVO.setAvatar(user.getAvatar());
+            userVOList.add(userVO);
+        }
+        return Result.success(userVOList);
+    }
+
+    public Result getDocumentVO(String documentId){
+        UserDocument userDocument=userDocumentMapper.selectById(documentId);
+        DocumentVO documentVO=new DocumentVO();
+        documentVO.setTitle(userDocument.getTitle());
+        documentVO.setUserId(userDocument.getUserId());
+        documentVO.setBaseTemplateId(userDocument.getBaseTemplateId());
+        documentVO.setContent(userDocument.getContent());
+        documentVO.setLastModified(userDocument.getLastModified());
+        documentVO.setShareToken(userDocument.getShareToken());
+        documentVO.setId(userDocument.getId());
+        documentVO.setUserCollaboration(userDocument.getUserCollaboration());
+        Template template = templateMapper.selectById(userDocument.getBaseTemplateId());
+        documentVO.setFileType(template.getFileType());
+        return Result.success(documentVO);
     }
 
 }
