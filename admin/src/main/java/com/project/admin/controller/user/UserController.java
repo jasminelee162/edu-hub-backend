@@ -1,6 +1,8 @@
 package com.project.admin.controller.user;
 
 import com.alibaba.fastjson2.JSONObject;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.project.common.annotation.Log;
 import com.project.common.domain.Result;
 import com.project.common.enums.BusinessType;
@@ -9,7 +11,9 @@ import com.project.common.utils.PasswordUtils;
 import com.project.framework.utils.ShiroUtils;
 import com.project.system.domain.Role;
 import com.project.system.domain.User;
+import com.project.system.domain.UserDocument;
 import com.project.system.domain.UserRole;
+import com.project.system.mapper.UserMapper;
 import com.project.system.service.RoleService;
 import com.project.system.service.UserRoleService;
 import com.project.system.service.UserService;
@@ -44,6 +48,8 @@ public class UserController {
     private RoleService roleService;
     @Autowired
     private UserRoleService userRoleService;
+    @Autowired
+    private UserMapper userMapper;
 
     /** 分页查询用户 */
     @Log(name = "分页查询用户", type = BusinessType.OTHER)
@@ -318,8 +324,10 @@ public class UserController {
 
     //点击后表示已读（红点取消）
     @PostMapping("/checked")
-    public void checked(@RequestParam String userName){
+    public Result checked(@RequestParam String userName){
         userService.checked(userName);
+        userService.sendEmail(userName);
+        return Result.success();
     }
 
 }

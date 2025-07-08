@@ -1,0 +1,203 @@
+package com.project.framework.server;
+
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicBoolean;
+import javax.websocket.*;
+import javax.websocket.server.PathParam;
+import javax.websocket.server.ServerEndpoint;
+
+import com.alibaba.fastjson2.JSON;
+import com.project.common.domain.Result;
+import com.project.common.domain.WebSocketResult;
+import com.project.system.service.DocumentService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@ServerEndpoint(value = "/api/websocket/sharedText/{sid}")
+@Component
+public class DocWebSocketServer {
+
+    private static ApplicationContext applicationContext;
+    private Session session;
+    private String sid;
+    private String userId;
+
+    // 设置 ApplicationContext 的静态方法
+    public static void setApplicationContext(ApplicationContext context) {
+        applicationContext = context;
+    }
+
+    // 获取 DocumentService 的方法
+    private DocumentService getDocumentService() {
+        return applicationContext.getBean(DocumentService.class);
+    }
+
+    // 存储所有连接的客户端
+    private static final CopyOnWriteArraySet<DocWebSocketServer> webSocketSet = new CopyOnWriteArraySet<>();
+    private static final Set<String> userSet = new HashSet<>();
+
+    // 消息队列和发送状态标志
+    private final BlockingQueue<String> messageQueue = new LinkedBlockingQueue<>();
+    private final AtomicBoolean isSending = new AtomicBoolean(false);
+
+    @OnOpen
+    public void onOpen(Session session, @PathParam("sid") String sid) {
+        DocumentService documentService = getDocumentService();
+        this.session = session;
+        this.sid = sid;
+        String userId = extractUserId(session);
+        String users = documentService.joinCollaboration(sid, userId);
+        System.out.println("aaaaaaaaaaaaaaaaaa"+users);
+
+        //发送成员加入的信息
+        broadcastMessage("1"+users);
+
+        webSocketSet.add(this);
+        userSet.add(userId);
+
+        startMessageSender();
+        System.out.println("新连接: userId=" + userId + ", sessionId=" + session.getId());
+    }
+
+
+    private String extractUserId(Session session) {
+        // 从URL查询参数中获取userId
+        String queryString = session.getQueryString();
+        if (queryString != null) {
+            String[] params = queryString.split("&");
+            for (String param : params) {
+                String[] keyValue = param.split("=");
+                if (keyValue.length == 2 && "userId".equals(keyValue[0])) {
+                    userId=keyValue[1];
+                    return keyValue[1];
+                }
+            }
+        }
+        return "unknown";
+    }
+
+    @OnMessage
+    public void onMessage(String message, Session session) {
+        // 收到客户端消息时，广播给所有连接的客户端
+
+        DocumentService documentService = getDocumentService();
+        //存入数据库
+        documentService.updateContent(this.sid,message.getBytes());
+        broadcastMessage("2"+message);
+    }
+
+    @OnClose
+    public void onClose() {
+        webSocketSet.remove(this);
+        userSet.remove(userId);
+        DocumentService documentService = getDocumentService();
+        Result result=documentService.exitCollaboration(this.sid, this.userId);
+        broadcastMessage("1"+result.getData());
+        System.out.println("连接关闭: userId=" + sid + ", sessionId=" + session.getId());
+    }
+
+    @OnError
+    public void onError(Throwable error) {
+        System.err.println("WebSocket错误: sid=" + sid + ", sessionId=" + session.getId() + ", error=" + error.getMessage());
+    }
+
+    private void startMessageSender() {
+        CompletableFuture.runAsync(() -> {
+            while (session.isOpen()) {
+                try {
+                    // 从队列中取出消息（阻塞等待）
+                    String message = messageQueue.take();
+
+                    // 原子性地检查并设置发送状态
+                    if (isSending.compareAndSet(false, true)) {
+                        try {
+                            // 使用异步发送，并注册回调
+                            session.getAsyncRemote().sendText(message, result -> {
+                                try {
+                                    if (result.getException() != null) {
+                                        System.err.println("消息发送失败: " + result.getException());
+                                        // 可以添加重试逻辑
+                                    } else {
+                                        System.out.println("消息发送成功: " + message.substring(0, Math.min(20, message.length())));
+                                    }
+                                } finally {
+                                    // 无论成功或失败，都释放发送锁
+                                    isSending.set(false);
+                                    // 检查队列中是否有新消息需要发送
+                                    processNextMessage();
+                                }
+                            });
+                        } catch (Exception e) {
+                            System.err.println("发送消息异常: " + e);
+                            isSending.set(false);
+                            processNextMessage();
+                        }
+                    } else {
+                        // 如果正在发送，将消息放回队列头部（避免丢失）
+                        messageQueue.put(message);
+                        // 短暂休眠，避免CPU占用过高
+                        Thread.sleep(10);
+                    }
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    break;
+                } catch (Exception e) {
+                    System.err.println("消息处理异常: " + e);
+                }
+            }
+        });
+    }
+
+    private void processNextMessage() {
+        // 如果队列不为空且当前没有在发送，立即处理下一条消息
+        if (!messageQueue.isEmpty() && isSending.compareAndSet(false, true)) {
+            String message = messageQueue.poll();
+            if (message != null) {
+                try {
+                    session.getAsyncRemote().sendText(message, result -> {
+                        try {
+                            if (result.getException() != null) {
+                                System.err.println("消息发送失败: " + result.getException());
+                            } else {
+                                System.out.println("消息发送成功: " + message.substring(0, Math.min(20, message.length())));
+                            }
+                        } finally {
+                            isSending.set(false);
+                            processNextMessage();
+                        }
+                    });
+                } catch (Exception e) {
+                    System.err.println("发送消息异常: " + e);
+                    isSending.set(false);
+                    processNextMessage();
+                }
+            } else {
+                isSending.set(false);
+            }
+        }
+    }
+
+    // 广播消息给所有连接的客户端
+    private void broadcastMessage(String message) {
+        for (DocWebSocketServer client : webSocketSet) {
+            if (client.sid.equals(this.sid)) {
+                client.sendMessage(message);
+            }
+        }
+    }
+
+    // 提供给外部的发送消息方法
+    public void sendMessage(String message) {
+        try {
+            messageQueue.put(message);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.err.println("消息加入队列被中断: " + e);
+        }
+    }
+}

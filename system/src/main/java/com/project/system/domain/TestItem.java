@@ -107,4 +107,7 @@ public class TestItem implements Serializable {
 
     @TableField(exist = false)
     private Integer pageSize;
+
+    @TableField(exist = false)
+    private int totalTime;
 }
