@@ -14,7 +14,14 @@ import org.springframework.core.env.ConfigurableEnvironment;
  * @author jas
  * @date 2025/6/26
  */
-@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class },scanBasePackages = "com.project.*")
+@SpringBootApplication(
+        exclude = {DataSourceAutoConfiguration.class},
+        scanBasePackages = {
+                "com.project.admin",
+                "com.project.framework",  // 扫描framework模块下的所有组件
+                "com.project.common"      // 其他可能需要扫描的模块
+        }
+)
 @ComponentScan("com.project")
 @MapperScan("com.**.mapper")
 public class AdminApplication {

@@ -1,6 +1,8 @@
 package com.project.system.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.project.common.domain.Result;
 import com.project.system.domain.Template;
 import com.project.system.domain.UserDocument;
 import com.project.system.mapper.DocumentVersionMapper;
@@ -15,6 +17,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -63,7 +66,6 @@ public class DocumentServiceImpl implements DocumentService {
     }
 
     //更新内容
-    @Async
     public void updateContent(String docId, byte[] content) {
         UserDocument doc = userDocumentMapper.selectById(docId);
         doc.setContent(content);
@@ -79,11 +81,36 @@ public class DocumentServiceImpl implements DocumentService {
         return doc.getContent();
     }
 
-    public List<String> joinCollaboration(String docId, String userId) {
+    public String joinCollaboration(String docId, String userId) {
         UserDocument doc = userDocumentMapper.selectById(docId);
-        doc.setUserCollaboration(doc.getUserCollaboration()+"#"+userMapper.selectById(userId).getUserName());
-        List<String> users= List.of(doc.getUserCollaboration().split("#"));
-        return users;
+        String name =userMapper.selectById(userId).getUserName();
+        String docString=doc.getUserCollaboration();
+        List<String> users =List.of(docString.split("#"));
+        if (users.contains(name)) {
+            return docString;
+        }
+        String str=doc.getUserCollaboration()+"#"+name;
+        doc.setUserCollaboration(str);
+        UpdateWrapper<UserDocument> wrapper = new UpdateWrapper<>();
+        wrapper.eq("id", docId);
+        userDocumentMapper.update(doc,wrapper);
+        return str;
+    }
+
+    public Result exitCollaboration(String docId, String userId){
+        UserDocument doc = userDocumentMapper.selectById(docId);
+        String name =userMapper.selectById(userId).getUserName();
+        String docString=doc.getUserCollaboration();
+        List<String> users =new ArrayList<>(List.of(docString.split("#")));
+        if (!users.contains(name)) {
+             return Result.success(docString);
+        }
+       users.remove(name);
+        String str="";
+        for (int i=0;i<users.size();i++){
+            str=str+users.get(i)+"#";
+        }
+        return Result.success(str);
     }
 
 }

@@ -27,4 +27,12 @@ public class EmailServiceImpl implements EmailService {
         message.setText("您的验证码是：" + code + "，有效期5分钟。");
         mailSender.send(message);
     }
+    public void sendEmail(String to, String content) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom(from);
+        message.setTo(to);
+        message.setSubject("【智能化在线教学支持服务平台学生中心系统】教师入驻申请结果");
+        message.setText(content);
+        mailSender.send(message);
+    }
 }

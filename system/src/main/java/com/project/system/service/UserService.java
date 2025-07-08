@@ -24,5 +24,6 @@ public interface UserService extends IService<User> {
     Page<User> getUserPage(User user);
     List<String> unRead();
     void checked(String userName);
+    void sendEmail(String userName);
 
 }
