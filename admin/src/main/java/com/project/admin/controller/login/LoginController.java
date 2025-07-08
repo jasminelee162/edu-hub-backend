@@ -30,7 +30,7 @@ import java.util.Date;
 /**
  * @author shaozhujie
  * @version 1.0
- * @description: 登陆
+ * @description: 登录
  * @date 2023/9/8 9:04
  */
 @Controller

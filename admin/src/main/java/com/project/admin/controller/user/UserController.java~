@@ -1,8 +1,6 @@
 package com.project.admin.controller.user;
 
 import com.alibaba.fastjson2.JSONObject;
-import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.project.common.annotation.Log;
 import com.project.common.domain.Result;
 import com.project.common.enums.BusinessType;
@@ -11,9 +9,7 @@ import com.project.common.utils.PasswordUtils;
 import com.project.framework.utils.ShiroUtils;
 import com.project.system.domain.Role;
 import com.project.system.domain.User;
-import com.project.system.domain.UserDocument;
 import com.project.system.domain.UserRole;
-import com.project.system.mapper.UserMapper;
 import com.project.system.service.RoleService;
 import com.project.system.service.UserRoleService;
 import com.project.system.service.UserService;
@@ -48,8 +44,6 @@ public class UserController {
     private RoleService roleService;
     @Autowired
     private UserRoleService userRoleService;
-    @Autowired
-    private UserMapper userMapper;
 
     /** 分页查询用户 */
     @Log(name = "分页查询用户", type = BusinessType.OTHER)
@@ -90,7 +84,7 @@ public class UserController {
     @Transactional(rollbackFor = Exception.class)
     @PostMapping("saveUser")
     public Result saveUser(@RequestBody User user) {
-        //先校验登录账号是否重复
+        //先校验登陆账号是否重复
         boolean account = checkAccount(user);
         if (!account) {
             return Result.fail("登录账号已存在不可重复！");
@@ -138,7 +132,7 @@ public class UserController {
     public Result editUser(@RequestBody User apeUser) {
         User user = userService.getById(apeUser.getId());
         if (!user.getLoginAccount().equals(apeUser.getLoginAccount())) {
-            //先校验登录账号是否重复
+            //先校验登陆账号是否重复
             boolean account = checkAccount(apeUser);
             if (!account) {
                 return Result.fail("登录账号已存在不可重复！");
@@ -250,7 +244,7 @@ public class UserController {
         }
     }
 
-    /** 获取登录用户信息 */
+    /** 获取登陆用户信息 */
     @Log(name = "获取登录用户信息", type = BusinessType.OTHER)
     @GetMapping("getUserInfo")
     public Result getUserInfo() {
@@ -324,10 +318,8 @@ public class UserController {
 
     //点击后表示已读（红点取消）
     @PostMapping("/checked")
-    public Result checked(@RequestParam String userName){
+    public void checked(@RequestParam String userName){
         userService.checked(userName);
-        userService.sendEmail(userName);
-        return Result.success();
     }
 
 }

@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 /**
  * @author shaozhujie
  * @version 1.0
- * @description: 登陆日志mapper
+ * @description: 登录日志mapper
  * @date 2023/9/23 8:51
  */
 public interface LoginLogMapper extends BaseMapper<LoginLog> {
