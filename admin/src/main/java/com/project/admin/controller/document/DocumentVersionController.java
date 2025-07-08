@@ -40,13 +40,13 @@ public class DocumentVersionController {
     //获得所有版本
     @GetMapping("/all")
     public Result getAllVersions(@RequestParam String documentId) {
+        System.out.println("uuuuuuuuuuuuuuuuuuu："+documentVersionService.getAllVersion(documentId));
         return Result.success(documentVersionService.getAllVersion(documentId));
     }
 
     //版本记录
     @PostMapping("/record")
     public Result record(@RequestParam String documentId,@RequestParam byte[] content, @RequestParam String changeNote) {
-        System.out.println("vvvvvvvvvvvvvvvvvvvvvvvv"+Base64.getEncoder().encodeToString(content));
         UserDocument userDocument = new UserDocument();
         userDocument.setId(documentId);
         userDocument.setContent(content);

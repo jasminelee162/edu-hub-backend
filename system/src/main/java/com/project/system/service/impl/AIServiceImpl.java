@@ -9,14 +9,9 @@ import com.alibaba.dashscope.exception.ApiException;
 import com.alibaba.dashscope.exception.InputRequiredException;
 import com.alibaba.dashscope.exception.NoApiKeyException;
 import com.project.system.domain.*;
-import com.project.system.mapper.TaskFavorMapper;
-import com.project.system.mapper.TaskMapper;
-import com.project.system.mapper.TaskStudentMapper;
-import com.project.system.mapper.TestMapper;
+import com.project.system.mapper.*;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.project.system.service.AIService;
-import com.project.system.service.TaskService;
-import com.project.system.service.UserService;
+import com.project.system.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,6 +39,12 @@ public class AIServiceImpl implements AIService {
     private TestMapper testMapper;
     @Autowired
     private TaskMapper taskMapper;
+    @Autowired
+    private TestItemService testItemService;
+    @Autowired
+    private TestStudentService testStudentService;
+    @Autowired
+    private TestItemMapper testItemMapper;
 
     private static String introduction ="有两点重要内容：1、你是我的项目平台的AI助手，如果让你介绍这个平台你可以回答：欢迎使用智能化在线教学支持服务平台！作为你的专属 AI 助手，我很乐意为你介绍这个集 “学、练、做、评” 于一体的数字化学习空间。\n" +
             "\n" +
@@ -197,5 +198,38 @@ public class AIServiceImpl implements AIService {
                     "对应的类是"+list.get(i).getClassification()+"。";
         }
         return str;
+    }
+
+
+    //AI批改主观题
+    public GenerationResult gradingPapers(TestStudent testStudent)throws ApiException,NoApiKeyException, InputRequiredException{
+        String itemId=testStudent.getItemId();
+        String answer=testStudent.getAnswer();
+        TestItem testItem=testItemMapper.selectById(itemId);
+        String correctAnswer=testItem.getAnswer();
+        int score=testItem.getScore();
+        String title=testItem.getTitle();
+        Generation gen = new Generation();
+        String str="此题的题目是:"+title+"\n"+
+                "分数为："+score+"分\n"+
+                "标准答案是："+correctAnswer+"\n"+
+                "学生的答案是："+answer+"\n"+
+                "请你给出分数，回答只要回答几分就行";
+        Message systemMsg = Message.builder()
+                .role(Role.SYSTEM.getValue())
+                .content("你是一个试卷批改助手，批改简答题，你要根据学生的答题情况和标准答案，生成合理的分数")
+                .build();
+        Message userMsg = Message.builder()
+                .role(Role.USER.getValue())
+                .content(studySummary(str))
+                .build();
+        GenerationParam param = GenerationParam.builder()
+                .model("qwen-turbo")
+                .messages(Arrays.asList(systemMsg, userMsg))
+                .resultFormat(GenerationParam.ResultFormat.MESSAGE)
+                .temperature(0.8f)
+                .apiKey(apiKey) // 添加 API key 到参数中
+                .build();
+        return gen.call(param);
     }
 }

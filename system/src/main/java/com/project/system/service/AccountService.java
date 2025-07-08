@@ -10,4 +10,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @date 2023/9/21 8:46
  */
 public interface AccountService extends IService<Account> {
+
 }

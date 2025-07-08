@@ -5,13 +5,15 @@ import com.alibaba.dashscope.exception.ApiException;
 import com.alibaba.dashscope.exception.InputRequiredException;
 import com.alibaba.dashscope.exception.NoApiKeyException;
 import com.project.common.domain.Result;
+import com.project.system.domain.TestStudent;
 import com.project.system.service.AIService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 @CrossOrigin(origins = "http://127.0.0.1:3001")
 @Controller
 @ResponseBody
@@ -48,4 +50,16 @@ public class AIController {
         return Result.success(resp);
     }
 
+
+
+    //AI主观题批改
+    @RequestMapping("/grades")
+    public Result gradingPapers(@RequestBody List<TestStudent> testStudent) throws ApiException, NoApiKeyException, InputRequiredException {
+        List<Integer> grades=new ArrayList<>();
+        for(TestStudent t:testStudent){
+            GenerationResult result=aiService.gradingPapers(t);
+            grades.add(Integer.valueOf(result.getOutput().getChoices().get(0).getMessage().getContent()));
+        }
+        return Result.success(grades);
+    }
 }
