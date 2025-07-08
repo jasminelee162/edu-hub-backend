@@ -66,15 +66,22 @@ public class TestItemController {
     public Result getTestItemByTestId(@RequestParam("id")String id) {
         User userInfo = ShiroUtils.getUserInfo();
         Test test = testService.getById(id);
+
         QueryWrapper<TestItem> queryWrapper = new QueryWrapper<>();
-        queryWrapper.lambda().eq(TestItem::getTestId,id).orderByAsc(TestItem::getSort);
+        queryWrapper.lambda().eq(TestItem::getTestId, id).orderByAsc(TestItem::getSort);
         List<TestItem> testItem = testItemService.list(queryWrapper);
+
         List<TestStudent> testStudents = new ArrayList<>();
         for (TestItem item : testItem) {
+            // 设置totalTime字段
+            item.setTotalTime(test.getTotalTime());
+            System.out.println("item.setTotalTime(test.getTotalTime()):"+item.getTotalTime());
+
             QueryWrapper<TestStudent> wrapper = new QueryWrapper<>();
-            wrapper.lambda().eq(TestStudent::getUserId,userInfo.getId())
-                    .eq(TestStudent::getItemId,item.getId());
+            wrapper.lambda().eq(TestStudent::getUserId, userInfo.getId())
+                    .eq(TestStudent::getItemId, item.getId());
             TestStudent testStudent = testStudentService.getOne(wrapper);
+
             if (testStudent == null) {
                 testStudent = new TestStudent();
                 testStudent.setItemId(item.getId());
@@ -90,9 +97,11 @@ public class TestItemController {
             }
             testStudents.add(testStudent);
         }
+
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("testItem", testStudents);
-        jsonObject.put("test",test);
+        jsonObject.put("test", test);
+        jsonObject.put("totalTime", test.getTotalTime());
         return Result.success(jsonObject);
     }
 
