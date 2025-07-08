@@ -12,4 +12,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface TaskStudentService extends IService<TaskStudent> {
     boolean unRead(String taskName);
     void checked(String taskName,String userName);
+
+    int countDistinctUserByTaskId(String taskId) ;
 }

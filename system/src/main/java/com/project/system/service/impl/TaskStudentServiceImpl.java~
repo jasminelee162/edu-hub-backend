@@ -45,8 +45,4 @@ public class TaskStudentServiceImpl extends ServiceImpl<TaskStudentMapper, TaskS
 
         taskStudentMapper.update(updateEntity, updateWrapper);
     }
-
-    public int countDistinctUserByTaskId(String taskId) {
-        return baseMapper.countDistinctUserByTaskId(taskId);
-    }
 }

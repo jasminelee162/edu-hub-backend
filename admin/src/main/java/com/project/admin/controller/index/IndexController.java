@@ -6,10 +6,7 @@ import com.project.framework.utils.ShiroUtils;
 import com.project.system.domain.Task;
 import com.project.system.domain.TaskStudent;
 import com.project.system.domain.User;
-import com.project.system.service.AccountService;
-import com.project.system.service.TaskService;
-import com.project.system.service.TaskStudentService;
-import com.project.system.service.UserService;
+import com.project.system.service.*;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author shaozhujie
@@ -200,5 +198,83 @@ public class IndexController {
         }
         return Result.success(taskList);
     }
+
+
+
+    @GetMapping("/course-student-count")
+    public Result getCourseStudentCount() {
+        User user = ShiroUtils.getUserInfo();
+        String teacherId = user.getId();
+        List<JSONObject> resultList = new ArrayList<>();
+
+        QueryWrapper<Task> taskQuery = new QueryWrapper<>();
+        taskQuery.lambda().eq(Task::getTeacherId, teacherId);
+        List<Task> taskList = taskService.list(taskQuery);
+
+        for (Task task : taskList) {
+            JSONObject obj = new JSONObject();
+            obj.put("courseName", task.getName());
+            obj.put("taskId", task.getId());
+
+            // 用自定义方法统计学生数，避免groupBy问题
+            int studentCount = taskStudentService.countDistinctUserByTaskId(task.getId());
+            obj.put("studentCount", studentCount);
+
+            resultList.add(obj);
+        }
+        return Result.success(resultList);
+    }
+
+
+    @Autowired
+    private TestService testService;
+
+    @GetMapping("/score-distribution")
+    public Result getScoreDistribution(@RequestParam("taskId") String taskId) {
+        // 查询该课程下报名通过的所有学生
+        List<TaskStudent> studentList = taskStudentService.list(
+                new QueryWrapper<TaskStudent>()
+                        .eq("task_id", taskId)
+                        .eq("state", 0)
+        );
+
+        int[] ranges = new int[5]; // 各成绩段计数
+
+        for (TaskStudent student : studentList) {
+            // 调用 testService 获取该学生的总分
+            Map<String, Object> scoreMap = testService.getStudentTotalScore(taskId, student.getUserId());
+
+            if (scoreMap == null || scoreMap.get("point") == null) {
+                continue; // 如果没有成绩，跳过
+            }
+
+            try {
+                double score = Double.parseDouble(scoreMap.get("point").toString());
+                if (score < 60) ranges[0]++;
+                else if (score < 70) ranges[1]++;
+                else if (score < 80) ranges[2]++;
+                else if (score < 90) ranges[3]++;
+                else ranges[4]++;
+            } catch (NumberFormatException e) {
+                // 忽略格式错误的成绩
+                continue;
+            }
+        }
+
+        String[] labels = {"0-60", "60-70", "70-80", "80-90", "90-100"};
+        List<JSONObject> result = new ArrayList<>();
+        for (int i = 0; i < labels.length; i++) {
+            JSONObject obj = new JSONObject();
+            obj.put("range", labels[i]);
+            obj.put("count", ranges[i]);
+            result.add(obj);
+        }
+
+        return Result.success(result);
+    }
+
+
+
+
 
 }

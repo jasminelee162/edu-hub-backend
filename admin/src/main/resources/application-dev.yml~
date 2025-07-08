@@ -9,7 +9,11 @@ spring:
       master:
         url: jdbc:mysql://localhost:3306/learn?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
         username: root
-        password: cMS050306
+<<<<<<< HEAD
+        password: 123
+=======
+        password: qqww123456
+>>>>>>> 41f61815e372ddfeb1be1ed9d8d596eb3a4b9d0c
       # 从库数据源
       slave:
         # 从数据源开关/默认关闭
@@ -96,3 +100,9 @@ spring:
           starttls:
             enable: true    # 启用TLS加密
             required: true  # 强制TLS
+  # application.properties
+  logging:
+    level:
+      org:
+        springframework:
+          context: DEBUG
