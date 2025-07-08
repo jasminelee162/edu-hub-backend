@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Base64;
+
 @Controller
 @ResponseBody
 @RequestMapping("/documentVersion")
@@ -44,6 +46,7 @@ public class DocumentVersionController {
     //版本记录
     @PostMapping("/record")
     public Result record(@RequestParam String documentId,@RequestParam byte[] content, @RequestParam String changeNote) {
+        System.out.println("vvvvvvvvvvvvvvvvvvvvvvvv"+Base64.getEncoder().encodeToString(content));
         UserDocument userDocument = new UserDocument();
         userDocument.setId(documentId);
         userDocument.setContent(content);
