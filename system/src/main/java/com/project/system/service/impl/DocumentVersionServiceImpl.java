@@ -54,7 +54,6 @@ public class DocumentVersionServiceImpl implements DocumentVersionService {
 
     //返回某个版本的内容
     public byte[] getVersionById(String id) {
-
         return documentVersionMapper.selectById(id).getContent();
     }
 }

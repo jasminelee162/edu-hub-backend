@@ -1,32 +1,42 @@
 package com.project.admin.controller.document;
 
-
 import com.project.common.domain.Result;
 import com.project.system.mapper.UserDocumentMapper;
 import com.project.system.service.DocumentService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.handler.annotation.*;
+import org.springframework.messaging.MessageHeaders;
+import org.springframework.messaging.handler.annotation.DestinationVariable;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.Payload;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.MimeType;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Controller
 @ResponseBody
+@Slf4j
 public class DocumentController {
-
 
     @Autowired
     private DocumentService documentService;
-    @Autowired
-    private SimpMessageSendingOperations messagingTemplate;
+
+    /*@Autowired
+    private SimpMessageSendingOperations messagingTemplate;*/
     @Autowired
     private UserDocumentMapper userDocumentMapper;
 
-    //创建共享文档(会返回共享ID)
+    // 创建共享文档(会返回共享ID)
     @PostMapping("/create")
     public Result createDocument(@RequestBody Map<String, Object> jsonMap) {
         String templateId = jsonMap.get("templateId").toString();
@@ -34,37 +44,26 @@ public class DocumentController {
         return Result.success(documentService.createFromTemplate(templateId, userId));
     }
 
-    //编辑文档
+    @GetMapping("/members")
+    public Result members(@RequestParam String documentId) {
+        return Result.success(userDocumentMapper.selectById(documentId).getUserCollaboration());
+    }
+
+    @GetMapping("/documentInit")
+    public Result documentInit(@RequestParam String documentId) {
+        return Result.success(userDocumentMapper.selectById(documentId).getContent());
+    }
+
+
+
+    // 编辑文档
     @MessageMapping("/{documentId}/edit")
     @SendTo("/topic/document/{documentId}")
-    public byte[] editDocument(@DestinationVariable String documentId,  // 从路径获取文档ID
+    public byte[] editDocument(@DestinationVariable String documentId,
                                @Payload byte[] documentData) {
         return documentData;
     }
 
-
-
-    //共享初始化
-    @MessageMapping("/{documentId}/init")
-    public void initDocument(@DestinationVariable String documentId,@Header("simpUser") Principal principal
-                             ) {
-        if (principal == null) {
-            throw new IllegalStateException("未认证用户");
-        }
-
-        String userId = principal.getName();
-        System.out.println("处理文档初始化, documentId: " + documentId +
-                ", userId: " + userId);
-        List<String> users=documentService.joinCollaboration(documentId,userId);
-        messagingTemplate.convertAndSendToUser(
-                userId,           // 目标用户
-                "/queue/init",      // 目标路径（用户专属队列）
-                documentService.getContent(documentId)  // 消息内容
-        );
-        messagingTemplate.convertAndSend(
-                "/topic/document/" + documentId + "/join",
-                users);
-    }
 
     @GetMapping("/confirm")
     public Result confirmDocument(@RequestParam("documentId") String documentId) {
@@ -73,4 +72,8 @@ public class DocumentController {
         }
         return Result.success();
     }
+
+
+
+
 }
