@@ -51,7 +51,7 @@ public class DocumentController {
 
     @GetMapping("/documentInit")
     public Result documentInit(@RequestParam String documentId) {
-        return Result.success(userDocumentMapper.selectById(documentId).getContent());
+        return Result.success(userDocumentMapper.selectById(documentId));
     }
 
 
