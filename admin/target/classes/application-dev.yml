@@ -11,9 +11,10 @@ spring:
         username: root
 <<<<<<< HEAD
         password: 123
+
 =======
-        password: qqww123456
->>>>>>> 41f61815e372ddfeb1be1ed9d8d596eb3a4b9d0c
+        password: cMS050306
+>>>>>>> 1a5a70c1ddc70ae71cc2174743a4cc105d49adfa
       # 从库数据源
       slave:
         # 从数据源开关/默认关闭
