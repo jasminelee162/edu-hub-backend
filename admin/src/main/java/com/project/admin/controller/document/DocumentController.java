@@ -46,12 +46,12 @@ public class DocumentController {
 
     @GetMapping("/members")
     public Result members(@RequestParam String documentId) {
-        return Result.success(userDocumentMapper.selectById(documentId).getUserCollaboration());
+        return documentService.getUserList(documentId);
     }
 
     @GetMapping("/documentInit")
     public Result documentInit(@RequestParam String documentId) {
-        return Result.success(userDocumentMapper.selectById(documentId));
+        return Result.success(documentService.getDocumentVO(documentId));
     }
 
 
