@@ -10,4 +10,6 @@ public interface DocumentService {
     byte[] getContent(String docId);
     String joinCollaboration(String docId, String userId);
     Result exitCollaboration(String docId, String userId);
+    Result getUserList(String docId);
+    Result getDocumentVO(String documentId);
 }
