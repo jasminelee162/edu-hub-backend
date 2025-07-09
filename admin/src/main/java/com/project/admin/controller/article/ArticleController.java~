@@ -119,7 +119,7 @@ public class ArticleController {
     @PostMapping("editArticle")
     public Result editArticle(@RequestBody Article article) {
         User userInfo = ShiroUtils.getUserInfo();
-//        article.setAvatar(userInfo.getAvatar());
+        article.setAvatar(userInfo.getAvatar());
         if (StringUtils.isNotBlank(article.getTaskId())) {
             Task task = taskService.getById(article.getTaskId());
             article.setTaskName(task.getName());
