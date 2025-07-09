@@ -54,6 +54,8 @@ public class DocumentController {
         return Result.success(documentService.getDocumentVO(documentId));
     }
 
+
+
     // 编辑文档
     @MessageMapping("/{documentId}/edit")
     @SendTo("/topic/document/{documentId}")
@@ -61,6 +63,7 @@ public class DocumentController {
                                @Payload byte[] documentData) {
         return documentData;
     }
+
 
     @GetMapping("/confirm")
     public Result confirmDocument(@RequestParam("documentId") String documentId) {
