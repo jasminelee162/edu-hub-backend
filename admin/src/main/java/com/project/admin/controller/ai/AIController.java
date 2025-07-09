@@ -56,10 +56,14 @@ public class AIController {
     @RequestMapping("/grades")
     public Result gradingPapers(@RequestBody List<TestStudent> testStudent) throws ApiException, NoApiKeyException, InputRequiredException {
         List<Integer> grades=new ArrayList<>();
+        int count=0;
         for(TestStudent t:testStudent){
+            count++;
             GenerationResult result=aiService.gradingPapers(t);
-            grades.add(Integer.valueOf(result.getOutput().getChoices().get(0).getMessage().getContent()));
+            grades.add(Integer.valueOf((result.getOutput().getChoices().get(0).getMessage().getContent())));
         }
+        System.out.println("次数："+count);
+        System.out.println("grade大小："+grades.size());
         return Result.success(grades);
     }
 }

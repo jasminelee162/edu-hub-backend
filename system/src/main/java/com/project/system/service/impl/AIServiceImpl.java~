@@ -204,7 +204,7 @@ public class AIServiceImpl implements AIService {
     //AI批改主观题
     public GenerationResult gradingPapers(TestStudent testStudent)throws ApiException,NoApiKeyException, InputRequiredException{
         String itemId=testStudent.getItemId();
-        String answer=testStudent.getSolution();
+        String answer=testStudent.getAnswer();
         TestItem testItem=testItemMapper.selectById(itemId);
         String correctAnswer=testItem.getAnswer();
         int score=testItem.getScore();
