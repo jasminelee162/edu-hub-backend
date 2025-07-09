@@ -46,15 +46,13 @@ public class DocumentController {
 
     @GetMapping("/members")
     public Result members(@RequestParam String documentId) {
-        return documentService.getUserList(documentId);
+        return Result.success(documentService.getUserList(documentId));
     }
 
     @GetMapping("/documentInit")
     public Result documentInit(@RequestParam String documentId) {
         return Result.success(documentService.getDocumentVO(documentId));
     }
-
-
 
     // 编辑文档
     @MessageMapping("/{documentId}/edit")
@@ -63,7 +61,6 @@ public class DocumentController {
                                @Payload byte[] documentData) {
         return documentData;
     }
-
 
     @GetMapping("/confirm")
     public Result confirmDocument(@RequestParam("documentId") String documentId) {
