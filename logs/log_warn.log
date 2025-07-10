@@ -1,6 +1,87 @@
-2025-07-09 07:54:02.377 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-09 07:54:47.079 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2025-07-09 07:57:22.575 [http-nio-8080-exec-6] WARN  org.apache.shiro.authc.AbstractAuthenticator - Authentication failed for token submission [com.project.framework.custom.JwtToken@f255079].  Possible unexpected error? (Typical or expected login exceptions should extend from AuthenticationException).
+2025-07-09 10:33:07.004 [http-nio-8080-exec-32] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 10:35:34.433 [http-nio-8080-exec-29] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 10:37:42.324 [http-nio-8080-exec-49] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 10:41:16.881 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-09 10:41:54.174 [http-nio-8080-exec-35] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 10:45:56.099 [http-nio-8080-exec-96] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:00:24.948 [http-nio-8080-exec-42] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:00:25.135 [http-nio-8080-exec-56] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:00:25.136 [http-nio-8080-exec-53] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getTitle()" because "userDocument" is null]
+2025-07-09 11:01:47.122 [http-nio-8080-exec-60] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:01:47.212 [http-nio-8080-exec-67] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getTitle()" because "userDocument" is null]
+2025-07-09 11:01:51.132 [http-nio-8080-exec-85] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:01:51.132 [http-nio-8080-exec-78] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getTitle()" because "userDocument" is null]
+2025-07-09 11:03:07.533 [http-nio-8080-exec-25] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:03:07.594 [http-nio-8080-exec-20] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getTitle()" because "userDocument" is null]
+2025-07-09 11:05:57.809 [http-nio-8080-exec-90] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:06:39.870 [http-nio-8080-exec-76] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:06:39.916 [http-nio-8080-exec-92] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getTitle()" because "userDocument" is null]
+2025-07-09 11:07:50.680 [http-nio-8080-exec-70] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:14:06.292 [http-nio-8080-exec-35] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:14:20.730 [http-nio-8080-exec-93] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:14:39.092 [http-nio-8080-exec-57] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:14:39.094 [http-nio-8080-exec-61] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getTitle()" because "userDocument" is null]
+2025-07-09 11:19:44.635 [http-nio-8080-exec-100] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:20:42.981 [http-nio-8080-exec-26] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:20:42.981 [http-nio-8080-exec-27] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getTitle()" because "userDocument" is null]
+2025-07-09 11:20:43.272 [http-nio-8080-exec-29] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:20:43.272 [http-nio-8080-exec-23] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getTitle()" because "userDocument" is null]
+2025-07-09 11:20:43.366 [http-nio-8080-exec-36] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getTitle()" because "userDocument" is null]
+2025-07-09 11:20:43.366 [http-nio-8080-exec-20] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:20:44.381 [http-nio-8080-exec-53] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:20:45.382 [http-nio-8080-exec-62] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:20:46.431 [http-nio-8080-exec-69] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:20:47.508 [http-nio-8080-exec-87] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:20:48.628 [http-nio-8080-exec-98] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:20:49.728 [http-nio-8080-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:20:51.605 [http-nio-8080-exec-20] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:20:53.628 [http-nio-8080-exec-53] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:20:55.629 [http-nio-8080-exec-83] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:20:57.604 [http-nio-8080-exec-98] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:21:00.690 [http-nio-8080-exec-22] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:21:02.632 [http-nio-8080-exec-32] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 11:21:04.651 [http-nio-8080-exec-63] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 13:20:02.003 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-09 13:27:03.320 [restartedMain] WARN  org.springframework.boot.SpringApplication - Unable to close ApplicationContext
+org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.project.admin.controller.document.DocumentController] for bean with name 'documentController' defined in file [/Users/caominshan/Desktop/250625实训/46-SpringBoot+Vue在线学习教育平台/edu-hub-backend/admin/target/classes/com/project/admin/controller/document/DocumentController.class]; nested exception is java.lang.ClassNotFoundException: com.project.admin.controller.document.DocumentController
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1542)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:693)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:663)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1670)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:570)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:667)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:659)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1305)
+	at org.springframework.boot.SpringApplication.getExitCodeFromMappedException(SpringApplication.java:899)
+	at org.springframework.boot.SpringApplication.getExitCodeFromException(SpringApplication.java:887)
+	at org.springframework.boot.SpringApplication.handleExitCode(SpringApplication.java:874)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:815)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:336)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at com.project.admin.AdminApplication.main(AdminApplication.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.ClassNotFoundException: com.project.admin.controller.document.DocumentController
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:467)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:144)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:467)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:469)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1607)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1534)
+	... 21 common frames omitted
+2025-07-09 13:27:50.396 [http-nio-8080-exec-7] WARN  org.apache.shiro.authc.AbstractAuthenticator - Authentication failed for token submission [com.project.framework.custom.JwtToken@66ac555].  Possible unexpected error? (Typical or expected login exceptions should extend from AuthenticationException).
 org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
 ### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException
 ### The error may exist in com/project/system/mapper/UserMapper.java (best guess)
@@ -558,6 +639,21 @@ org.apache.catalina.connector.ClientAbortException: java.io.IOException: 你的�
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-09 13:28:06.464 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-07-09 13:28:37.023 [http-nio-8080-exec-62] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 13:28:41.381 [http-nio-8080-exec-92] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 13:28:42.512 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 13:28:43.493 [http-nio-8080-exec-15] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 13:28:44.499 [http-nio-8080-exec-25] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 13:28:45.527 [http-nio-8080-exec-37] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 13:28:46.605 [http-nio-8080-exec-53] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 13:28:47.699 [http-nio-8080-exec-62] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 13:34:38.813 [http-nio-8080-exec-45] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 13:58:51.585 [http-nio-8080-exec-66] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 14:01:19.662 [http-nio-8080-exec-25] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 14:14:38.888 [http-nio-8080-exec-54] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 14:29:51.559 [http-nio-8080-exec-80] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
+2025-07-09 14:41:19.512 [http-nio-8080-exec-18] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException: Cannot invoke "com.project.system.domain.UserDocument.getUserCollaboration()" because "doc" is null]
 Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
 	at java.base/sun.nio.ch.SocketDispatcher.write0(Native Method)
 	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:54)
@@ -580,7 +676,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 	at org.apache.coyote.Response.action(Response.java:209)
 	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:305)
 	... 86 common frames omitted
-2025-07-09 08:40:22.606 [http-nio-8080-exec-75] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 08:40:22.606 [http-nio-8080-exec-75] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -588,7 +684,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 ### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
-2025-07-09 08:40:22.611 [http-nio-8080-exec-72] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 08:40:22.611 [http-nio-8080-exec-72] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -602,7 +698,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 2025-07-09 10:53:04.133 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
 2025-07-09 10:53:15.307 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
 2025-07-09 10:53:31.620 [http-nio-8080-exec-11] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 4]
-2025-07-09 10:53:31.701 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 10:53:31.701 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -610,7 +706,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 ### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
-2025-07-09 10:53:31.701 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 10:53:31.701 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -618,7 +714,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 ### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
-2025-07-09 11:01:12.768 [http-nio-8080-exec-91] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 11:01:12.768 [http-nio-8080-exec-91] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -626,7 +722,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 ### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
-2025-07-09 11:01:12.771 [http-nio-8080-exec-98] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 11:01:12.771 [http-nio-8080-exec-98] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -635,7 +731,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
 2025-07-09 11:01:12.772 [http-nio-8080-exec-92] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 4]
-2025-07-09 11:12:16.482 [http-nio-8080-exec-52] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 11:12:16.482 [http-nio-8080-exec-52] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -643,7 +739,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 ### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
-2025-07-09 11:12:16.482 [http-nio-8080-exec-51] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 11:12:16.482 [http-nio-8080-exec-51] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -652,7 +748,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
 2025-07-09 11:12:16.487 [http-nio-8080-exec-49] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 4]
-2025-07-09 11:14:06.259 [http-nio-8080-exec-74] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 11:14:06.259 [http-nio-8080-exec-74] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -660,7 +756,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 ### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
-2025-07-09 11:14:06.262 [http-nio-8080-exec-69] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 11:14:06.262 [http-nio-8080-exec-69] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -669,7 +765,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
 2025-07-09 11:14:06.263 [http-nio-8080-exec-73] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 4]
-2025-07-09 11:14:53.422 [http-nio-8080-exec-79] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 11:14:53.422 [http-nio-8080-exec-79] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -677,7 +773,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 ### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
-2025-07-09 11:14:53.426 [http-nio-8080-exec-85] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 11:14:53.426 [http-nio-8080-exec-85] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -686,7 +782,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
 2025-07-09 11:14:53.426 [http-nio-8080-exec-90] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 4]
-2025-07-09 11:27:20.036 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 11:27:20.036 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -694,7 +790,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 ### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
-2025-07-09 11:27:20.042 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 11:27:20.042 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -706,7 +802,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 2025-07-09 11:31:43.307 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
 2025-07-09 11:32:12.810 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'AIController': Unsatisfied dependency expressed through field 'aiService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.project.system.service.AIService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 2025-07-09 11:41:55.064 [http-nio-8080-exec-78] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 4]
-2025-07-09 11:41:55.068 [http-nio-8080-exec-79] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 11:41:55.068 [http-nio-8080-exec-79] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -714,7 +810,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 ### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
-2025-07-09 11:41:55.068 [http-nio-8080-exec-81] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 11:41:55.068 [http-nio-8080-exec-81] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -724,7 +820,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
 2025-07-09 13:07:25.286 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
 2025-07-09 13:33:31.847 [http-nio-8080-exec-59] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 4]
-2025-07-09 13:33:31.949 [http-nio-8080-exec-58] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 13:33:31.949 [http-nio-8080-exec-58] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -732,7 +828,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 ### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
-2025-07-09 13:33:31.949 [http-nio-8080-exec-61] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 13:33:31.949 [http-nio-8080-exec-61] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -747,7 +843,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 2025-07-09 14:11:11.033 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.cglib.core.CodeGenerationException: java.lang.LinkageError-->loader 'app' attempted duplicate class definition for com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18. (com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18 is in unnamed module of loader 'app')]
 2025-07-09 14:11:19.135 [background-preinit] WARN  o.s.h.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
 2025-07-09 20:38:52.716 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 4]
-2025-07-09 20:38:52.960 [http-nio-8080-exec-95] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 20:38:52.960 [http-nio-8080-exec-95] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap
@@ -755,7 +851,7 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 ### SQL: SELECT  id,user_id,user_name,teacher_id,teacher_name,task_id,task_name,state,checked  FROM task_student     WHERE (teacher_id = ? AND state = ?) GROUP BY user_id
 ### Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by]
-2025-07-09 20:38:52.960 [http-nio-8080-exec-91] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+2025-07-09 20:38:52.960 [http-nio-8080-exec-91] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException:
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learn.task_student.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ### The error may exist in com/project/system/mapper/TaskStudentMapper.java (best guess)
 ### The error may involve defaultParameterMap

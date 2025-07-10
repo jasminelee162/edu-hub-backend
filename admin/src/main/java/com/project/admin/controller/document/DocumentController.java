@@ -5,13 +5,22 @@ import com.project.system.mapper.UserDocumentMapper;
 import com.project.system.service.DocumentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
+import org.springframework.messaging.simp.SimpMessageSendingOperations;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.MimeType;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -45,6 +54,8 @@ public class DocumentController {
         return Result.success(documentService.getDocumentVO(documentId));
     }
 
+
+
     // 编辑文档
     @MessageMapping("/{documentId}/edit")
     @SendTo("/topic/document/{documentId}")
@@ -52,6 +63,7 @@ public class DocumentController {
                                @Payload byte[] documentData) {
         return documentData;
     }
+
 
     @GetMapping("/confirm")
     public Result confirmDocument(@RequestParam("documentId") String documentId) {
