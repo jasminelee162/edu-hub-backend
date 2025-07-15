@@ -114,11 +114,10 @@ Edu Hub 是一套面向学生、教师和管理员的智能教育平台，提供
 
 ## 技术栈
 
-- **主语言**：Node.js / TypeScript（如为Java/Python按实际填写）
-- **Web框架**：Express / NestJS / Spring Boot / Django
-- **数据库**：MySQL / PostgreSQL / MongoDB
+- **主语言**：Node.js / TypeScript
+- **Web框架**：Spring Boot
+- **数据库**：MySQL
 - **缓存**：Redis
-- **消息队列**：选配，如 RabbitMQ、Kafka
 - **认证**：JWT
 - **实时通信**：WebSocket/Socket.io（用于协作编辑、AI流式推送等）
 
@@ -157,7 +156,7 @@ Edu Hub 是一套面向学生、教师和管理员的智能教育平台，提供
 
 ## 参与贡献
 
-欢迎提交 Issue 和 PR 参与开发。在提交前建议阅读 [CONTRIBUTING.md](CONTRIBUTING.md)（如有）。
+欢迎提交 Issue 和 PR 参与开发。
 
 ---
 
