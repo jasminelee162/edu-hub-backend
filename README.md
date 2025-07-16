@@ -3,7 +3,7 @@
 Edu Hub 是一套面向学生、教师和管理员的智能教育平台，提供从课程学习、作业考试到协作交流、数据分析的一站式解决方案。本项目为 Edu Hub 的后端服务，负责支撑前端所有功能模块的数据与业务逻辑。
 
 - 学生端前端：[edu-hub-student-frontend](https://github.com/jasminelee162/edu-hub-student-frontend)
-- 管理端前端：[edu-hub-admin-frontend](https://github.com/jasminelee162/edu-hub-admin-frontend)
+- 教师/管理端前端：[edu-hub-admin-frontend](https://github.com/jasminelee162/edu-hub-admin-frontend)
 - 后端服务（本仓库）：[edu-hub-backend](https://github.com/jasminelee162/edu-hub-backend)
 
 ---
