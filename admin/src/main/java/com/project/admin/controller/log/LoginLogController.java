@@ -12,12 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * @author shaozhujie
- * @version 1.0
- * @description: 登录日志controller
- * @date 2023/9/25 8:35
- */
+
 @Controller
 @ResponseBody
 @RequestMapping("loginLog")

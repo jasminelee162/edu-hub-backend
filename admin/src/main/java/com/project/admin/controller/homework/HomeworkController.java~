@@ -38,7 +38,6 @@ public class HomeworkController {
         Page<Homework> page = new Page<>(homework.getPageNumber(), homework.getPageSize());
         QueryWrapper<Homework> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
-                .eq(StringUtils.isNotBlank(homework.getChapterId()), Homework::getChapterId, homework.getChapterId()) // 添加章节 ID 查询条件
                 .like(StringUtils.isNotBlank(homework.getTitle()), Homework::getTitle, homework.getTitle())
                 .eq(homework.getType() != null, Homework::getType, homework.getType())
                 .orderByAsc(Homework::getSort);

@@ -98,18 +98,13 @@ public class TestStudentServiceImpl extends ServiceImpl<TestStudentMapper, TestS
 
         // 添加优势课程(得分最高的课程)
         maxScoreEntry.ifPresent(entry -> {
-            List<Double> scores = courseAllScores.getOrDefault(entry.getKey(), Collections.emptyList());
-            String scoresString = scores.stream()
-                    .map(String::valueOf)
-                    .collect(Collectors.joining("，"));
-
             result.add(Map.of(
                     "subject", entry.getKey(),
-                    "studentScore", scoresString,  // 改为显示所有考试得分
+                    "studentScore", entry.getValue(),
                     "avgScore", entry.getValue(),
                     "status", "优势科目"
             ));
-            System.out.println("添加优势课程：" + entry.getKey() + "，得分：" + scoresString);
+            System.out.println("添加优势课程：" + entry.getKey() + "，得分：" + entry.getValue());
         });
 
         // 添加薄弱课程(得分最低的课程)
@@ -134,7 +129,6 @@ public class TestStudentServiceImpl extends ServiceImpl<TestStudentMapper, TestS
         System.out.println("结果构建完成，返回结果。");
         return result;
     }
-
 
 
 

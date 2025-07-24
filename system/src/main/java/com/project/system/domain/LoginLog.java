@@ -12,12 +12,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
-/**
- * @author shaozhujie
- * @version 1.0
- * @description: 登录日志
- * @date 2023/9/23 8:47
- */
+
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
