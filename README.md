@@ -118,12 +118,6 @@ Edu Hub 是一套面向学生、教师和管理员的智能教育平台，提供
 
 ---
 
-## API 文档
-
-- 提供 RESTful API，建议通过 Swagger 或 Postman 获取接口文档（如已集成，访问 `/api-docs`）。
-
----
-
 ## 参与贡献
 
 欢迎提交 Issue 和 PR 参与开发。
