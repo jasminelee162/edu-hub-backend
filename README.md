@@ -8,6 +8,19 @@ Edu Hub 是一套面向学生、教师和管理员的智能教育平台，提供
 
 ---
 
+## 系统架构
+
+为了更好地理解 Edu Hub 的顶层设计与数据流向，以下是系统的核心架构展示。
+
+### 系统主体结构图
+<img width="1088" height="513" alt="image" src="https://github.com/user-attachments/assets/b0f644c1-a6e2-4413-9dca-183c3efb238a" />
+
+
+### 层次结构图
+<img width="1109" height="637" alt="image" src="https://github.com/user-attachments/assets/12dca997-b1e3-4507-9366-d88bbc34007a" />
+
+---
+
 ## 功能模块
 
 ### 学生端功能
@@ -84,7 +97,7 @@ Edu Hub 是一套面向学生、教师和管理员的智能教育平台，提供
 
 ## 技术栈
 
-- **主语言**：Node.js / TypeScript
+- **主语言**：Java
 - **Web框架**：Spring Boot
 - **数据库**：MySQL
 - **缓存**：Redis
